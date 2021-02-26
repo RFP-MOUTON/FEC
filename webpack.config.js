@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     // The mode lets us add webpack to our start scripts.
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     // Entry point where reactdom.render is called.
     output: {
         path: path.join(__dirname, 'dist'),
