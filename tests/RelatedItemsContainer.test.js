@@ -1,6 +1,6 @@
-import React from 'react';
-import container from '../src/components/RelatedItemsContainer.jsx';
-import import { shallow, mount, render } from 'enzyme';
+// import React from 'react';
+// import container from '../src/components/RelatedItemsContainer.jsx';
+// import import { shallow, mount, render } from 'enzyme';
 
 // This is how you will start each test file.
 
