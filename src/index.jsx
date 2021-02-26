@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Reviews from './Components/ReviewsContainer.jsx'
+
 // this is where we're call reactDOM.render and define our entry point to the
 // app.
 class App extends React.Component {
@@ -13,7 +15,10 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
       <div>Hello World</div>
+      <Reviews />
+      </div>
     );
   }
 }
