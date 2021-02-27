@@ -1,9 +1,5 @@
 import React from 'react';
 
-const Reviews = () => (
-  <div id="reviewContainer">
-    <p id="test">Reviews go here!</p>
-  </div>
-);
+const Reviews = () => <div>Reviews go here!</div>;
 
 export default Reviews;
