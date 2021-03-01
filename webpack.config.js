@@ -18,6 +18,17 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+      {
+        test: /\.scss$/,
+        include: [path.resolve(__dirname, 'src', 'sass')],
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+     },
+    ],
+    loaders: [
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
+      },
     ],
   },
 };
