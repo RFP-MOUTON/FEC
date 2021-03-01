@@ -5,8 +5,15 @@
 }
 
 #ratingBreakdown {
-  grid-column-start: 0;
+  grid-column-start: 1;
+  grid-row-start: 1;
   background-color: tomato;
+}
+
+#factors {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: yellow;
 }
 
 #reviewList {

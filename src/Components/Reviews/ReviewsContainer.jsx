@@ -2,6 +2,7 @@ import React from 'react';
 
 import ReviewList from './ReviewList.jsx';
 import RatingBreakdown from './RatingBreakdown.jsx';
+import Factors from './Factors.jsx';
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Reviews extends React.Component {
     return (
       <div id="reviewContainer">
         <RatingBreakdown />
+        <Factors />
         <ReviewList />
       </div>
     );
