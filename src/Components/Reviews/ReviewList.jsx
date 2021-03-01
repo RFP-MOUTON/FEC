@@ -2,10 +2,12 @@ import React from 'react';
 
 import ReviewTile from './ReviewTile.jsx';
 
-const ReviewList = () => {
+const ReviewList = ({ reviews }) => {
   return (
     <div id="reviewList">
-      <ReviewTile />
+      {reviews.map((review) => {
+        return <ReviewTile key={review.review_id} review={review} />
+      })}
     </div>
   )
 };
