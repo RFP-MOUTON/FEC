@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RelatedItemsContainer = (props) => {
+const RelatedItemsContainer = () => {
   return <div>Related Items Container Test</div>;
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TileUserDate = ({ user, date }) => {
+  console.log(date);
   return (
     <div>
       <div>
