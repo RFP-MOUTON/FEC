@@ -12,22 +12,22 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+      {
         test: /\.jsx?/,
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
-      },
-      {
-        test: /\.scss$/,
-        include: [path.resolve(__dirname, 'src', 'sass')],
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
-     },
-    ],
-    loaders: [
-      {
-        test: /\.scss$/,
-        loader: 'style!css!sass',
       },
     ],
   },

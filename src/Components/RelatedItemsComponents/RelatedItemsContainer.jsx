@@ -1,11 +1,12 @@
 import React from 'react';
-import './RelatedItems.scss';
-import RelatedItemsSlider from './SliderComponents/RelatedItemsSlider.jsx';
+import RelatedItemsSlider from './RelatedItemsSlider.jsx';
+
+import '../../css/RelatedItems.scss';
 
 const RelatedItemsContainer = () => {
   return (
     <React.Fragment>
-      <div>Related Items Container Test</div>
+      <h6>Related Items Container Test</h6>
       <RelatedItemsSlider />
     </React.Fragment>
   );
