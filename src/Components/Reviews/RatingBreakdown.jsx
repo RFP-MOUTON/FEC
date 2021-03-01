@@ -2,7 +2,9 @@ import React from 'react';
 
 const RatingBreakdown = () => {
   return (
-    <div id="ratingBreakdown">Rating Breakdown</div>
+    <div>
+      <div id="ratingBreakdown">Rating Breakdown</div>
+    </div>
   );
 };
 

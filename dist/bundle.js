@@ -106,7 +106,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Factors = function Factors() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"factors\"\n  }, \"Factors\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Factors);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/Factors.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Factors = function Factors() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"factors\"\n  }, \"Factors\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Factors);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/Factors.jsx?");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar RatingBreakdown = function RatingBreakdown() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"ratingBreakdown\"\n  }, \"Rating Breakdown\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingBreakdown);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/RatingBreakdown.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar RatingBreakdown = function RatingBreakdown() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"ratingBreakdown\"\n  }, \"Rating Breakdown\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingBreakdown);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/RatingBreakdown.jsx?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _TileStars_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TileStars.jsx */ \"./src/Components/Reviews/TileStars.jsx\");\n/* harmony import */ var _TileUserDate_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TileUserDate.jsx */ \"./src/Components/Reviews/TileUserDate.jsx\");\n/* harmony import */ var _TilePhotos_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TilePhotos.jsx */ \"./src/Components/Reviews/TilePhotos.jsx\");\n/* harmony import */ var _TileHelpfulReport_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TileHelpfulReport.jsx */ \"./src/Components/Reviews/TileHelpfulReport.jsx\");\n/* harmony import */ var _TileResponse_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TileResponse.jsx */ \"./src/Components/Reviews/TileResponse.jsx\");\n/* harmony import */ var _TileRecommend_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TileRecommend.jsx */ \"./src/Components/Reviews/TileRecommend.jsx\");\n/* harmony import */ var _TileSummary_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TileSummary.jsx */ \"./src/Components/Reviews/TileSummary.jsx\");\n/* harmony import */ var _TileBody_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TileBody.jsx */ \"./src/Components/Reviews/TileBody.jsx\");\n\n\n\n\n\n\n\n\n\n\nvar ReviewTile = function ReviewTile(_ref) {\n  var review = _ref.review;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"reviewTile\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileStars_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileUserDate_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileSummary_jsx__WEBPACK_IMPORTED_MODULE_7__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileBody_jsx__WEBPACK_IMPORTED_MODULE_8__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileRecommend_jsx__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileResponse_jsx__WEBPACK_IMPORTED_MODULE_5__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TilePhotos_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileHelpfulReport_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewTile);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/ReviewTile.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _TileComponents_TileStars_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TileComponents/TileStars.jsx */ \"./src/Components/Reviews/TileComponents/TileStars.jsx\");\n/* harmony import */ var _TileComponents_TileUserDate_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TileComponents/TileUserDate.jsx */ \"./src/Components/Reviews/TileComponents/TileUserDate.jsx\");\n/* harmony import */ var _TileComponents_TilePhotos_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TileComponents/TilePhotos.jsx */ \"./src/Components/Reviews/TileComponents/TilePhotos.jsx\");\n/* harmony import */ var _TileComponents_TileHelpfulReport_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TileComponents/TileHelpfulReport.jsx */ \"./src/Components/Reviews/TileComponents/TileHelpfulReport.jsx\");\n/* harmony import */ var _TileComponents_TileResponse_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TileComponents/TileResponse.jsx */ \"./src/Components/Reviews/TileComponents/TileResponse.jsx\");\n/* harmony import */ var _TileComponents_TileRecommend_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TileComponents/TileRecommend.jsx */ \"./src/Components/Reviews/TileComponents/TileRecommend.jsx\");\n/* harmony import */ var _TileComponents_TileSummary_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TileComponents/TileSummary.jsx */ \"./src/Components/Reviews/TileComponents/TileSummary.jsx\");\n/* harmony import */ var _TileComponents_TileBody_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TileComponents/TileBody.jsx */ \"./src/Components/Reviews/TileComponents/TileBody.jsx\");\n\n\n\n\n\n\n\n\n\n\nvar ReviewTile = function ReviewTile(_ref) {\n  var review = _ref.review;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"reviewTile\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileStars_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {\n    rating: review.rating\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileUserDate_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {\n    user: review.reviewer_name,\n    date: review.date\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileSummary_jsx__WEBPACK_IMPORTED_MODULE_7__.default, {\n    summary: review.summary\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileBody_jsx__WEBPACK_IMPORTED_MODULE_8__.default, {\n    body: review.body\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileRecommend_jsx__WEBPACK_IMPORTED_MODULE_6__.default, {\n    recommend: review.recommend\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileResponse_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {\n    response: review.response\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TilePhotos_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {\n    photos: review.photos\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TileComponents_TileHelpfulReport_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {\n    helpfulness: review.helpfulness\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewTile);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/ReviewTile.jsx?");
 
 /***/ }),
 
@@ -150,83 +150,83 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileBody.jsx":
-/*!*********************************************!*\
-  !*** ./src/Components/Reviews/TileBody.jsx ***!
-  \*********************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileBody.jsx":
+/*!************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileBody.jsx ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileBody = function TileBody() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Body Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileBody);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileBody.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileBody = function TileBody(_ref) {\n  var body = _ref.body;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, body));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileBody);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileBody.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileHelpfulReport.jsx":
-/*!******************************************************!*\
-  !*** ./src/Components/Reviews/TileHelpfulReport.jsx ***!
-  \******************************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileHelpfulReport.jsx":
+/*!*********************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileHelpfulReport.jsx ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileHelpfulReport = function TileHelpfulReport() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Helpful and Report Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileHelpfulReport);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileHelpfulReport.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileHelpfulReport = function TileHelpfulReport(_ref) {\n  var helpfulness = _ref.helpfulness;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Helpful? Yes (\", helpfulness, \") | Report\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileHelpfulReport);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileHelpfulReport.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TilePhotos.jsx":
-/*!***********************************************!*\
-  !*** ./src/Components/Reviews/TilePhotos.jsx ***!
-  \***********************************************/
+/***/ "./src/Components/Reviews/TileComponents/TilePhotos.jsx":
+/*!**************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TilePhotos.jsx ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TilePhotos = function TilePhotos() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Photos Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TilePhotos);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TilePhotos.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TilePhotos = function TilePhotos(_ref) {\n  var photos = _ref.photos;\n\n  if (photos.length === 0) {\n    return null;\n  }\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Photos Here\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TilePhotos);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TilePhotos.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileRecommend.jsx":
-/*!**************************************************!*\
-  !*** ./src/Components/Reviews/TileRecommend.jsx ***!
-  \**************************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileRecommend.jsx":
+/*!*****************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileRecommend.jsx ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileRecommend = function TileRecommend() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"I Recommend this product\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileRecommend);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileRecommend.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileRecommend = function TileRecommend(_ref) {\n  var recommend = _ref.recommend;\n\n  if (!recommend) {\n    return null;\n  }\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"I recommend this product\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileRecommend);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileRecommend.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileResponse.jsx":
-/*!*************************************************!*\
-  !*** ./src/Components/Reviews/TileResponse.jsx ***!
-  \*************************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileResponse.jsx":
+/*!****************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileResponse.jsx ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileResponse = function TileResponse() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Response Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileResponse);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileResponse.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileResponse = function TileResponse(_ref) {\n  var response = _ref.response;\n\n  if (!response) {\n    return null;\n  }\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, response));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileResponse);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileResponse.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileStars.jsx":
-/*!**********************************************!*\
-  !*** ./src/Components/Reviews/TileStars.jsx ***!
-  \**********************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileStars.jsx":
+/*!*************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileStars.jsx ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileStars = function TileStars() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Stars Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileStars);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileStars.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileStars = function TileStars(_ref) {\n  var rating = _ref.rating;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, rating));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileStars);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileStars.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileSummary.jsx":
-/*!************************************************!*\
-  !*** ./src/Components/Reviews/TileSummary.jsx ***!
-  \************************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileSummary.jsx":
+/*!***************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileSummary.jsx ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileSummary = function TileSummary() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Summary Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileSummary);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileSummary.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileSummary = function TileSummary(_ref) {\n  var summary = _ref.summary;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, summary));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileSummary);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileSummary.jsx?");
 
 /***/ }),
 
-/***/ "./src/Components/Reviews/TileUserDate.jsx":
-/*!*************************************************!*\
-  !*** ./src/Components/Reviews/TileUserDate.jsx ***!
-  \*************************************************/
+/***/ "./src/Components/Reviews/TileComponents/TileUserDate.jsx":
+/*!****************************************************************!*\
+  !*** ./src/Components/Reviews/TileComponents/TileUserDate.jsx ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileUserDate = function TileUserDate() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"User and Date Here\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileUserDate);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileUserDate.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar TileUserDate = function TileUserDate(_ref) {\n  var user = _ref.user,\n      date = _ref.date;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, user, \", \", date));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TileUserDate);\n\n//# sourceURL=webpack://fec/./src/Components/Reviews/TileComponents/TileUserDate.jsx?");
 
 /***/ }),
 

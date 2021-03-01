@@ -2,7 +2,9 @@ import React from 'react';
 
 const Factors = () => {
   return (
-    <div id="factors" >Factors</div>
+    <div>
+      <div id="factors">Factors</div>
+    </div>
   );
 };
 
