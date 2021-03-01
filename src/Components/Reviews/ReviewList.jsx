@@ -1,8 +1,12 @@
 import React from 'react';
 
+import ReviewTile from './ReviewTile.jsx';
+
 const ReviewList = () => {
   return (
-    <div>Review List</div>
+    <div id="reviewList">
+      <ReviewTile />
+    </div>
   )
 };
 
