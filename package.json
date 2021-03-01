@@ -3,12 +3,17 @@
   "jest": {
     "setupFilesAfterEnv": [
       "<rootDir>/tests/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "version": "1.0.0",
   "description": "Our Hack Reactor FEC project",
   "main": "index.js",
-  "eslintConfig": { "extends": "airbnb" },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
   "scripts": {
     "test": "jest",
     "build": "webpack -w ",
