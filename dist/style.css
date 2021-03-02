@@ -27,3 +27,11 @@
 .reviewTile {
   background-color: yellowgreen;
 }
+
+.w-6 {
+  width: 20px;
+}
+
+.h-6 {
+  height: 20px;
+}
