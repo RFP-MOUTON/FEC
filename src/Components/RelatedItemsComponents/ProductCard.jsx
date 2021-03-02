@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
       <div className="productCategory">{product.category}</div>
       <div className="productName">{product.name}</div>
       <div className="productPrice">${product.default_price}</div>
-      <div className="productRating">Rating goes here</div>
+      <div className="productRating">Instert Rating Here</div>
     </div>
   );
 };
