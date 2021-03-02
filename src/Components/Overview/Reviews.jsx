@@ -7,19 +7,8 @@ class Reviews extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    instance
-      .get('/products')
-      .then((response) => {
-        console.log(response);
-      })
-      .then(function (error) {
-        console.log(error);
-      });
-  }
-
   render() {
-    return <div>Greetings travelers</div>;
+    return <div>Greetings</div>;
   }
 }
 
