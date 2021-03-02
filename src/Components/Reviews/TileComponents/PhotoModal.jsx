@@ -9,11 +9,9 @@ const PhotoModal = ({ photo, toggle }) => {
         src={photo.url}
         alt={photo.url}
       />
-      <button
-        type="button"
-        className="closeButton"
-        onClick={toggle}
-      >X</button>
+      <button type="button" className="closeButton" onClick={toggle}>
+        X
+      </button>
     </>
   );
 };
