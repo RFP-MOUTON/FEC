@@ -5,7 +5,8 @@ const TileResponse = ({ response }) => {
     return null;
   }
   return (
-    <div>
+    <div className="response">
+      <div>Response from seller:</div>
       <div>{response}</div>
     </div>
   );
