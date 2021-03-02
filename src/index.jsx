@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 // import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import Reviews from './Components/Reviews/ReviewsContainer.jsx';
+import RelatedItemsContainer from './Components/RelatedItemsComponents/RelatedItemsContainer.jsx';
 
 // this is where we're call reactDOM.render and define our entry point to the
 // app.
@@ -19,6 +20,7 @@ class App extends React.Component {
     return (
       <div>
         <div>Hello World</div>
+        <RelatedItemsContainer />
         <Reviews />
       </div>
     );
