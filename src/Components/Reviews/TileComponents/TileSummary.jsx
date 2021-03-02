@@ -3,7 +3,7 @@ import React from 'react';
 const TileSummary = ({ summary }) => {
   return (
     <div>
-      <div>{summary}</div>
+      <b>{summary}</b>
     </div>
   );
 };
