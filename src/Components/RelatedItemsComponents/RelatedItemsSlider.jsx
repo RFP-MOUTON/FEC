@@ -1,16 +1,33 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
+import ArrowLeft from './ArrowLeft.jsx';
+import ArrowRight from './ArrowRight.jsx';
 
-const RelatedItemsSlider = () => {
-  const sliderArr = [1, 2, 3, 4, 5];
+const RelatedItemsSlider = ({
+  productData,
+  currentProduct,
+  LeftButtonHandler,
+  RightButtonHandler,
+}) => {
   return (
-    <React.Fragment>
-      <div className="slider">
-        {sliderArr.map((product, index) => {
-          return <ProductCard key={index} product={product} />;
-        })}
+    <div>
+      <ArrowLeft LeftButtonHandler={LeftButtonHandler} />
+      <ArrowRight RightButtonHandler={RightButtonHandler} />
+      <div className="cardSlider">
+        <div
+          className="cardSliderWrapper"
+          style={{
+            transform: `translateX(-${
+              productData.indexOf(currentProduct) * (100 / productData.length)
+            }%)`,
+          }}
+        >
+          {productData.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
+        </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
