@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import Enzyme from 'enzyme';
 // import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
+import OverviewContainer from './Components/Overview/OverviewContainer.jsx';
 import Reviews from './Components/Reviews/ReviewsContainer.jsx';
 import RelatedItemsContainer from './Components/RelatedItemsComponents/RelatedItemsContainer.jsx';
 
@@ -20,6 +20,7 @@ class App extends React.Component {
     return (
       <div>
         <div>Hello World</div>
+        <OverviewContainer />
         <RelatedItemsContainer />
         <Reviews />
       </div>
