@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Star = ({ shade, id }) => {
-  console.log(id);
-  let newId = id.toString();
+  const newId = id.toString();
 
   return (
     <svg

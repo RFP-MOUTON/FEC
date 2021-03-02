@@ -5,8 +5,10 @@ const TilePhotos = ({ photos }) => {
     return null;
   }
   return (
-    <div>
-      <div>Photos Here</div>
+    <div className="thumbnails">
+      {photos.map((photo) => {
+        return <img key={photo.id} src={photo.url} alt={photo.url} />;
+      })}
     </div>
   );
 };

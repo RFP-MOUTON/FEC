@@ -16,9 +16,9 @@ const ReviewTile = ({ review }) => {
       <TileUserDate user={review.reviewer_name} date={review.date} />
       <TileSummary summary={review.summary} />
       <TileBody body={review.body} />
+      <TilePhotos photos={review.photos} />
       <TileRecommend recommend={review.recommend} />
       <TileResponse response={review.response} />
-      <TilePhotos photos={review.photos} />
       <TileHelpfulReport helpfulness={review.helpfulness} />
     </div>
   );
