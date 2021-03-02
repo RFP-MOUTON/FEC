@@ -29,7 +29,7 @@ class RelatedItemsContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="relatedItemsContainer">
         <RelatedItemsSlider
           productData={this.state.productData}
           currentProduct={this.state.currentProduct}

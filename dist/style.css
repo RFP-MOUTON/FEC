@@ -1,7 +1,17 @@
+#mainContainer {
+  display: grid;
+  grid-template-rows: 1000px 1000px 1000px;
+}
+
+#relatedItemsContainer {
+  grid-row-start: 2;
+}
+
 #reviewContainer {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 500px 500px;
+  grid-row-start: 3;
 }
 
 #ratingBreakdown {
