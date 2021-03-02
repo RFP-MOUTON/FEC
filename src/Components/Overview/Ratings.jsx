@@ -37,10 +37,9 @@ function Ratings(props) {
   let average = 0;
   if (props.ratings !== undefined) {
     Object.keys(props.ratings).map((key, index) => {
-      count = average + proprs.ratings[key];
-      average = count + props.ratings[key] * key;
+      count = count + parseInt(props.ratings[key]);
+      average = average + props.ratings[key] * key;
     });
-
     average = average / count;
   }
 
