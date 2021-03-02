@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 // import Enzyme from 'enzyme';
 // import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-import Reviews from './Components/ReviewsContainer.jsx';
-import RelatedItemsContainer from './Components/RelatedItemsContainer.jsx';
+import Reviews from './Components/Reviews/ReviewsContainer.jsx';
+import RelatedItemsContainer from './Components/RelatedItemsComponents/RelatedItemsContainer.jsx';
 
 // this is where we're call reactDOM.render and define our entry point to the
 // app.
