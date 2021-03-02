@@ -4,16 +4,6 @@ import data from './data.js';
 
 import '../../css/RelatedItems.scss';
 
-<<<<<<< HEAD
-const RelatedItemsContainer = () => {
-  return (
-    <>
-      <h6>Related Items Container Test</h6>
-      <RelatedItemsSlider />
-    </>
-  );
-};
-=======
 class RelatedItemsContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -50,6 +40,5 @@ class RelatedItemsContainer extends React.Component {
     );
   }
 }
->>>>>>> d70ed672701d59bbfbe63f171503e9fc3e40029b
 
 export default RelatedItemsContainer;
