@@ -1,6 +1,7 @@
 import React from 'react';
-import Reviews from './Reviews.jsx';
+import Ratings from './Ratings.jsx';
 import instance from './instance';
+import StarIcon from './StarIcon.jsx';
 
 class OverviewContainer extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class OverviewContainer extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Reviews />
+        <Ratings ratings={this.state.reviews.ratings} />
       </React.Fragment>
     );
   }
