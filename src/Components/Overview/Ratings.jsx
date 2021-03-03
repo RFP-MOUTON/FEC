@@ -1,24 +1,21 @@
 import React from 'react';
 import axios from 'axios';
-import instance from './instance';
+// import instance from './instance';
 import StarIcon from './StarIcon.jsx';
 
 function Ratings(props) {
   const { ratings } = props;
   let count = 0;
   let average = 0;
-  const results = [];
   if (ratings !== undefined) {
-    Object.keys(ratings).map((key, index) => {
-      count += parseInt(props.ratings[key]);
+    Object.keys(ratings).map((key) => {
+      count += parseInt(props.ratings[key], 10);
       average += props.ratings[key] * key;
       return 'Success';
     });
     average /= count;
   }
 
-  // for (let i = 0; i < )
-  // <StarIcon />
   if (ratings === undefined) {
     return <div>Loading Stars</div>;
   }
