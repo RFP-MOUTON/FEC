@@ -10,11 +10,9 @@ class RelatedItemsContainer extends React.Component {
     this.state = {
       productData: data,
       currentProduct: data[0],
-      isModalOpen: false,
     };
     this.LeftButtonHandler = this.LeftButtonHandler.bind(this);
     this.RightButtonHandler = this.RightButtonHandler.bind(this);
-    this.ToggleModalHandler = this.ToggleModalHandler.bind(this);
   }
 
   LeftButtonHandler() {
@@ -29,22 +27,17 @@ class RelatedItemsContainer extends React.Component {
     this.setState({ currentProduct: data[newIndex] });
   }
 
-  ToggleModalHandler() {
-    const { isModalOpen } = this.state;
-    this.setState({ isModalOpen: !isModalOpen });
-  }
-
   render() {
-    const { productData, currentProduct, isModalOpen } = this.state;
+    const { viewedProductInfo } = this.props;
+    const { productData, currentProduct } = this.state;
     return (
       <div id="relatedItemsContainer">
         <RelatedItemsSlider
           productData={productData}
           currentProduct={currentProduct}
-          isModalOpen={isModalOpen}
+          viewedProductInfo={viewedProductInfo}
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
-          ToggleModalHandler={this.ToggleModalHandler}
         />
       </div>
     );
