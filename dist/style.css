@@ -78,6 +78,8 @@
   background: black;
 }
 
+/* Star Bars */
+
 .progress {
   background: rgba(196, 196, 196, 0.1);
   justify-content: flex-start;
@@ -94,6 +96,13 @@
   background: green;
   height: 15px;
   /* width: 30%; */
+}
+
+.barContainer {
+  margin: 10px;
+}
+.barContainer div {
+  display: inline-block;
 }
 
 @keyframes load {

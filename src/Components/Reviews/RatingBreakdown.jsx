@@ -20,7 +20,11 @@ const RatingBreakdown = ({ metaData }) => {
       <p>RATINGS AND REVIEWS</p>
       <Rating average={average} totalReviews={totalReviews} />
       <Recommended recommended={recommended} totalReviews={totalReviews} />
-      <StarBar />
+      <StarBar num="1" stars={one} total={totalReviews} />
+      <StarBar num="2" stars={two} total={totalReviews} />
+      <StarBar num="3" stars={three} total={totalReviews} />
+      <StarBar num="4" stars={four} total={totalReviews} />
+      <StarBar num="5" stars={five} total={totalReviews} />
     </div>
   );
 };
