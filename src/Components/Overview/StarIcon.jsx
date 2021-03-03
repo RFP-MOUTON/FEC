@@ -1,16 +1,20 @@
 import React from 'react';
 
 const StarIcon = (props) => {
-  const { fill = 'none' } = props;
+  const { fill, id } = props;
 
   return (
     <svg
       className="w-6 h-6"
-      fill="none"
+      fill="url(#gradient)"
       stroke="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <linearGradient id="gradient">
+        <stop offset={fill} stopColor="black" />
+        <stop offset={fill} stopColor="white" />
+      </linearGradient>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

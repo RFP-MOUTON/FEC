@@ -3,6 +3,10 @@
   grid-template-rows: 1000px 1000px 1000px;
 }
 
+#overviewContainer {
+  grid-row-start: 1;
+}
+
 #relatedItemsContainer {
   grid-row-start: 2;
 }

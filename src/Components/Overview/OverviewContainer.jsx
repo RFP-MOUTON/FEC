@@ -1,6 +1,6 @@
 import React from 'react';
 import Ratings from './Ratings.jsx';
-import instance from './instance';
+import instance from './instance.js';
 import StarIcon from './StarIcon.jsx';
 
 class OverviewContainer extends React.Component {
@@ -26,33 +26,36 @@ class OverviewContainer extends React.Component {
         });
         this.updateComponent();
       })
-      .then(function (error) {
+      .then((error) => {
         console.log(error);
       });
-    // Save that product in state
+    // Save that product in sta
   }
+
   updateComponent() {
-    console.log('id: ' + this.state.data.id);
-    if (this.state.data !== '') {
+    const { data } = this.state;
+    console.log(`id: ${data.id}`);
+    if (data !== '') {
       instance
-        .get('/reviews/meta', { params: { product_id: this.state.data.id } })
+        .get('/reviews/meta', { params: { product_id: data.id } })
         .then((response) => {
           console.log(response.data);
           this.setState({
             reviews: response.data,
           });
         })
-        .then(function (error) {
+        .then((error) => {
           console.log(error);
         });
     }
   }
 
   render() {
+    const { reviews } = this.state;
     return (
-      <React.Fragment>
-        <Ratings ratings={this.state.reviews.ratings} />
-      </React.Fragment>
+      <div id="overviewContainer">
+        <Ratings ratings={reviews.ratings} />
+      </div>
     );
   }
 }
