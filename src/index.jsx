@@ -37,7 +37,7 @@ class App extends React.Component {
         <div>Hello World</div>
         <OverviewContainer id={data.id} />
         <RelatedItemsContainer />
-        <Reviews />
+        <Reviews id={data.id} />
       </div>
     );
   }
