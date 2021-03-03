@@ -62,7 +62,7 @@
   position: fixed;
   background: white;
   width: auto !important;
-  height: auto !important;
+  height: 80% !important;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
@@ -76,4 +76,27 @@
   top: 0;
   right: 0;
   background: black;
+}
+
+.progress {
+  background: rgba(196, 196, 196, 0.1);
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 15px;
+  width: 250px;
+}
+
+.progress-value {
+  /* animation: load 3s normal forwards; */
+  background: green;
+  height: 15px;
+  /* width: 30%; */
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 68%; }
 }
