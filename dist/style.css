@@ -23,7 +23,7 @@
 #factors {
   grid-column-start: 1;
   grid-row-start: 2;
-  background-color: yellow;
+  background-color: white;
 }
 
 #reviewList {
@@ -81,7 +81,7 @@
 /* Star Bars */
 
 .progress {
-  background: rgba(196, 196, 196, 0.1);
+  background: rgba(66, 66, 66, 0.1);
   justify-content: flex-start;
   align-items: center;
   position: relative;
@@ -91,11 +91,26 @@
   width: 250px;
 }
 
+.factor {
+  background: rgba(66, 66, 66, 0.1);
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 15px;
+  width: 300px;
+}
+
 .progress-value {
   /* animation: load 3s normal forwards; */
   background: green;
   height: 15px;
   /* width: 30%; */
+}
+.factor-value {
+  position: absolute;
+  left: 25%;
 }
 
 .barContainer {
@@ -108,4 +123,17 @@
 @keyframes load {
   0% { width: 0; }
   100% { width: 68%; }
+}
+
+.indicator {
+  height: 28px;
+  width: 28px;
+}
+
+.characteristics div {
+  display: inline-block;
+}
+.rightChar {
+  position: relative;
+  left: 193px;
 }

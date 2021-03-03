@@ -1,9 +1,11 @@
 import React from 'react';
 
+import FactorBar from './FactorsComponents/FactorBarComponent.jsx';
+
 const Factors = () => {
   return (
-    <div>
-      <div id="factors">Factors</div>
+    <div id="factors">
+      <FactorBar />
     </div>
   );
 };
