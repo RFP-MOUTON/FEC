@@ -16,23 +16,24 @@ class RelatedItemsContainer extends React.Component {
   }
 
   LeftButtonHandler() {
-    const newIndex =
-      this.state.productData.indexOf(this.state.currentProduct) - 1;
+    const { productData, currentProduct } = this.state;
+    const newIndex = productData.indexOf(currentProduct) - 1;
     this.setState({ currentProduct: data[newIndex] });
   }
 
   RightButtonHandler() {
-    const newIndex =
-      this.state.productData.indexOf(this.state.currentProduct) + 1;
+    const { productData, currentProduct } = this.state;
+    const newIndex = productData.indexOf(currentProduct) + 1;
     this.setState({ currentProduct: data[newIndex] });
   }
 
   render() {
+    const { productData, currentProduct } = this.state;
     return (
       <div>
         <RelatedItemsSlider
-          productData={this.state.productData}
-          currentProduct={this.state.currentProduct}
+          productData={productData}
+          currentProduct={currentProduct}
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
         />
