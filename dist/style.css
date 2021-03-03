@@ -99,7 +99,7 @@
   padding: 0 5px;
   display: flex;
   height: 15px;
-  width: 300px;
+  width: 100%;
 }
 
 .progress-value {
@@ -119,6 +119,10 @@
 .barContainer div {
   display: inline-block;
 }
+.factorBarContainer {
+  width: 300px;
+  margin: 15px;
+}
 
 @keyframes load {
   0% { width: 0; }
@@ -135,5 +139,6 @@
 }
 .rightChar {
   position: relative;
-  left: 193px;
+  float: right;
+  left: 7px;
 }

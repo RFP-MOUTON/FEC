@@ -1,11 +1,17 @@
 import React from 'react';
 
-const FactorBar = () => {
+const ComfortBar = ({ comfort }) => {
+  if (!comfort) {
+    return null;
+  }
+  const { value } = comfort;
+  const roughPercent = value / 5;
+  const roundedPercent = Math.round(roughPercent * 100) + '%';
   return (
     <div className="factorBarContainer">
-      <div>Size</div>
+      <div>Comfort</div>
       <div className="factor">
-        <div className="factor-value">
+        <div className="factor-value" style={{ left: roundedPercent }}>
           <svg
             className="indicator"
             fill="currentColor"
@@ -21,12 +27,11 @@ const FactorBar = () => {
         </div>
       </div>
       <div className="characteristics">
-        <div className="leftChar">too small</div>
-        <div className="rightChar">too large</div>
+        <div className="leftChar">uncomfortable</div>
+        <div className="rightChar">perfect</div>
       </div>
-
     </div>
   );
 };
 
-export default FactorBar;
+export default ComfortBar;

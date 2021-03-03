@@ -17,10 +17,11 @@ class Reviews extends React.Component {
 
   render() {
     const { reviews, metaData } = this.state;
+    const { characteristics } = metaData;
     return (
       <div id="reviewContainer">
         <RatingBreakdown metaData={metaData} />
-        <Factors metaData={metaData} />
+        <Factors characteristics={characteristics} />
         <ReviewList reviews={reviews} />
       </div>
     );
