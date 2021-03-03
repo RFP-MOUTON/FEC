@@ -28,11 +28,11 @@ function Ratings(props) {
         if (key < average) {
           return <StarIcon fill="100%" id={key} />;
         }
-        if (average - key > 0 && average - key < 1) {
-          if (average - key < 0.25) {
+        if (key - average > 0 && key - average < 1) {
+          if (key - average < 0.25) {
             return <StarIcon fill="38%" id={key} />;
           }
-          if (average - key > 0.75) {
+          if (key - average > 0.75) {
             return <StarIcon fill="62%" id={key} />;
           }
           return <StarIcon fill="50%" id={key} />;

@@ -6,12 +6,12 @@ const StarIcon = (props) => {
   return (
     <svg
       className="w-6 h-6"
-      fill="url(#gradient)"
+      fill={`url(#${id})`}
       stroke="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <linearGradient id="gradient">
+      <linearGradient id={id}>
         <stop offset={fill} stopColor="black" />
         <stop offset={fill} stopColor="white" />
       </linearGradient>
