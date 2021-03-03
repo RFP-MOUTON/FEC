@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Enzyme from 'enzyme';
-// import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import axios from 'axios';
+import config from './env/config.js';
 import OverviewContainer from './Components/Overview/OverviewContainer.jsx';
 import Reviews from './Components/Reviews/ReviewsContainer.jsx';
 import RelatedItemsContainer from './Components/RelatedItemsComponents/RelatedItemsContainer.jsx';
-import instance from './Components/Overview/instance.js';
-// this is where we're call reactDOM.render and define our entry point to the
-// app.
-// Enzyme.configure({ adapter: new Adapter() });
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    instance
+    axios
       .get('/products', { params: { count: 1 } })
       .then((response) => {
         this.setState({

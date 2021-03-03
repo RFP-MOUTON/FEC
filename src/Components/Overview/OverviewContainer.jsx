@@ -1,7 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import Ratings from './Ratings.jsx';
-import instance from './instance.js';
-import StarIcon from './StarIcon.jsx';
+// import instance from '../../env/config.js';
 
 class OverviewContainer extends React.Component {
   constructor(props) {
@@ -11,13 +11,12 @@ class OverviewContainer extends React.Component {
       reviews: '',
     };
     this.componentDidMount = this.componentDidMount.bind(this);
-    // this.updateComponent = this.updateComponent.bind(this);
   }
 
   componentDidMount() {
     const { id } = this.props;
     if (id !== '') {
-      instance
+      axios
         .get('/reviews/meta', { params: { product_id: id } })
         .then((response) => {
           this.setState({

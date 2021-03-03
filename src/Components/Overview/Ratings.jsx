@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-// import instance from './instance';
 import StarIcon from './StarIcon.jsx';
 
 function Ratings(props) {

@@ -1,2 +1,4 @@
 node_modules
-src/components/overview/instance.js
+
+## API key
+src/env/config.js
