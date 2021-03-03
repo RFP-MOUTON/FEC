@@ -6,8 +6,10 @@ import ArrowRight from './ArrowRight.jsx';
 const RelatedItemsSlider = ({
   productData,
   currentProduct,
+  isModalOpen,
   LeftButtonHandler,
   RightButtonHandler,
+  ToggleModalHandler,
 }) => {
   return (
     <div>
@@ -23,7 +25,14 @@ const RelatedItemsSlider = ({
           }}
         >
           {productData.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
+            return (
+              <ProductCard
+                key={product.id}
+                product={product}
+                isModalOpen={isModalOpen}
+                ToggleModalHandler={ToggleModalHandler}
+              />
+            );
           })}
         </div>
       </div>

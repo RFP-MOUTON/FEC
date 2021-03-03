@@ -10,31 +10,41 @@ class RelatedItemsContainer extends React.Component {
     this.state = {
       productData: data,
       currentProduct: data[0],
+      isModalOpen: false,
     };
     this.LeftButtonHandler = this.LeftButtonHandler.bind(this);
     this.RightButtonHandler = this.RightButtonHandler.bind(this);
+    this.ToggleModalHandler = this.ToggleModalHandler.bind(this);
   }
 
   LeftButtonHandler() {
-    const newIndex =
-      this.state.productData.indexOf(this.state.currentProduct) - 1;
+    const { productData, currentProduct } = this.state;
+    const newIndex = productData.indexOf(currentProduct) - 1;
     this.setState({ currentProduct: data[newIndex] });
   }
 
   RightButtonHandler() {
-    const newIndex =
-      this.state.productData.indexOf(this.state.currentProduct) + 1;
+    const { productData, currentProduct } = this.state;
+    const newIndex = productData.indexOf(currentProduct) + 1;
     this.setState({ currentProduct: data[newIndex] });
   }
 
+  ToggleModalHandler() {
+    const { isModalOpen } = this.state;
+    this.setState({ isModalOpen: !isModalOpen });
+  }
+
   render() {
+    const { productData, currentProduct, isModalOpen } = this.state;
     return (
       <div id="relatedItemsContainer">
         <RelatedItemsSlider
-          productData={this.state.productData}
-          currentProduct={this.state.currentProduct}
+          productData={productData}
+          currentProduct={currentProduct}
+          isModalOpen={isModalOpen}
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
+          ToggleModalHandler={this.ToggleModalHandler}
         />
       </div>
     );
