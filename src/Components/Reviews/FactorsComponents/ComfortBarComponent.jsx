@@ -6,7 +6,7 @@ const ComfortBar = ({ comfort }) => {
   }
   const { value } = comfort;
   const roughPercent = value / 5;
-  const roundedPercent = Math.round(roughPercent * 100) + '%';
+  const roundedPercent = `${Math.round(roughPercent * 100)}%`;
   return (
     <div className="factorBarContainer">
       <div>Comfort</div>

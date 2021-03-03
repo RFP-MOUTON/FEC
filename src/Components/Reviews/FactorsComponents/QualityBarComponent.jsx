@@ -6,7 +6,7 @@ const QualityBar = ({ quality }) => {
   }
   const { value } = quality;
   const roughPercent = value / 5;
-  const roundedPercent = Math.round(roughPercent * 100) + '%';
+  const roundedPercent = `${Math.round(roughPercent * 100)}%`;
   return (
     <div className="factorBarContainer">
       <div>Quality</div>
