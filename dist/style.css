@@ -1,6 +1,6 @@
 #mainContainer {
   display: grid;
-  grid-template-rows: 1000px 1000px 1000px;
+  grid-template-rows: 1000px 1000px auto;
 }
 
 #overviewContainer {
@@ -14,33 +14,41 @@
 #reviewContainer {
   display: grid;
   grid-template-columns: 12.5% 25% 50% 12.5%;
-  grid-template-rows: 5% 90% 5%;
+  grid-template-rows: 5% auto auto auto 5%;
   grid-row-start: 3;
+  min-width: 1400px;
+  max-width: 1400px;
 }
 
 #ratingBreakdown {
   grid-column-start: 2;
   grid-row-start: 2;
   position: relative;
+
 }
 
 #factors {
   margin: auto;
   position: relative;
   grid-column-start: 2;
-  grid-row-start: 2;
+  grid-row-start: 3;
+  right: 20px;
+
 }
 
 #reviewList {
-  display: grid;
   grid-column-start: 3;
   grid-row-start: 2;
+  grid-row-end: 5;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 #moreReviewsButton {
-  clear: both;
+  margin: auto;
+  position: relative;
   grid-column-start: 3;
-  grid-row-start: 3;
+  grid-row-start: 5;
   height: 50px;
   width: 150px;
   justify-self: center;
@@ -54,7 +62,9 @@
 }
 
 .reviewTile {
-
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
 .w-6{
@@ -103,10 +113,10 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  padding: 0 5px;
   display: flex;
   height: 15px;
   width: 250px;
+  margin: 0px 4px;
 }
 
 .factor {
@@ -139,6 +149,13 @@
 .factorBarContainer {
   width: 300px;
   margin: 15px;
+}
+.recommendPercent {
+
+}
+
+.starNums, .starsTotal {
+
 }
 
 @keyframes load {

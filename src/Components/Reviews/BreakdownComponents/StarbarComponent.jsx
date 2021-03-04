@@ -5,11 +5,11 @@ const StarBar = ({ num, stars, total }) => {
   const newWidth = `${percentage}%`;
   return (
     <div className="barContainer">
-      <div>{num} stars</div>
+      <div className="starNums">{num} stars</div>
       <div className="progress">
         <div className="progress-value" style={{ width: newWidth }} />
       </div>
-      <div>{stars}</div>
+      <div className="starsTotal">{stars}</div>
     </div>
   );
 };

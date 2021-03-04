@@ -6,9 +6,11 @@ const Recommended = ({ recommended, totalReviews }) => {
   const percentage = Math.round(roughRecommended * 100);
 
   return (
-    <>
-      <p>{percentage}% of reviews recommend this product</p>
-    </>
+    <div>
+      <p className="recommendPercent">
+        {percentage}% of reviews recommend this product
+      </p>
+    </div>
   );
 };
 
