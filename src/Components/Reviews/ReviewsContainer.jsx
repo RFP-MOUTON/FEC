@@ -5,6 +5,7 @@ import ReviewList from './ReviewList.jsx';
 import RatingBreakdown from './RatingBreakdown.jsx';
 import Factors from './Factors.jsx';
 import MoreReviewsBtn from './MoreReviewsButton.jsx';
+import SortingSelector from './SortingSelectorComponent.jsx';
 import meta from './metadummydata.js';
 
 class Reviews extends React.Component {
@@ -16,6 +17,7 @@ class Reviews extends React.Component {
       metaData: meta,
     };
     this.handleAddMoreReviews = this.handleAddMoreReviews.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   componentDidMount() {
@@ -36,9 +38,26 @@ class Reviews extends React.Component {
               metaData: data,
             });
           })
-      ).catch((error) => {
+      )
+      .catch((error) => {
         console.log(error);
       });
+  }
+
+  handleSort(event) {
+    event.preventDefault();
+    const { id } = this.props;
+    axios
+      .get('/reviews', { params: { product_id: id, count: 100, sort: event.target.value } })
+      .then(({ data }) => {
+        this.setState({
+          reviews: data.results,
+          currentlyDisplayed: [data.results[0], data.results[1]],
+        });
+      }).catch((error) => {
+        console.log(error)
+      })
+
   }
 
   handleAddMoreReviews(event) {
@@ -66,6 +85,7 @@ class Reviews extends React.Component {
       <div id="reviewContainer">
         <RatingBreakdown metaData={metaData} />
         <Factors characteristics={characteristics} />
+        <SortingSelector reviews={reviews} handleSort={this.handleSort} />
         <ReviewList reviews={currentlyDisplayed} />
         <MoreReviewsBtn
           totalReviews={reviews}

@@ -13,43 +13,48 @@
 
 #reviewContainer {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 500px 500px;
+  grid-template-columns: 12.5% 25% 50% 12.5%;
+  grid-template-rows: 5% 90% 5%;
   grid-row-start: 3;
 }
 
 #ratingBreakdown {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  background-color: tomato;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  position: relative;
 }
 
 #factors {
-  grid-column-start: 1;
+  margin: auto;
+  position: relative;
+  grid-column-start: 2;
   grid-row-start: 2;
-  background-color: white;
 }
 
 #reviewList {
-  float: left;
   display: grid;
-  grid-template-rows: 50% 50%;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  background-color: rgb(14, 12, 148);
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 
 #moreReviewsButton {
   clear: both;
-  grid-column-start: 2;
-  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-start: 3;
   height: 50px;
   width: 150px;
   justify-self: center;
 }
 
+#sortingSelector {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  height: max-content;
+  width: max-content;
+}
+
 .reviewTile {
-  background-color: yellowgreen;
+
 }
 
 .w-6{
@@ -123,7 +128,6 @@
 }
 .factor-value {
   position: absolute;
-  left: 25%;
 }
 
 .barContainer {
