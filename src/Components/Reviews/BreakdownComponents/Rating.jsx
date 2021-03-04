@@ -2,7 +2,7 @@ import React from 'react';
 
 import Star from '../TileComponents/Star.jsx';
 
-const Rating = ({ average }) => {
+const Rating = ({ average, totalReviews }) => {
   const averageRounded = Math.round(average * 10) / 10;
   let currentRating = averageRounded;
   const starArray = [];
@@ -31,6 +31,7 @@ const Rating = ({ average }) => {
       {starArray.map((shade) => {
         return <Star key={shade.id} id={shade.id} shade={shade.shade} />;
       })}
+      <p>Out of {totalReviews} reviews</p>
     </>
   );
 };

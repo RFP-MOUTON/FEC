@@ -1,6 +1,6 @@
 #mainContainer {
   display: grid;
-  grid-template-rows: 1000px 1000px 1000px;
+  grid-template-rows: 1000px 1000px auto;
 }
 
 #overviewContainer {
@@ -13,33 +13,58 @@
 
 #reviewContainer {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 500px 500px;
+  grid-template-columns: 12.5% 25% 50% 12.5%;
+  grid-template-rows: 5% auto auto auto 5%;
   grid-row-start: 3;
+  min-width: 1400px;
+  max-width: 1400px;
 }
 
 #ratingBreakdown {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  background-color: tomato;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  position: relative;
+
 }
 
 #factors {
-  grid-column-start: 1;
-  grid-row-start: 2;
-  background-color: yellow;
+  margin: auto;
+  position: relative;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  right: 20px;
+
 }
 
 #reviewList {
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-column-start: 2;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+#moreReviewsButton {
+  margin: auto;
+  position: relative;
+  grid-column-start: 3;
+  grid-row-start: 5;
+  height: 50px;
+  width: 150px;
+  justify-self: center;
+}
+
+#sortingSelector {
+  grid-column-start: 3;
   grid-row-start: 1;
-  background-color: chartreuse;
+  height: max-content;
+  width: max-content;
 }
 
 .reviewTile {
-  background-color: yellowgreen;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
 .w-6{
@@ -65,7 +90,7 @@
   position: fixed;
   background: white;
   width: auto !important;
-  height: auto !important;
+  height: 80% !important;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
@@ -80,3 +105,76 @@
   right: 0;
   background: black;
 }
+
+/* Star Bars */
+
+.progress {
+  background: rgba(66, 66, 66, 0.1);
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 15px;
+  width: 250px;
+  margin: 0px 4px;
+}
+
+.factor {
+  background: rgba(66, 66, 66, 0.1);
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 15px;
+  width: 100%;
+}
+
+.progress-value {
+  /* animation: load 3s normal forwards; */
+  background: green;
+  height: 15px;
+  /* width: 30%; */
+}
+.factor-value {
+  position: absolute;
+}
+
+.barContainer {
+  margin: 10px;
+}
+.barContainer div {
+  display: inline-block;
+}
+.factorBarContainer {
+  width: 300px;
+  margin: 15px;
+}
+.recommendPercent {
+
+}
+
+.starNums, .starsTotal {
+
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 68%; }
+}
+
+.indicator {
+  height: 28px;
+  width: 28px;
+}
+
+.characteristics div {
+  display: inline-block;
+}
+
+.rightChar {
+  position: relative;
+  float: right;
+  left: 7px;
+}
+
