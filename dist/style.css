@@ -31,6 +31,7 @@
 }
 
 #reviewList {
+  float: left;
   display: grid;
   grid-template-rows: 50% 50%;
   grid-column-start: 2;
@@ -39,9 +40,9 @@
 }
 
 #moreReviewsButton {
+  clear: both;
   grid-column-start: 2;
   grid-row-start: 1;
-  position: relative;
   height: 50px;
   width: 150px;
   justify-self: center;

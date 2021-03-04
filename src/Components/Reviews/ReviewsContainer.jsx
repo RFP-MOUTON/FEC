@@ -1,22 +1,44 @@
 import React from 'react';
+import axios from 'axios';
 
 import ReviewList from './ReviewList.jsx';
 import RatingBreakdown from './RatingBreakdown.jsx';
 import Factors from './Factors.jsx';
 import MoreReviewsBtn from './MoreReviewsButton.jsx';
-import data from './dummydata.js';
 import meta from './metadummydata.js';
-import tempDisplay from './tempdisplaydata.js';
 
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: data,
-      currentlyDisplayed: tempDisplay,
+      reviews: [],
+      currentlyDisplayed: [],
       metaData: meta,
     };
     this.handleAddMoreReviews = this.handleAddMoreReviews.bind(this);
+  }
+
+  componentDidMount() {
+    const { id } = this.props;
+    axios
+      .get('/reviews', { params: { product_id: id, count: 100 } })
+      .then(({ data }) => {
+        this.setState({
+          reviews: data.results,
+          currentlyDisplayed: [data.results[0], data.results[1]],
+        });
+      })
+      .then(
+        axios
+          .get('/reviews/meta', { params: { product_id: id } })
+          .then(({ data }) => {
+            this.setState({
+              metaData: data,
+            });
+          })
+      ).catch((error) => {
+        console.log(error);
+      });
   }
 
   handleAddMoreReviews(event) {
