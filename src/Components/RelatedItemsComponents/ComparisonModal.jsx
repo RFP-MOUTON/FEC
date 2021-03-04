@@ -11,7 +11,12 @@ const MODAL_STYLES = {
   zIndex: 1000,
 };
 
-const ComparisonModal = ({ isModalOpen, ToggleModalHandler }) => {
+const ComparisonModal = ({
+  isModalOpen,
+  ToggleModalHandler,
+  viewedProductInfo,
+  currentProductInfo,
+}) => {
   if (!isModalOpen) {
     return null;
   }

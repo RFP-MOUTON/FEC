@@ -23,11 +23,11 @@ const RelatedItemsSlider = ({
             }%)`,
           }}
         >
-          {productData.map((product) => {
+          {productData.map((productId) => {
             return (
               <ProductCard
-                key={product.id}
-                product={product}
+                key={productId}
+                productId={productId}
                 viewedProductInfo={viewedProductInfo}
               />
             );
