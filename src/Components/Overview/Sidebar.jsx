@@ -47,7 +47,7 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { reviews } = this.state;
+    const { reviews, styles } = this.state;
     const { data, id } = this.props;
     return (
       <div id="sidebarContainer">
@@ -58,9 +58,9 @@ class Sidebar extends React.Component {
           </div>
           <h1 id="productName">{data.name}</h1>
           <div id="price">{data.default_price}</div>
-        </div>
-        <div id="styles">
-          <Styles id={id} />
+          <div id="styles">
+            <Styles data={styles} />
+          </div>
         </div>
       </div>
     );
