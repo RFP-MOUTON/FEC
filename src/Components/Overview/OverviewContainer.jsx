@@ -20,7 +20,9 @@ const OverviewContainer = (props) => {
   const { id, data } = props;
   return (
     <div id="overviewContainer">
-      <Sidebar id={id} data={data} />
+      <div id="topHalf">
+        <Sidebar id={id} data={data} />
+      </div>
     </div>
   );
 };
