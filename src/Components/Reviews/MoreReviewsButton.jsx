@@ -7,7 +7,11 @@ const MoreReviewsBtn = ({ totalReviews, currentlyDisplayed, handleClick }) => {
   ) {
     return null;
   }
-  return <button id="moreReviewsButton" type="button" onClick={handleClick}>MORE REVIEWS</button>;
+  return (
+    <button id="moreReviewsButton" type="button" onClick={handleClick}>
+      MORE REVIEWS
+    </button>
+  );
 };
 
 export default MoreReviewsBtn;
