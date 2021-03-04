@@ -42,16 +42,20 @@ class Styles extends React.Component {
         <SelectedStyle name={target || data.results[0].name} />
         <div className="category-list">
           {data.results.map((style) => {
+            let selected = false;
+            if (style.name === target) {
+              selected = true;
+            }
             return (
               <div
                 className="category-data"
                 key={style.style_id}
                 onClick={this.handleClick}
               >
-                <img
+                <StyleImage
                   src={style.photos[0].thumbnail_url}
                   alt={style.name}
-                  className="categoryImage"
+                  selected={selected}
                 />
               </div>
             );
