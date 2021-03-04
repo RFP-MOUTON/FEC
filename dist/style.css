@@ -143,6 +143,12 @@
 .barContainer {
   margin: 10px;
 }
+
+.barContainer:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
 .barContainer div {
   display: inline-block;
 }
@@ -161,6 +167,10 @@
 @keyframes load {
   0% { width: 0; }
   100% { width: 68%; }
+}
+
+.helpfulLink:hover {
+  cursor: pointer;
 }
 
 .indicator {
