@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar.jsx';
+import '../../css/Overview.scss';
 // import instance from '../../env/config.js';
 
 // class OverviewContainer extends React.Component {

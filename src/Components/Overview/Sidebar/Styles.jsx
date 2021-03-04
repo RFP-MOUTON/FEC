@@ -1,11 +1,14 @@
 import React from 'react';
+import StyleImage from './StyleImage.jsx';
+import SelectedStyle from './SelectedStyle.jsx';
 
 class Styles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      something: '',
+      target: '',
     };
+    this.handleClick = this.handleClick.bind(this);
   }
   /*
     1. Map over images
@@ -22,18 +25,34 @@ class Styles extends React.Component {
   }
   */
 
+  handleClick(event) {
+    this.setState({
+      target: event.target.alt,
+    });
+  }
+
   render() {
     const { data } = this.props;
+    const { target } = this.state;
     if (data === '') {
-      return <div></div>;
+      return <div>Loading</div>;
     }
     return (
       <div>
+        <SelectedStyle name={target || data.results[0].name} />
         <div className="category-list">
           {data.results.map((style) => {
             return (
-              <div className="category-data" key={style.style_id}>
-                <img src={style.photos[0].thumbnail_url} alt={style.name} />
+              <div
+                className="category-data"
+                key={style.style_id}
+                onClick={this.handleClick}
+              >
+                <img
+                  src={style.photos[0].thumbnail_url}
+                  alt={style.name}
+                  className="categoryImage"
+                />
               </div>
             );
           })}
