@@ -51,7 +51,17 @@
   grid-row-start: 5;
   height: 50px;
   width: 150px;
-  justify-self: center;
+  right: 80px;
+}
+
+#AddAReviewButton {
+  margin: auto;
+  position: relative;
+  grid-column-start: 3;
+  grid-row-start: 5;
+  height: 50px;
+  width: 150px;
+  left: 80px;
 }
 
 #sortingSelector {
@@ -104,6 +114,16 @@
   top: 0;
   right: 0;
   background: black;
+}
+
+#addAReviewModal {
+  position: fixed;
+  background: grey;
+  width: 50% !important;
+  height: 80% !important;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 
 /* Star Bars */

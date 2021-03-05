@@ -33,22 +33,22 @@ class TileHelpfulReport extends React.Component {
             Was this review helpful?{' '}
             <a
               className="helpfulLink"
-              onClick={() =>
-                handleHelpful(reviewId, () => {
+              onClick={() => {
+                return handleHelpful(reviewId, () => {
                   this.handleClick();
-                })
-              }
+                });
+              }}
             >
               Yes
             </a>{' '}
             ({helpfulness}) |{' '}
             <a
               className="helpfulLink"
-              onClick={() =>
-                report(reviewId, () => {
+              onClick={() => {
+                return report(reviewId, () => {
                   this.handleReport();
-                })
-              }
+                });
+              }}
             >
               Report
             </a>

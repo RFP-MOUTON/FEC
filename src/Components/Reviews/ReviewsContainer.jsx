@@ -6,6 +6,7 @@ import RatingBreakdown from './RatingBreakdown.jsx';
 import Factors from './Factors.jsx';
 import MoreReviewsBtn from './MoreReviewsButton.jsx';
 import SortingSelector from './SortingSelectorComponent.jsx';
+import AddAReview from './AddAReviewButton.jsx';
 import meta from './metadummydata.js';
 
 class Reviews extends React.Component {
@@ -112,14 +113,14 @@ class Reviews extends React.Component {
 
   handleHelpful(reviewId, callback) {
     axios.put(`/reviews/${reviewId}/helpful`).then(() => {
-      callback()
-    })
+      callback();
+    });
   }
 
   handleReport(reviewId, callback) {
     axios.put(`/reviews/${reviewId}/report`).then(() => {
-      callback()
-    })
+      callback();
+    });
   }
 
   handleAddMoreReviews(event) {
@@ -161,12 +162,17 @@ class Reviews extends React.Component {
         />
         <Factors characteristics={characteristics} />
         <SortingSelector reviews={reviews} handleSort={this.handleSort} />
-        <ReviewList reviews={filtered} handleHelpful={this.handleHelpful} report={this.handleReport}/>
+        <ReviewList
+          reviews={filtered}
+          handleHelpful={this.handleHelpful}
+          report={this.handleReport}
+        />
         <MoreReviewsBtn
           totalReviews={reviews}
           currentlyDisplayed={currentlyDisplayed}
           handleClick={this.handleAddMoreReviews}
         />
+        <AddAReview />
       </div>
     );
   }
