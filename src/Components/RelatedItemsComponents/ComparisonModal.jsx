@@ -59,8 +59,8 @@ const ComparisonModal = ({
     <div className="comparisonModal" style={MODAL_STYLES}>
       {noDupeFeatures.map((feature) => {
         if (currentProductFeatures.includes(feature))
-          return <FeaturesCurrent glyph="✔" />;
-        return <FeaturesCurrent glyph="✘" />;
+          return <FeaturesCurrent key={feature} glyph="✔" />;
+        return <FeaturesCurrent key={feature} glyph="✘" />;
       })}
 
       {noDupeFeatures.map((feature) => {
@@ -69,8 +69,8 @@ const ComparisonModal = ({
 
       {noDupeFeatures.map((feature) => {
         if (viewedProductFeatures.includes(feature))
-          return <FeaturesViewed glyph="✔" />;
-        return <FeaturesViewed glyph="✘" />;
+          return <FeaturesViewed key={feature} glyph="✔" />;
+        return <FeaturesViewed key={feature} glyph="✘" />;
       })}
 
       <button type="button" onClick={ToggleModalHandler}>

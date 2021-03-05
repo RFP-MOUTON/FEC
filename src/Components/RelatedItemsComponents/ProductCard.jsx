@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import ProductRating from './ProductRating.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
 
 import dummyStyles from './dummyStyles.js';
@@ -38,9 +39,9 @@ class ProductCard extends React.Component {
       });
 
     axios
-      .get(`/reviews/?product_id=${productId}`)
-      .then((reviewsData) => {
-        this.setState({ reviewsInfo: reviewsData.data });
+      .get(`/reviews/meta/?product_id=${productId}`)
+      .then((reviewsMetaData) => {
+        this.setState({ reviewsInfo: reviewsMetaData.data });
       })
       .catch((error) => {
         throw error;
@@ -60,12 +61,6 @@ class ProductCard extends React.Component {
       stylesInfo,
       reviewsInfo,
     } = this.state;
-    let reviewsSum = 0;
-    reviewsInfo.results.map((reviewObj) => {
-      reviewsSum += reviewObj.rating;
-      return null;
-    });
-    const reviewAverage = reviewsSum / reviewsInfo.count;
     return (
       <div
         className="productCard"
@@ -78,7 +73,7 @@ class ProductCard extends React.Component {
         <div className="productCategory">{currentProductInfo.category}</div>
         <div className="productName">{currentProductInfo.name}</div>
         <div className="productPrice">${stylesInfo.original_price}</div>
-        <div className="productRating">{reviewAverage} stars</div>
+        <ProductRating reviewsInfo={reviewsInfo} />
         <button type="button">❤</button>
         <ComparisonModal
           isModalOpen={isModalOpen}

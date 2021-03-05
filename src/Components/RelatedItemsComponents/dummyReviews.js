@@ -1,74 +1,34 @@
 const dummyReviews = {
-  product: '17762',
-  page: 0,
-  count: 5,
-  results: [
-    {
-      review_id: 288013,
-      rating: 4,
-      summary: 'Banana',
-      recommend: false,
-      response: null,
-      body:
-        "Because I had a bad bunch of bananas I didn't like this product. They really changed the whole tonality of my day.",
-      date: '2021-03-04T00:00:00.000Z',
-      reviewer_name: 'wolfshirts',
-      helpfulness: 0,
-      photos: [],
+  product_id: '17762',
+  ratings: {
+    1: '14',
+    2: '11',
+    3: '7',
+    4: '11',
+    5: '4',
+  },
+  recommended: {
+    false: '17',
+    true: '30',
+  },
+  characteristics: {
+    Size: {
+      id: 59528,
+      value: '2.9111111111111111',
     },
-    {
-      review_id: 288012,
-      rating: 2,
-      summary: 'Test post',
-      recommend: true,
-      response: null,
-      body:
-        'This is a test post to the api to see what is going on with my axios post to the api. I hope it works.',
-      date: '2021-03-04T00:00:00.000Z',
-      reviewer_name: 'wolfshirts',
-      helpfulness: 0,
-      photos: [],
+    Width: {
+      id: 59529,
+      value: '2.9250000000000000',
     },
-    {
-      review_id: 288011,
-      rating: 2,
-      summary: 'Test post',
-      recommend: true,
-      response: null,
-      body:
-        'This is a test post to the api to see what is going on with my axios post to the api. I hope it works.',
-      date: '2021-03-04T00:00:00.000Z',
-      reviewer_name: 'wolfshirts',
-      helpfulness: 0,
-      photos: [],
+    Comfort: {
+      id: 59530,
+      value: '2.8222222222222222',
     },
-    {
-      review_id: 288010,
-      rating: 2,
-      summary: 'Test post',
-      recommend: true,
-      response: null,
-      body:
-        'This is a test post to the api to see what is going on with my axios post to the api. I hope it works.',
-      date: '2021-03-04T00:00:00.000Z',
-      reviewer_name: 'wolfshirts',
-      helpfulness: 0,
-      photos: [],
+    Quality: {
+      id: 59531,
+      value: '2.6888888888888889',
     },
-    {
-      review_id: 288009,
-      rating: 2,
-      summary: 'Test post',
-      recommend: true,
-      response: null,
-      body:
-        'This is a test post to the api to see what is going on with my axios post to the api. I hope it works.',
-      date: '2021-03-04T00:00:00.000Z',
-      reviewer_name: 'wolfshirts',
-      helpfulness: 0,
-      photos: [],
-    },
-  ],
+  },
 };
 
 export default dummyReviews;
