@@ -79,6 +79,7 @@ class ProductCard extends React.Component {
         <div className="productName">{currentProductInfo.name}</div>
         <div className="productPrice">${stylesInfo.original_price}</div>
         <div className="productRating">{reviewAverage} stars</div>
+        <button type="button">❤</button>
         <ComparisonModal
           isModalOpen={isModalOpen}
           ToggleModalHandler={this.ToggleModalHandler}

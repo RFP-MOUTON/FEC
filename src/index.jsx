@@ -36,7 +36,6 @@ class App extends React.Component {
     }
     return (
       <div id="mainContainer">
-        <div>Hello World</div>
         <OverviewContainer id={data.id} />
         <RelatedItemsContainer viewedProductId={data.id} />
         <Reviews />

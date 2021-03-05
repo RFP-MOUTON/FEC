@@ -2,3 +2,5 @@ node_modules
 
 ## API key
 src/env/config.js
+
+dist/bundle.js
