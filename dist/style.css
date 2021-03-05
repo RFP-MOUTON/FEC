@@ -51,7 +51,17 @@
   grid-row-start: 5;
   height: 50px;
   width: 150px;
-  justify-self: center;
+  right: 80px;
+}
+
+#AddAReviewButton {
+  margin: auto;
+  position: relative;
+  grid-column-start: 3;
+  grid-row-start: 5;
+  height: 50px;
+  width: 150px;
+  left: 80px;
 }
 
 #sortingSelector {
@@ -86,6 +96,11 @@
   margin: 5px;
 }
 
+#addAReviewModal {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+}
+
 .modal-main {
   position: fixed;
   background: white;
@@ -104,6 +119,16 @@
   top: 0;
   right: 0;
   background: black;
+}
+
+#addAReviewModal {
+  position: fixed;
+  background: grey;
+  width: 50% !important;
+  height: 80% !important;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 
 /* Star Bars */
@@ -143,6 +168,12 @@
 .barContainer {
   margin: 10px;
 }
+
+.barContainer:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
 .barContainer div {
   display: inline-block;
 }
@@ -161,6 +192,10 @@
 @keyframes load {
   0% { width: 0; }
   100% { width: 68%; }
+}
+
+.helpfulLink:hover {
+  cursor: pointer;
 }
 
 .indicator {
