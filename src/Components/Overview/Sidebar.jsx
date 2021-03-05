@@ -49,6 +49,9 @@ class Sidebar extends React.Component {
   render() {
     const { reviews, styles } = this.state;
     const { data, id } = this.props;
+    if (styles === '') {
+      return <div></div>;
+    }
     return (
       <div id="sidebarContainer">
         <Ratings ratings={reviews.ratings} />
