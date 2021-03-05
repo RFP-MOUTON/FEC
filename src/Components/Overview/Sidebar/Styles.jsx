@@ -7,6 +7,7 @@ class Styles extends React.Component {
     super(props);
     this.state = {
       target: '',
+      targetID: '',
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -26,14 +27,17 @@ class Styles extends React.Component {
   */
 
   handleClick(event) {
+    console.log(event.target.alt);
+    const eventData = event.target.alt.split(' ');
     this.setState({
-      target: event.target.alt,
+      target: eventData[0],
+      targetID: eventData[1],
     });
   }
 
   render() {
     const { data } = this.props;
-    const { target } = this.state;
+    const { target, targetID } = this.state;
     if (data === '') {
       return <div>Loading</div>;
     }
@@ -42,8 +46,12 @@ class Styles extends React.Component {
         <SelectedStyle name={target || data.results[0].name} />
         <div className="category-list">
           {data.results.map((style) => {
+            //console.log(style.style_id);
             let selected = false;
-            if (style.name === target) {
+            if (targetID !== '' && style.style_id === targetID) {
+              selected = true;
+            }
+            if (style.default) {
               selected = true;
             }
             return (
@@ -52,11 +60,14 @@ class Styles extends React.Component {
                 key={style.style_id}
                 onClick={this.handleClick}
               >
-                <StyleImage
-                  src={style.photos[0].thumbnail_url}
-                  alt={style.name}
-                  selected={selected}
-                />
+                <div alt={style.name} name={style.style_id}>
+                  <StyleImage
+                    src={style.photos[0].thumbnail_url}
+                    alt={style.name}
+                    selected={selected}
+                    name={style.style_id}
+                  />
+                </div>
               </div>
             );
           })}
