@@ -9,7 +9,8 @@ import TileRecommend from './TileComponents/TileRecommend.jsx';
 import TileSummary from './TileComponents/TileSummary.jsx';
 import TileBody from './TileComponents/TileBody.jsx';
 
-const ReviewTile = ({ review }) => {
+const ReviewTile = ({ review, handleHelpful, report }) => {
+  const { review_id } = review;
   return (
     <div className="reviewTile">
       <TileStars rating={review.rating} />
@@ -19,7 +20,7 @@ const ReviewTile = ({ review }) => {
       <TilePhotos photos={review.photos} />
       <TileRecommend recommend={review.recommend} />
       <TileResponse response={review.response} />
-      <TileHelpfulReport helpfulness={review.helpfulness} />
+      <TileHelpfulReport helpfulness={review.helpfulness} handleHelpful={handleHelpful} reviewId={review_id} report={report} />
     </div>
   );
 };
