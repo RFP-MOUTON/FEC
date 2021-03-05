@@ -21,18 +21,18 @@ function Ratings(props) {
     <div>
       {Object.keys(ratings).map((key) => {
         if (key < average) {
-          return <StarIcon fill="100%" id={key} />;
+          return <StarIcon fill="100%" id={key} key={key} />;
         }
         if (key - average > 0 && key - average < 1) {
           if (key - average < 0.25) {
-            return <StarIcon fill="38%" id={key} />;
+            return <StarIcon fill="38%" id={key} key={key} />;
           }
           if (key - average > 0.75) {
-            return <StarIcon fill="62%" id={key} />;
+            return <StarIcon fill="62%" id={key} key={key} />;
           }
-          return <StarIcon fill="50%" id={key} />;
+          return <StarIcon fill="50%" id={key} key={key} />;
         }
-        return <StarIcon fill="0%" id={key} />;
+        return <StarIcon fill="0%" id={key} key={key} />;
       })}
       {average}
     </div>
