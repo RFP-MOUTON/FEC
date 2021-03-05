@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import RelatedItemsSlider from './RelatedItemsSlider.jsx';
+import YourOutfitSlider from './YourOutfitSlider.jsx';
 import data from './data.js';
 
 import '../../css/RelatedItems.scss';
@@ -58,6 +59,7 @@ class RelatedItemsContainer extends React.Component {
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
         />
+        <YourOutfitSlider />
       </div>
     );
   }

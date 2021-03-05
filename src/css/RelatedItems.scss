@@ -1,3 +1,26 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.portraitImg {
+  display: block;
+  height: 220px;
+  width: 200px;
+  border: none;
+  margin: 0 auto;
+}
+
+.outfitSliderWrapper {
+  display: flex;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  .productCard {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
 .cardSliderWrapper {
   display: flex;
   position: absolute;

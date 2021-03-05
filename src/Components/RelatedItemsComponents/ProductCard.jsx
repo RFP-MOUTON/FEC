@@ -69,7 +69,9 @@ class ProductCard extends React.Component {
         onClick={this.ToggleModalHandler}
         onKeyPress={this.ToggleModalHandler}
       >
-        <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
+        <div className="portraitImg">
+          <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
+        </div>
         <div className="productCategory">{currentProductInfo.category}</div>
         <div className="productName">{currentProductInfo.name}</div>
         <div className="productPrice">${stylesInfo.original_price}</div>
