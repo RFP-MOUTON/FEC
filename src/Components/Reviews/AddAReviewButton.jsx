@@ -11,7 +11,8 @@ class AddAReview extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleModal() {
+  toggleModal(event) {
+    event.preventDefault();
     this.setState((previousState) => {
       return {
         modalVisible: !previousState.modalVisible,
