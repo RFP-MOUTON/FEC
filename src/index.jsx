@@ -34,11 +34,7 @@ class App extends React.Component {
     }
     return (
       <div id="mainContainer">
-<<<<<<< HEAD
         <OverviewContainer id={data.id} data={data} />
-=======
-        <OverviewContainer id={data.id} />
->>>>>>> 31307350e2a1fe196bb77dac6a5460bdd85baecb
         <RelatedItemsContainer />
         <Reviews id={data.id} />
       </div>
