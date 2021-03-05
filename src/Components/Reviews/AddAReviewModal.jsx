@@ -10,13 +10,22 @@ class AddAReviewForm extends React.Component {
     const { toggle } = this.props;
     return (
       <form id="addAReviewModal">
-        <label>
+        <div>
           Overall rating (mandatory)
-          <input></input>
-        </label>
+        </div>
         <label>
           Do you recommend this product? (mandatory)
-          <input></input>
+          <div>
+            <label>
+              Yes
+            <input type="radio" value="Yes" name="recommend"></input>
+            </label>
+            <label>
+              No
+            <input type="radio" value="No" name="recommend"></input>
+            </label>
+
+          </div>
         </label>
         <label>
           Characteristics (mandatory)

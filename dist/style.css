@@ -96,6 +96,11 @@
   margin: 5px;
 }
 
+#addAReviewModal {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+}
+
 .modal-main {
   position: fixed;
   background: white;

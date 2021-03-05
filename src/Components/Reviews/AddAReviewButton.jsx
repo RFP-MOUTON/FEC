@@ -22,12 +22,13 @@ class AddAReview extends React.Component {
 
   render() {
     const { modalVisible } = this.state;
+    const { metaData } = this.props;
     return (
       <>
         <button id="AddAReviewButton" type="button" onClick={this.toggleModal}>
           ADD A REVIEW
         </button>
-        {modalVisible ? <AddAReviewForm toggle={this.toggleModal} /> : null}
+        {modalVisible ? <AddAReviewForm toggle={this.toggleModal} metaData={metaData}/> : null}
       </>
     );
   }
