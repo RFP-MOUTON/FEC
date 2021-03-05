@@ -27,7 +27,6 @@ class Styles extends React.Component {
   */
 
   handleClick(event) {
-    console.log(event.target.alt);
     const eventData = event.target.alt.split(' ');
     this.setState({
       target: eventData[0],
@@ -46,12 +45,11 @@ class Styles extends React.Component {
         <SelectedStyle name={target || data.results[0].name} />
         <div className="category-list">
           {data.results.map((style) => {
-            //console.log(style.style_id);
             let selected = false;
-            if (targetID !== '' && style.style_id === targetID) {
+            if (targetID === '' && style['default?'] === true) {
               selected = true;
             }
-            if (style.default) {
+            if (style.style_id.toString() === targetID.toString()) {
               selected = true;
             }
             return (
