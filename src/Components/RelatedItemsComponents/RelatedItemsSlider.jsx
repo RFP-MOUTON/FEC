@@ -12,6 +12,7 @@ const RelatedItemsSlider = ({
 }) => {
   return (
     <div>
+      Related Items
       <ArrowLeft LeftButtonHandler={LeftButtonHandler} />
       <ArrowRight RightButtonHandler={RightButtonHandler} />
       <div className="cardSlider">

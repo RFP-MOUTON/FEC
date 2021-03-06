@@ -33,7 +33,6 @@ const ProductRating = ({ reviewsInfo }) => {
         }
         return <ReviewStars key={key} fill="0%" id={key} />;
       })}
-      {average}
     </div>
   );
 };
