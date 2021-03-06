@@ -172,7 +172,7 @@ class Reviews extends React.Component {
           currentlyDisplayed={currentlyDisplayed}
           handleClick={this.handleAddMoreReviews}
         />
-        <AddAReview metaData={metaData}/>
+        <AddAReview metaData={metaData} />
       </div>
     );
   }
