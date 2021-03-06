@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SelectedStyle = (props) => {
-  const { name } = props;
+  const { name, funk } = props;
 
   if (name === '') {
     return <div className="selectedStyle">Style: </div>;

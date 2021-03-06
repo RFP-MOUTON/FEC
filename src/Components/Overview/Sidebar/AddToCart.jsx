@@ -1,12 +1,20 @@
 import React from 'react';
 import QuantitySelect from './QuantitySelect.jsx';
+import AddButton from './AddButton.jsx';
+import PleaseSelectStyle from './PleaseSelectStyle.jsx';
 class AddToCart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       chosenSKU: '',
+      skuID: '',
+      chosenQuantity: '',
+      submitted: false,
+      pleaseSelectStyle: false,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleQuantity = this.handleQuantity.bind(this);
+    this.handleSubmission = this.handleSubmission.bind(this);
   }
 
   handleChange(event) {
@@ -17,15 +25,36 @@ class AddToCart extends React.Component {
     });
   }
 
+  handleQuantity(event) {
+    this.setState({
+      chosenQuantity: event.target.value,
+    });
+  }
+
+  handleSubmission(event) {
+    const { skuID } = this.state;
+    if (skuID === '') {
+      this.setState({
+        pleaseSelectStyle: true,
+        submitted: false,
+      });
+    } else {
+      this.setState({
+        submitted: true,
+      });
+    }
+  }
+
   render() {
     const { style } = this.props;
-    const { chosenSKU } = this.state;
-    let index = 0;
+    const { chosenSKU, skuID, chosenQuantity, pleaseSelectStyle } = this.state;
+
     if (style === '') {
-      return <div id="AddToCart"></div>;
+      return <div id="AddToCart" />;
     }
     return (
       <div id="AddToCart">
+        <PleaseSelectStyle toggle={pleaseSelectStyle} />
         <select onChange={this.handleChange}>
           {Object.keys(style.skus).map((key) => {
             return (
@@ -40,33 +69,21 @@ class AddToCart extends React.Component {
             );
           })}
         </select>
-        <QuantitySelect quantity={chosenSKU.quantity} />
+        <div>
+          <QuantitySelect
+            quantity={chosenSKU.quantity}
+            funk={this.handleQuantity}
+          />
+        </div>
+        <AddButton
+          skuID={skuID}
+          chosenQuantity={chosenQuantity}
+          chosenSKU={chosenSKU}
+          onChange={this.handleSubmission}
+        />
       </div>
     );
   }
 }
-
-// const AddToCart = (props) => {
-//   /*
-//     Here we can pass these props to lower sub compoenents if we need.
-//   */
-//   const { style } = props;
-//   if (style === '') {
-//     return <div id="AddToCart"></div>;
-//   }
-//   return (
-//     <div id="AddToCart">
-//       <select>
-//         {Object.keys(style.skus).map((key) => {
-//           return (
-//             <option key={key} text="size">
-//               {style.skus[key].size}
-//             </option>
-//           );
-//         })}
-//       </select>
-//     </div>
-//   );
-// };
 
 export default AddToCart;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QuantitySelect = (props) => {
-  let { quantity } = props;
+  let { quantity, funk } = props;
   const items = [];
   if (quantity === undefined || quantity === '') {
     return (
@@ -17,9 +17,9 @@ const QuantitySelect = (props) => {
     items.push(i);
   }
   return (
-    <select>
+    <select onChange={funk}>
       {items.map((item) => {
-        return <option>{item}</option>;
+        return <option key={item}>{item}</option>;
       })}
     </select>
   );
