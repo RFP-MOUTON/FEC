@@ -9,6 +9,7 @@ class AddAReview extends React.Component {
       modalVisible: false,
     };
     this.toggleModal = this.toggleModal.bind(this);
+
     this.handleSuccessfulSubmit = this.handleSuccessfulSubmit.bind(this);
   }
 
@@ -40,6 +41,7 @@ class AddAReview extends React.Component {
         {modalVisible ? (
           <AddAReviewForm toggle={this.toggleModal} submit={this.handleSuccessfulSubmit} metaData={metaData} />
         ) : null}
+
       </>
     );
   }
