@@ -38,7 +38,11 @@ class AddAReview extends React.Component {
           ADD A REVIEW
         </button>
         {modalVisible ? (
-          <AddAReviewForm toggle={this.toggleModal} submit={this.handleSuccessfulSubmit} metaData={metaData} />
+          <AddAReviewForm
+            toggle={this.toggleModal}
+            submit={this.handleSuccessfulSubmit}
+            metaData={metaData}
+          />
         ) : null}
       </>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const PhotoModal = ({ photo, toggle }) => {
   return (
-    <>
+    <div className="blur">
       <img
         className="modal-main"
         key={photo.id}
@@ -12,7 +12,7 @@ const PhotoModal = ({ photo, toggle }) => {
       <button type="button" className="closeButton" onClick={toggle}>
         X
       </button>
-    </>
+    </div>
   );
 };
 

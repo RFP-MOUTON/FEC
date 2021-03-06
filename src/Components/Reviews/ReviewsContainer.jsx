@@ -95,7 +95,7 @@ class Reviews extends React.Component {
     const { id } = this.props;
     axios
       .get('/reviews', {
-        params: { product_id: id, count: 100, sort: event.target.value },
+        params: { product_id: id, count: 1000, sort: event.target.value },
       })
       .then(({ data }) => {
         this.setState({
