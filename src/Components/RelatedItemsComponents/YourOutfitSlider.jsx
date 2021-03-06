@@ -1,36 +1,43 @@
 import React from 'react';
-import ProductCard from './ProductCard.jsx';
+import OutfitCard from './OutfitCard.jsx';
 import ArrowLeft from './ArrowLeft.jsx';
 import ArrowRight from './ArrowRight.jsx';
+import YourOutfitAddCard from './YourOutfitAddCard.jsx';
 
-const RelatedItemsSlider = ({
-  productData,
-  currentProduct,
-  isModalOpen,
-  LeftButtonHandler,
-  RightButtonHandler,
-  ToggleModalHandler,
+const YourOutfitSlider = ({
+  viewedProductInfo,
+  localStorageInfo,
+  currentLocalStorage,
+  AddOutfitHandler,
+  RemoveOutfitHandler,
+  LeftButtonOutfitHandler,
+  RightButtonOutfitHandler,
 }) => {
   return (
     <div>
-      <ArrowLeft LeftButtonHandler={LeftButtonHandler} />
-      <ArrowRight RightButtonHandler={RightButtonHandler} />
-      <div className="cardSlider">
+      Your Outfit
+      <ArrowLeft LeftButtonHandler={LeftButtonOutfitHandler} />
+      <ArrowRight RightButtonHandler={RightButtonOutfitHandler} />
+      <div className="outfitSlider">
         <div
-          className="cardSliderWrapper"
+          className="outfitSliderWrapper"
           style={{
             transform: `translateX(-${
-              productData.indexOf(currentProduct) * (100 / productData.length)
+              localStorageInfo.indexOf(currentLocalStorage) *
+              (100 / localStorageInfo.length)
             }%)`,
           }}
         >
-          {productData.map((product) => {
+          <YourOutfitAddCard
+            viewedProductInfo={viewedProductInfo}
+            AddOutfitHandler={AddOutfitHandler}
+          />
+          {localStorageInfo.map((productId) => {
             return (
-              <ProductCard
-                key={product.id}
-                product={product}
-                isModalOpen={isModalOpen}
-                ToggleModalHandler={ToggleModalHandler}
+              <OutfitCard
+                key={productId}
+                productId={productId}
+                RemoveOutfitHandler={RemoveOutfitHandler}
               />
             );
           })}
@@ -40,4 +47,4 @@ const RelatedItemsSlider = ({
   );
 };
 
-export default RelatedItemsSlider;
+export default YourOutfitSlider;

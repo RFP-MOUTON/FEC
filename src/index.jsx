@@ -23,7 +23,9 @@ class App extends React.Component {
         });
         // this.updateComponent();
       })
-      .then((error) => {});
+      .then((error) => {
+        throw error;
+      });
   }
 
   render() {
@@ -34,10 +36,9 @@ class App extends React.Component {
     }
     return (
       <div id="mainContainer">
-        <div>Hello World</div>
-        <OverviewContainer id={data.id} />
-        <RelatedItemsContainer />
-        <Reviews />
+        <OverviewContainer id={data.id} data={data} />
+        <RelatedItemsContainer viewedProductId={data.id} />
+        <Reviews id={data.id} />
       </div>
     );
   }
