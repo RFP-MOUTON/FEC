@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StyleImage = (props) => {
-  const { src, alt, selected, name, data, setInitial } = props;
+  const { src, alt, selected, data } = props;
   if (selected) {
     return (
       <>

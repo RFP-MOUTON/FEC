@@ -1,7 +1,7 @@
 import React from 'react';
 import StyleImage from './StyleImage.jsx';
 import SelectedStyle from './SelectedStyle.jsx';
-// import AddToCart from './AddToCart.jsx';
+import AddToCart from './AddToCart.jsx';
 
 class Styles extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class Styles extends React.Component {
     const { data } = this.props;
     const { selectedObj, targetID } = this.state;
     if (data === '') {
-      return <div>Loading</div>;
+      return <div className="category-list">Loading</div>;
     }
     let count = 0;
     return (
@@ -91,13 +91,13 @@ class Styles extends React.Component {
                     src={style.photos[0].thumbnail_url}
                     alt={`${style.style_id} ${count - 1}`}
                     selected={selected}
-                    setInitial={this.setInitial}
                   />
                 </div>
               </div>
             );
           })}
         </div>
+        <AddToCart style={selectedObj} />
       </div>
     );
   }

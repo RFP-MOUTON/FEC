@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
     const { reviews, styles } = this.state;
     const { data, id } = this.props;
     if (styles === '') {
-      return <div></div>;
+      return <div id="sidebarContainer" />;
     }
     return (
       <div id="sidebarContainer">
