@@ -9,6 +9,16 @@ class AddAReview extends React.Component {
       modalVisible: false,
     };
     this.toggleModal = this.toggleModal.bind(this);
+
+    this.handleSuccessfulSubmit = this.handleSuccessfulSubmit.bind(this);
+  }
+
+  handleSuccessfulSubmit() {
+    this.setState((previousState) => {
+      return {
+        modalVisible: !previousState.modalVisible,
+      };
+    });
   }
 
   toggleModal(event) {
@@ -28,7 +38,10 @@ class AddAReview extends React.Component {
         <button id="AddAReviewButton" type="button" onClick={this.toggleModal}>
           ADD A REVIEW
         </button>
-        {modalVisible ? <AddAReviewForm toggle={this.toggleModal} metaData={metaData}/> : null}
+        {modalVisible ? (
+          <AddAReviewForm toggle={this.toggleModal} submit={this.handleSuccessfulSubmit} metaData={metaData} />
+        ) : null}
+
       </>
     );
   }
