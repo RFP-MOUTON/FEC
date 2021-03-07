@@ -1,6 +1,6 @@
 #mainContainer {
   display: grid;
-  grid-template-rows: auto 320px auto;
+  grid-template-rows: auto auto auto;
 }
 
 #overviewContainer {

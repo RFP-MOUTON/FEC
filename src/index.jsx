@@ -23,13 +23,9 @@ class App extends React.Component {
         });
         // this.updateComponent();
       })
-<<<<<<< HEAD
-      .catch((error) => {console.log(error)});
-=======
       .then((error) => {
         throw error;
       });
->>>>>>> 4f9442c012682c5bbcfca1d452cfe7605f89670f
   }
 
   render() {
