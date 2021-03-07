@@ -1,21 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import ProductRating from './ProductRating.jsx';
-import ComparisonModal from './ComparisonModal.jsx';
 
 import dummyStyles from './dummyStyles.js';
 import dummyReviews from './dummyReviews.js';
 
-class ProductCard extends React.Component {
+class OutfitCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: false,
       currentProductInfo: '',
       stylesInfo: dummyStyles,
       reviewsInfo: dummyReviews,
     };
-    this.ToggleModalHandler = this.ToggleModalHandler.bind(this);
   }
 
   componentDidMount() {
@@ -48,19 +45,9 @@ class ProductCard extends React.Component {
       });
   }
 
-  ToggleModalHandler() {
-    const { isModalOpen } = this.state;
-    this.setState({ isModalOpen: !isModalOpen });
-  }
-
   render() {
-    const { viewedProductInfo } = this.props;
-    const {
-      isModalOpen,
-      currentProductInfo,
-      stylesInfo,
-      reviewsInfo,
-    } = this.state;
+    const { RemoveOutfitHandler } = this.props;
+    const { currentProductInfo, stylesInfo, reviewsInfo } = this.state;
     return (
       <div className="productCard">
         <div className="portraitImg">
@@ -70,18 +57,17 @@ class ProductCard extends React.Component {
         <div className="productName">{currentProductInfo.name}</div>
         <div className="productPrice">${stylesInfo.original_price}</div>
         <ProductRating reviewsInfo={reviewsInfo} />
-        <button type="button" onClick={this.ToggleModalHandler}>
-          ✭
+        <button
+          type="button"
+          onClick={() => {
+            return RemoveOutfitHandler(currentProductInfo.name);
+          }}
+        >
+          ✗
         </button>
-        <ComparisonModal
-          isModalOpen={isModalOpen}
-          ToggleModalHandler={this.ToggleModalHandler}
-          viewedProductInfo={viewedProductInfo}
-          currentProductInfo={currentProductInfo}
-        />
       </div>
     );
   }
 }
 
-export default ProductCard;
+export default OutfitCard;
