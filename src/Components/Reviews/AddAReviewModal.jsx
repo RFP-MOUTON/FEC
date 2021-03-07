@@ -13,6 +13,7 @@ import QualityComponent from './CharactersisticsFormComponents/QualitySelector.j
 import LengthComponent from './CharactersisticsFormComponents/LengthSelector.jsx';
 import FitComponent from './CharactersisticsFormComponents/FitSelector.jsx';
 
+
 class AddAReviewForm extends React.Component {
   constructor(props) {
     super(props);
