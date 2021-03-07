@@ -62,7 +62,7 @@ class RatingBreakdown extends React.Component {
 
     return (
       <div id="ratingBreakdown">
-        <p>RATINGS AND REVIEWS</p>
+        <p>RATINGS &amp; REVIEWS</p>
         <Rating average={average} totalReviews={totalReviews} />
         <SortingList sortingList={sortingList} />
         <Recommended recommended={recommended} totalReviews={totalReviews} />

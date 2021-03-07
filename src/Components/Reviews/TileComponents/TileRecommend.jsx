@@ -5,9 +5,9 @@ const TileRecommend = ({ recommend }) => {
     return null;
   }
   return (
-    <div>
+    <div className="tileRecommend">
       <svg
-        className="w-6 h-6"
+        className="w-6 h-6 check"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -20,7 +20,7 @@ const TileRecommend = ({ recommend }) => {
           d="M5 13l4 4L19 7"
         />
       </svg>
-      <div>I recommend this product</div>
+      <div className="recommendMessage">I recommend this product</div>
     </div>
   );
 };

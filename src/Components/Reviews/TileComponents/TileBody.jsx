@@ -2,8 +2,8 @@ import React from 'react';
 
 const TileBody = ({ body }) => {
   return (
-    <div>
-      <div>{body}</div>
+    <div className="tileBody">
+      <div className="bodyText">{body}</div>
     </div>
   );
 };

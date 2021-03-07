@@ -28,7 +28,7 @@ class TileHelpfulReport extends React.Component {
     const { clicked, reported } = this.state;
     if (!clicked && !reported) {
       return (
-        <div>
+        <div className="tileHelp">
           <div>
             Was this review helpful?{' '}
             <a
