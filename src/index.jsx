@@ -23,7 +23,7 @@ class App extends React.Component {
         });
         // this.updateComponent();
       })
-      .then((error) => {
+      .catch((error) => {
         throw error;
       });
   }

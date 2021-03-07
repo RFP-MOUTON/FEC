@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 
 import Rating from './BreakdownComponents/Rating.jsx';
@@ -61,8 +63,8 @@ class RatingBreakdown extends React.Component {
     return (
       <div id="ratingBreakdown">
         <p>RATINGS AND REVIEWS</p>
-        <SortingList sortingList={sortingList} />
         <Rating average={average} totalReviews={totalReviews} />
+        <SortingList sortingList={sortingList} />
         <Recommended recommended={recommended} totalReviews={totalReviews} />
         <StarBar
           num="1"

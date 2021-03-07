@@ -282,5 +282,27 @@
   left: 7px;
 }
 
+/* Breakdown  */
 
+#ratingStars {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 125px auto;
+}
 
+#average {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-items: left;
+  font-weight: bold;
+  font-size: 85px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#starsContainer {
+  grid-row-start: 1;
+}
+
+#outOf {
+  grid-row-start: 3;
+}
