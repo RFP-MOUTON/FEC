@@ -72,11 +72,12 @@
 }
 
 .reviewTile {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
   display: grid;
   grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-columns: 477px auto;
 }
 
 .tileStars {
@@ -101,12 +102,13 @@
   margin: 10px 0px;
 }
 
-/* .bodyText {
-  max-width: 20ch;
-  text-overflow: ellipsis;
+.bodyText {
+  word-wrap: break-word;
+  /* max-width: 250ch; */
+  /* text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
-} */
+  white-space: nowrap; */
+}
 
 .thumbnails {
   grid-row-start: 4;
@@ -136,11 +138,12 @@
 .response {
   background-color:rgb(190, 189, 189);
   grid-row-start: 6;
+  margin-bottom: 10px;
 }
 
 .thumbnails img {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   border: 2px solid;
   padding: 2px;
   margin: 5px;
@@ -357,4 +360,10 @@
 
 #outOf {
   grid-row-start: 3;
+}
+.showMore:hover {
+  cursor: pointer;
+}
+.showMore {
+  display: inline;
 }
