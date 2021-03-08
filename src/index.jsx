@@ -38,7 +38,7 @@ class App extends React.Component {
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
         <RelatedItemsContainer viewedProductId={data.id} />
-        <Reviews id={data.id} />
+        <Reviews id={data.id} productName={data.name} />
       </div>
     );
   }

@@ -149,9 +149,22 @@
   margin: 5px;
 }
 
-#addAReviewModal {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+#formLine1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+#formLine2 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 #overallRating {
@@ -160,10 +173,20 @@
 
 #recommend {
   grid-row-start: 3;
+  grid-column-start: 2;
+  justify-self: right;
 }
 
 .tileHelp {
   grid-row-start: 7;
+}
+
+.ratingMessage {
+  padding-left: 85px;
+}
+
+.overallMessage {
+  padding-left: 10px;
 }
 
 #characteristics {
@@ -180,6 +203,8 @@
 #reviewBody {
   grid-row-start: 6;
   grid-row-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 #reviewPhoto {
@@ -226,6 +251,9 @@
 
 
 #addAReviewModal {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: 50% 50%;
   position: fixed;
   background:white;
   width: 50% !important;

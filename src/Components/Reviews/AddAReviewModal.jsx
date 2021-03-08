@@ -182,7 +182,7 @@ class AddAReviewForm extends React.Component {
   }
 
   render() {
-    const { toggle, metaData } = this.props;
+    const { toggle, metaData, productName } = this.props;
     const {
       rating,
       ratingMessage,
@@ -197,8 +197,13 @@ class AddAReviewForm extends React.Component {
     return (
       <div className="blur">
         <form id="addAReviewModal">
+          <div id="formLine1">Write Your Review</div>
+          <div id="formLine2">For the {productName}</div>
           <div id="overallRating">
-            Overall rating (mandatory)
+            <div className="overallMessage">
+              Overall rating (mandatory)
+            </div>
+
             <div
               className="formStar"
               data-rating="1"
@@ -229,7 +234,7 @@ class AddAReviewForm extends React.Component {
               onClick={this.handleStarClick}
               style={{ background: rating > 4 ? 'black' : null }}
             />
-            <div>{ratingMessage}</div>
+            <div className="ratingMessage">{ratingMessage}</div>
           </div>
           <div id="recommend">
             <label>
