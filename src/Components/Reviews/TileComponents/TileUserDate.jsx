@@ -5,10 +5,8 @@ const TileUserDate = ({ user, date }) => {
   const dateFormatted = new Date(date).toLocaleDateString(undefined, options);
 
   return (
-    <div>
-      <div>
-        {user}, {dateFormatted}
-      </div>
+    <div className="tileUser">
+      {user}, {dateFormatted}
     </div>
   );
 };

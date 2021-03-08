@@ -20,6 +20,7 @@
         "prettier"
     ],
     "rules": {
+        "jsx-a11y/label-has-associated-control": "off",
         "prettier/prettier": "error",
         "no-unused-vars": "warn",
         "import/extensions": ["error", "always"],

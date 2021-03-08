@@ -4,7 +4,12 @@ const StarBar = ({ num, stars, total, handleClick }) => {
   const percentage = Math.round((stars / total) * 100);
   const newWidth = `${percentage}%`;
   return (
-    <div className="barContainer" onClick={() => {return handleClick(num)}} >
+    <div
+      className="barContainer"
+      onClick={() => {
+        return handleClick(num);
+      }}
+    >
       <div className="starNums">{num} stars</div>
       <div className="progress">
         <div className="progress-value" style={{ width: newWidth }} />

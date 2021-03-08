@@ -2,7 +2,7 @@ import React from 'react';
 
 const TileSummary = ({ summary }) => {
   return (
-    <div>
+    <div className="tileSummary">
       <b>{summary}</b>
     </div>
   );

@@ -15,7 +15,7 @@ const TileStars = ({ rating }) => {
     }
   }
   return (
-    <div>
+    <div className="tileStars">
       {starArray.map((shade) => {
         return <Star key={shade.id} id={shade.id} shade={shade.shade} />;
       })}

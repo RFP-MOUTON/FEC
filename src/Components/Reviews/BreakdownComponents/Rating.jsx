@@ -26,13 +26,15 @@ const Rating = ({ average, totalReviews }) => {
     }
   }
   return (
-    <>
-      <div>{averageRounded}</div>
-      {starArray.map((shade) => {
-        return <Star key={shade.id} id={shade.id} shade={shade.shade} />;
-      })}
-      <p>Out of {totalReviews} reviews</p>
-    </>
+    <div id="ratingStars">
+      <div id="average">{averageRounded}</div>
+      <div id="starsContainer">
+        {starArray.map((shade) => {
+          return <Star key={shade.id} id={shade.id} shade={shade.shade} />;
+        })}
+      </div>
+      <p id="outOf">Out of {totalReviews} reviews</p>
+    </div>
   );
 };
 
