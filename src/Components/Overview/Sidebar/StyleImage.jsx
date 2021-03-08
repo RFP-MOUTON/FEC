@@ -1,17 +1,19 @@
 import React from 'react';
+import { FaCheck } from 'react-icons/fa';
 
 const StyleImage = (props) => {
-  const { src, alt, selected, name } = props;
-  const altConcat = `${alt} ${name}`;
+  const { src, alt, selected, handleClick } = props;
   if (selected) {
     return (
       <>
-        Checkmark
-        <img src={src} alt={altConcat} className="categoryImage" />
+        <FaCheck id="checkmark" />
+        <img src={src} alt={alt} className="categoryImage" />
       </>
     );
   }
-  return <img src={src} alt={altConcat} className="categoryImage" />;
+  return (
+    <img src={src} alt={alt} className="categoryImage" onClick={handleClick} />
+  );
 };
 
 export default StyleImage;
