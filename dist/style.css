@@ -227,7 +227,7 @@
 
 #addAReviewModal {
   position: fixed;
-  background:rgb(63, 170, 95);
+  background:white;
   width: 50% !important;
   height: 80% !important;
   top:50%;
@@ -286,7 +286,7 @@
 }
 
 .barContainer:hover {
-  background-color: lightgreen;
+  background-color: rgb(204, 202, 202);
   cursor: pointer;
 }
 
@@ -299,7 +299,7 @@
 }
 
 .formStar {
-  background: grey;
+  background: rgb(202, 202, 202);
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   display: inline-block;
   height: 40px;

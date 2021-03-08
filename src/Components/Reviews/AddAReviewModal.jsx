@@ -203,31 +203,31 @@ class AddAReviewForm extends React.Component {
               className="formStar"
               data-rating="1"
               onClick={this.handleStarClick}
-              style={{ background: rating > 0 ? 'black' : 'white' }}
+              style={{ background: rating > 0 ? 'black' : null }}
             />
             <div
               className="formStar"
               data-rating="2"
               onClick={this.handleStarClick}
-              style={{ background: rating > 1 ? 'black' : 'white' }}
+              style={{ background: rating > 1 ? 'black' : null }}
             />
             <div
               className="formStar"
               data-rating="3"
               onClick={this.handleStarClick}
-              style={{ background: rating > 2 ? 'black' : 'white' }}
+              style={{ background: rating > 2 ? 'black' : null }}
             />
             <div
               className="formStar"
               data-rating="4"
               onClick={this.handleStarClick}
-              style={{ background: rating > 3 ? 'black' : 'white' }}
+              style={{ background: rating > 3 ? 'black' : null }}
             />
             <div
               className="formStar"
               data-rating="5"
               onClick={this.handleStarClick}
-              style={{ background: rating > 4 ? 'black' : 'white' }}
+              style={{ background: rating > 4 ? 'black' : null }}
             />
             <div>{ratingMessage}</div>
           </div>
