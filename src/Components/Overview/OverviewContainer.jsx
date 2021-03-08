@@ -20,8 +20,8 @@ import '../../css/Overview.scss';
 const OverviewContainer = (props) => {
   const { id, data } = props;
   return (
-    <div id="overviewContainer">
-      <div id="topHalf">
+    <div className="overviewContainer">
+      <div className="topHalf">
         <Sidebar id={id} data={data} />
       </div>
     </div>
