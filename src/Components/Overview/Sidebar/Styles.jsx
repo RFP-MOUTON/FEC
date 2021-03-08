@@ -1,15 +1,17 @@
 import React from 'react';
 import StyleImage from './StyleImage.jsx';
 import SelectedStyle from './SelectedStyle.jsx';
+import AddToCart from './AddToCart.jsx';
 
 class Styles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      target: '',
       targetID: '',
+      selectedObj: '',
     };
     this.handleClick = this.handleClick.bind(this);
+    this.setInitial = this.setInitial.bind(this);
   }
   /*
     1. Map over images
@@ -26,49 +28,83 @@ class Styles extends React.Component {
   }
   */
 
-  handleClick(event) {
-    const eventData = event.target.alt.split(' ');
-    this.setState({
-      target: eventData[0],
-      targetID: eventData[1],
-    });
+  componentDidMount() {
+    const { data } = this.props;
+    if (data) {
+      this.setInitial();
+    }
   }
+
+  handleClick(event) {
+    const { data, liftStyle } = this.props;
+    const eventData = event.target.alt.split(' ');
+    console.log('click registered');
+    this.setState({
+      targetID: eventData[0],
+      selectedObj: data.results[eventData[1]],
+    });
+    liftStyle(eventData[0], data.results[eventData[1]].photos);
+  }
+
+  setInitial() {
+    const { data, liftStyle } = this.props;
+    this.setState({
+      targetID: data.results[0].style_id,
+      selectedObj: data.results[0],
+    });
+    liftStyle(data.results[0].style_id, data.results[0].photos);
+  }
+  // handleClick(event) {
+  //   const { id, data } = this.props;
+  //   // const eventData = event.target.alt.split(' ');
+  //   this.setState({
+  //     target: id,
+  //     targetID: data,
+  //   });
+  // }
 
   render() {
     const { data } = this.props;
-    const { target, targetID } = this.state;
+    const { selectedObj, targetID } = this.state;
     if (data === '') {
-      return <div>Loading</div>;
+      return <div className="category-list">Loading</div>;
     }
+    let count = 0;
     return (
       <div>
-        <SelectedStyle name={target || data.results[0].name} />
-        <div className="category-list">
-          {data.results.map((style) => {
-            let selected = false;
-            if (targetID === '' && style['default?'] === true) {
-              selected = true;
-            }
-            if (style.style_id.toString() === targetID.toString()) {
-              selected = true;
-            }
-            return (
-              <div
-                className="category-data"
-                key={style.style_id}
-                onClick={this.handleClick}
-              >
-                <div alt={style.name} name={style.style_id}>
-                  <StyleImage
-                    src={style.photos[0].thumbnail_url}
+        <SelectedStyle name={selectedObj.name || data.results[0].name} />
+        <div id="styles">
+          <div className="category-list">
+            {data.results.map((style) => {
+              count += 1;
+              let selected = false;
+              if (targetID === '' && style['default?'] === true) {
+                selected = true;
+              }
+              if (style.style_id.toString() === targetID.toString()) {
+                selected = true;
+              }
+              return (
+                <div className="category-data" key={style.style_id}>
+                  <div
                     alt={style.name}
-                    selected={selected}
                     name={style.style_id}
-                  />
+                    className="checkContainer"
+                  >
+                    <StyleImage
+                      src={style.photos[0].thumbnail_url}
+                      alt={`${style.style_id} ${count - 1}`}
+                      selected={selected}
+                      handleClick={this.handleClick}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+        </div>
+        <div id="addToCart">
+          <AddToCart style={selectedObj} />
         </div>
       </div>
     );

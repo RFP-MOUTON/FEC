@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Ratings from './Sidebar/Ratings.jsx';
 import Styles from './Sidebar/Styles.jsx';
+import Carosel from './Sidebar/Carosel.jsx';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Sidebar extends React.Component {
     this.componentDidMount = this.componentDidMount.bind(this);
     this.getMeta = this.getMeta.bind(this);
     this.getStyles = this.getStyles.bind(this);
+    this.liftStyle = this.liftStyle.bind(this);
   }
 
   componentDidMount() {
@@ -46,23 +48,38 @@ class Sidebar extends React.Component {
       .then((error) => {});
   }
 
+  liftStyle(styleID, style) {
+    this.setState({
+      styleID,
+      stylePhotos: style,
+    });
+  }
+
   render() {
-    const { reviews, styles } = this.state;
+    const { reviews, styles, styleID, stylePhotos } = this.state;
     const { data, id } = this.props;
+    if (styles === '') {
+      return <div className="sidebarContainer" />;
+    }
     return (
-      <div id="sidebarContainer">
-        <Ratings ratings={reviews.ratings} />
-        <div id="titles">
-          <div id="category" className="text">
-            {data.category}
+      <>
+        <div className="sidebarContainer">
+          <div id="titles">
+            <Ratings ratings={reviews.ratings} />
+            <div id="category" className="text">
+              {data.category}
+            </div>
+            <h1 id="productName">{data.name}</h1>
+            <div id="price">{data.default_price}</div>
           </div>
-          <h1 id="productName">{data.name}</h1>
-          <div id="price">{data.default_price}</div>
-          <div id="styles">
-            <Styles data={styles} />
+          <div>
+            <Styles data={styles} liftStyle={this.liftStyle} />
           </div>
         </div>
-      </div>
+        <div id="carosel">
+          <Carosel styleID={styleID} images={stylePhotos} />
+        </div>
+      </>
     );
   }
 }
