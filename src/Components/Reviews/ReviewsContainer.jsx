@@ -95,7 +95,7 @@ class Reviews extends React.Component {
     const { id } = this.props;
     axios
       .get('/reviews', {
-        params: { product_id: id, count: 100, sort: event.target.value },
+        params: { product_id: id, count: 1000, sort: event.target.value },
       })
       .then(({ data }) => {
         this.setState({
@@ -154,6 +154,7 @@ class Reviews extends React.Component {
   render() {
     const { reviews, metaData, currentlyDisplayed, filtered } = this.state;
     const { characteristics } = metaData;
+    const { productName } = this.props;
     return (
       <div id="reviewContainer">
         <RatingBreakdown
@@ -172,7 +173,7 @@ class Reviews extends React.Component {
           currentlyDisplayed={currentlyDisplayed}
           handleClick={this.handleAddMoreReviews}
         />
-        <AddAReview metaData={metaData} />
+        <AddAReview metaData={metaData} productName={productName} />
       </div>
     );
   }

@@ -20,7 +20,12 @@ const ReviewTile = ({ review, handleHelpful, report }) => {
       <TilePhotos photos={review.photos} />
       <TileRecommend recommend={review.recommend} />
       <TileResponse response={review.response} />
-      <TileHelpfulReport helpfulness={review.helpfulness} handleHelpful={handleHelpful} reviewId={review_id} report={report} />
+      <TileHelpfulReport
+        helpfulness={review.helpfulness}
+        handleHelpful={handleHelpful}
+        reviewId={review_id}
+        report={report}
+      />
     </div>
   );
 };
