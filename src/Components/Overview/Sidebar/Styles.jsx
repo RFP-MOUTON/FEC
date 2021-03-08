@@ -36,20 +36,23 @@ class Styles extends React.Component {
   }
 
   handleClick(event) {
-    const { data } = this.props;
+    const { data, liftStyle } = this.props;
     const eventData = event.target.alt.split(' ');
+    console.log('click registered');
     this.setState({
       targetID: eventData[0],
       selectedObj: data.results[eventData[1]],
     });
+    liftStyle(eventData[0], data.results[eventData[1]].photos);
   }
 
   setInitial() {
-    const { data } = this.props;
+    const { data, liftStyle } = this.props;
     this.setState({
       targetID: data.results[0].style_id,
       selectedObj: data.results[0],
     });
+    liftStyle(data.results[0].style_id, data.results[0].photos);
   }
   // handleClick(event) {
   //   const { id, data } = this.props;
@@ -70,34 +73,39 @@ class Styles extends React.Component {
     return (
       <div>
         <SelectedStyle name={selectedObj.name || data.results[0].name} />
-        <div className="category-list">
-          {data.results.map((style) => {
-            count += 1;
-            let selected = false;
-            if (targetID === '' && style['default?'] === true) {
-              selected = true;
-            }
-            if (style.style_id.toString() === targetID.toString()) {
-              selected = true;
-            }
-            return (
-              <div className="category-data" key={style.style_id}>
-                <div
-                  alt={style.name}
-                  name={style.style_id}
-                  onClick={this.handleClick}
-                >
-                  <StyleImage
-                    src={style.photos[0].thumbnail_url}
-                    alt={`${style.style_id} ${count - 1}`}
-                    selected={selected}
-                  />
+        <div id="styles">
+          <div className="category-list">
+            {data.results.map((style) => {
+              count += 1;
+              let selected = false;
+              if (targetID === '' && style['default?'] === true) {
+                selected = true;
+              }
+              if (style.style_id.toString() === targetID.toString()) {
+                selected = true;
+              }
+              return (
+                <div className="category-data" key={style.style_id}>
+                  <div
+                    alt={style.name}
+                    name={style.style_id}
+                    className="checkContainer"
+                  >
+                    <StyleImage
+                      src={style.photos[0].thumbnail_url}
+                      alt={`${style.style_id} ${count - 1}`}
+                      selected={selected}
+                      handleClick={this.handleClick}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-        <AddToCart style={selectedObj} />
+        <div id="addToCart">
+          <AddToCart style={selectedObj} />
+        </div>
       </div>
     );
   }
