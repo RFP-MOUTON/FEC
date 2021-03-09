@@ -13,7 +13,6 @@ import QualityComponent from './CharactersisticsFormComponents/QualitySelector.j
 import LengthComponent from './CharactersisticsFormComponents/LengthSelector.jsx';
 import FitComponent from './CharactersisticsFormComponents/FitSelector.jsx';
 
-
 class AddAReviewForm extends React.Component {
   constructor(props) {
     super(props);
@@ -200,9 +199,7 @@ class AddAReviewForm extends React.Component {
           <div id="formLine1">Write Your Review</div>
           <div id="formLine2">For the {productName}</div>
           <div id="overallRating">
-            <div className="overallMessage">
-              Overall rating (mandatory)
-            </div>
+            <div className="overallMessage">Overall rating (mandatory)</div>
 
             <div
               className="formStar"

@@ -57,13 +57,13 @@ class TileHelpfulReport extends React.Component {
       );
     } else if (reported) {
       return (
-        <div>
+        <div className="tileHelp">
           <div>Was this review helpful? Yes ({helpfulness}) | Reported</div>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="tileHelp">
           <div>Was this review helpful? Yes ({helpfulness + 1})</div>
         </div>
       );
