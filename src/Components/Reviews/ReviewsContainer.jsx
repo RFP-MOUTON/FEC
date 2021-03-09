@@ -14,12 +14,14 @@ import withClickTracker from '../../../HOC/withClickTracker.js';
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
+    const { id } = this.props;
     this.state = {
       reviews: [],
       currentlyDisplayed: [],
       filterList: new Set(),
       filtered: [],
       metaData: meta,
+      id,
     };
     this.handleAddMoreReviews = this.handleAddMoreReviews.bind(this);
     this.handleSort = this.handleSort.bind(this);
