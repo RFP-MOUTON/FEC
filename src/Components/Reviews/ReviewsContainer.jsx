@@ -32,7 +32,7 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    const { id } = this.props;
+    const { id } = this.state;
     axios
       .get('/reviews', { params: { product_id: id, count: 100 } })
       .then(({ data }) => {
@@ -60,6 +60,39 @@ class Reviews extends React.Component {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { id } = this.state;
+    if (prevState.id !== id) {
+      axios
+        .get('/reviews', { params: { product_id: id, count: 100 } })
+        .then(({ data }) => {
+          this.setState({
+            reviews: data.results,
+            currentlyDisplayed: [data.results[0], data.results[1]],
+          });
+        })
+        .then(() => {
+          this.setState(({ currentlyDisplayed }) => {
+            return {
+              filtered: currentlyDisplayed,
+            };
+          });
+        })
+        .then(
+          axios
+            .get('/reviews/meta', { params: { product_id: id } })
+            .then(({ data }) => {
+              this.setState({
+                metaData: data,
+              });
+            })
+        )
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   handleFiltersList(filters) {
@@ -96,7 +129,7 @@ class Reviews extends React.Component {
 
   handleSort(event) {
     event.preventDefault();
-    const { id } = this.props;
+    const { id } = this.state;
     axios
       .get('/reviews', {
         params: { product_id: id, count: 1000, sort: event.target.value },
@@ -160,7 +193,10 @@ class Reviews extends React.Component {
     const { characteristics } = metaData;
     const { productName, clickTracker } = this.props;
     return (
-      <div id="reviewContainer" onClick={(event) => clickTracker(event, 'reviews')}>
+      <div
+        id="reviewContainer"
+        onClick={(event) => clickTracker(event, 'reviews')}
+      >
         <RatingBreakdown
           metaData={metaData}
           handleFiltersList={this.handleFiltersList}
