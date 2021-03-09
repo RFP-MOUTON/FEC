@@ -264,6 +264,15 @@
   border-radius: 15px;
 }
 
+#addAReviewModal input[type=text] {
+  margin: 5px;
+  width: 250px;
+}
+
+#addAReviewModal textarea {
+  margin: 5px;
+  width: 250px;
+}
 .blur {
   position: fixed;
     width: 100%;
