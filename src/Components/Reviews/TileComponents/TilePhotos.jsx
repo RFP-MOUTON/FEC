@@ -9,7 +9,10 @@ const TilePhotos = ({ photos }) => {
   return (
     <div className="thumbnails">
       {photos.map((photo) => {
-        return <TileThumb key={photo.id} photo={photo} />;
+        const urlCheck = photo.url.slice(0, 3);
+        if (urlCheck === 'htt') {
+          return <TileThumb key={photo.id} photo={photo} />;
+        }
       })}
     </div>
   );
