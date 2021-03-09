@@ -11,7 +11,7 @@ const RelatedItemsSlider = ({
   viewedProductInfo,
 }) => {
   return (
-    <div>
+    <div className="itemSliderGrid">
       Related Items
       <ArrowLeft LeftButtonHandler={LeftButtonHandler} />
       <ArrowRight RightButtonHandler={RightButtonHandler} />

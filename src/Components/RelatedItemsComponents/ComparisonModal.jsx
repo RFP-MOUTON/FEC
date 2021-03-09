@@ -10,7 +10,7 @@ const MODAL_STYLES = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   backgroundColor: '#808080',
-  padding: '50px',
+  padding: '25px',
   zIndex: 1000,
 };
 
@@ -57,23 +57,36 @@ const ComparisonModal = ({
 
   return ReactDom.createPortal(
     <div className="comparisonModal" style={MODAL_STYLES}>
-      {noDupeFeatures.map((feature) => {
-        if (currentProductFeatures.includes(feature))
-          return <FeaturesCurrent key={feature} glyph="✔" />;
-        return <FeaturesCurrent key={feature} glyph="✘" />;
-      })}
+      <div>{currentProductInfo.name}</div>
+      <div>Features</div>
+      <div>{viewedProductInfo.name}</div>
+      <div className="currentItemFeatures">
+        {noDupeFeatures.map((feature) => {
+          if (currentProductFeatures.includes(feature))
+            return <FeaturesCurrent key={feature} glyph="✔" />;
+          return <FeaturesCurrent key={feature} glyph="✘" />;
+        })}
+      </div>
 
-      {noDupeFeatures.map((feature) => {
-        return <FeaturesList key={feature} feature={feature} />;
-      })}
+      <div className="featuresList">
+        {noDupeFeatures.map((feature) => {
+          return <FeaturesList key={feature} feature={feature} />;
+        })}
+      </div>
 
-      {noDupeFeatures.map((feature) => {
-        if (viewedProductFeatures.includes(feature))
-          return <FeaturesViewed key={feature} glyph="✔" />;
-        return <FeaturesViewed key={feature} glyph="✘" />;
-      })}
+      <div className="viewedItemFeatures">
+        {noDupeFeatures.map((feature) => {
+          if (viewedProductFeatures.includes(feature))
+            return <FeaturesViewed key={feature} glyph="✔" />;
+          return <FeaturesViewed key={feature} glyph="✘" />;
+        })}
+      </div>
 
-      <button type="button" onClick={ToggleModalHandler}>
+      <button
+        className="closeModalButton"
+        type="button"
+        onClick={ToggleModalHandler}
+      >
         Close
       </button>
     </div>,
