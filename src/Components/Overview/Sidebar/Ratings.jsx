@@ -5,7 +5,8 @@ function Ratings(props) {
   const { ratings } = props;
   let count = 0;
   let average = 0;
-  if (ratings !== undefined) {
+  console.log(Number.isNaN(parseFloat(ratings)));
+  if (ratings !== undefined && Number.isNaN(parseFloat(ratings)) === false) {
     Object.keys(ratings).map((key) => {
       count += parseInt(props.ratings[key], 10);
       average += props.ratings[key] * key;
@@ -14,8 +15,8 @@ function Ratings(props) {
     average /= count;
   }
 
-  if (ratings === undefined) {
-    return <div className="overviewStars">Loading Stars</div>;
+  if (ratings === undefined || Number.isNaN(ratings) === true) {
+    return <div className="overviewStars" />;
   }
   return (
     <div className="overviewStars">
@@ -34,7 +35,6 @@ function Ratings(props) {
         }
         return <StarIcon fill="0%" id={key} key={key} />;
       })}
-      {average}
     </div>
   );
 }

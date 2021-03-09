@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar.jsx';
 import '../../css/Overview.scss';
+import withClickTracker from '../../../HOC/withClickTracker.js';
 // import instance from '../../env/config.js';
 
 // class OverviewContainer extends React.Component {
@@ -20,11 +21,14 @@ import '../../css/Overview.scss';
 const OverviewContainer = (props) => {
   const { id, data } = props;
   return (
-    <div className="overviewContainer">
+    <div
+      className="overviewContainer"
+      onclick={(event) => clickTracker(event, 'reviews')}
+    >
       <div className="topHalf">
         <Sidebar id={id} data={data} />
       </div>
     </div>
   );
 };
-export default OverviewContainer;
+export default withClickTracker(Sidebar);
