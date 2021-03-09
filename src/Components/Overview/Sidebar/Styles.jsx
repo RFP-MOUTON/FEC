@@ -38,7 +38,6 @@ class Styles extends React.Component {
   handleClick(event) {
     const { data, liftStyle } = this.props;
     const eventData = event.target.alt.split(' ');
-    console.log('click registered');
     this.setState({
       targetID: eventData[0],
       selectedObj: data.results[eventData[1]],
