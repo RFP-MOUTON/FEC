@@ -16,10 +16,11 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get('/products', { params: { count: 1 } })
+      .get('/products', { params: { count: 10 } })
       .then((response) => {
+        console.log(response.data[8]);
         this.setState({
-          data: response.data[0],
+          data: response.data[8],
         });
         // this.updateComponent();
       })
@@ -38,7 +39,6 @@ class App extends React.Component {
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
         <RelatedItemsContainer viewedProductId={data.id} />
-        <Reviews id={data.id} productName={data.name} />
       </div>
     );
   }
