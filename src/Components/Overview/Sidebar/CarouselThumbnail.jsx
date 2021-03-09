@@ -1,11 +1,11 @@
 import React from 'react';
 
-class CarouselThumbnail extends React.component {
+class CarouselThumbnail extends React.Component {
   constructor(props) {
     super(props);
-    this.state({
+    this.state = {
       displayedPage: 1,
-    });
+    };
   }
 
   // handleUpArrow() {
