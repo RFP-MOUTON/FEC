@@ -3,7 +3,6 @@ import React from 'react';
 import ReviewTile from './ReviewTile.jsx';
 
 const ReviewList = ({ reviews, handleHelpful, report }) => {
-  console.log(reviews)
   return (
     <>
       <div id="reviewList">
@@ -18,7 +17,6 @@ const ReviewList = ({ reviews, handleHelpful, report }) => {
               />
             );
           }
-
         })}
       </div>
     </>
