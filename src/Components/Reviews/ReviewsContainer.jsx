@@ -9,6 +9,8 @@ import SortingSelector from './SortingSelectorComponent.jsx';
 import AddAReview from './AddAReviewButton.jsx';
 import meta from './metadummydata.js';
 
+import withClickTracker from '../../../HOC/withClickTracker.js';
+
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
@@ -154,9 +156,9 @@ class Reviews extends React.Component {
   render() {
     const { reviews, metaData, currentlyDisplayed, filtered } = this.state;
     const { characteristics } = metaData;
-    const { productName } = this.props;
+    const { productName, clickTracker } = this.props;
     return (
-      <div id="reviewContainer">
+      <div id="reviewContainer" onClick={(event) => clickTracker(event, 'reviews')}>
         <RatingBreakdown
           metaData={metaData}
           handleFiltersList={this.handleFiltersList}
@@ -179,4 +181,4 @@ class Reviews extends React.Component {
   }
 }
 
-export default Reviews;
+export default withClickTracker(Reviews);
