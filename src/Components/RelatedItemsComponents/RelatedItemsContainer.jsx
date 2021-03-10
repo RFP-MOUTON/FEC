@@ -46,6 +46,26 @@ class RelatedItemsContainer extends React.Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+    const { viewedProductId } = this.props;
+    if (prevProps.viewedProductId !== viewedProductId) {
+      const relatedItemsRoute = `/products/${viewedProductId}/related`;
+      axios
+        .get(relatedItemsRoute)
+        .then((relatedItemsArray) => {
+          this.setState({ productData: relatedItemsArray.data });
+          this.setState({ currentProduct: relatedItemsArray.data[0] });
+        })
+        .catch((error) => {
+          throw error;
+        });
+
+      axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
+        this.setState({ viewedProductInfo: viewedProductData.data });
+      });
+    }
+  }
+
   LeftButtonHandler() {
     const { productData, currentProduct } = this.state;
     const newIndex = productData.indexOf(currentProduct) - 1;
@@ -90,7 +110,7 @@ class RelatedItemsContainer extends React.Component {
       localStorageInfo,
       currentLocalStorage,
     } = this.state;
-    const { clickTracker } = this.props;
+    const { clickTracker, newProductHandler } = this.props;
     return (
       <div
         id="relatedItemsContainer"
@@ -102,6 +122,7 @@ class RelatedItemsContainer extends React.Component {
           viewedProductInfo={viewedProductInfo}
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
+          newProductHandler={newProductHandler}
         />
         <YourOutfitSlider
           viewedProductInfo={viewedProductInfo}
@@ -111,6 +132,7 @@ class RelatedItemsContainer extends React.Component {
           RightButtonOutfitHandler={this.RightButtonOutfitHandler}
           AddOutfitHandler={this.AddOutfitHandler}
           RemoveOutfitHandler={this.RemoveOutfitHandler}
+          newProductHandler={newProductHandler}
         />
       </div>
     );

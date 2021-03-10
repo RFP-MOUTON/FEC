@@ -9,6 +9,7 @@ const RelatedItemsSlider = ({
   LeftButtonHandler,
   RightButtonHandler,
   viewedProductInfo,
+  newProductHandler,
 }) => {
   return (
     <div className="itemSliderGrid">
@@ -30,6 +31,7 @@ const RelatedItemsSlider = ({
                 key={productId}
                 productId={productId}
                 viewedProductInfo={viewedProductInfo}
+                newProductHandler={newProductHandler}
               />
             );
           })}

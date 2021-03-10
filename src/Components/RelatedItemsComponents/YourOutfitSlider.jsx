@@ -12,6 +12,7 @@ const YourOutfitSlider = ({
   RemoveOutfitHandler,
   LeftButtonOutfitHandler,
   RightButtonOutfitHandler,
+  newProductHandler,
 }) => {
   return (
     <div className="itemSliderGrid">
@@ -38,6 +39,7 @@ const YourOutfitSlider = ({
                 key={productId}
                 productId={productId}
                 RemoveOutfitHandler={RemoveOutfitHandler}
+                newProductHandler={newProductHandler}
               />
             );
           })}
