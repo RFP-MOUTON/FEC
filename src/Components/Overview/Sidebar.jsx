@@ -62,7 +62,7 @@ class Sidebar extends React.Component {
       return <div className="sidebarContainer" />;
     }
     return (
-      <>
+      <div id="overviewTopHalf">
         <div className="sidebarContainer">
           <div id="titles">
             <Ratings ratings={reviews.ratings} />
@@ -76,10 +76,10 @@ class Sidebar extends React.Component {
             <Styles data={styles} liftStyle={this.liftStyle} />
           </div>
         </div>
-        <div id="carosel">
+        <div>
           <Carosel styleID={styleID} images={stylePhotos} />
         </div>
-      </>
+      </div>
     );
   }
 }

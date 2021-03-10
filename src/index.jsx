@@ -20,7 +20,7 @@ class App extends React.Component {
       .get('/products', { params: { count: 10 } })
       .then((response) => {
         this.setState({
-          data: response.data[0],
+          data: response.data[8],
         });
         // this.updateComponent();
       })
