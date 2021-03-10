@@ -51,11 +51,11 @@ class RatingBreakdown extends React.Component {
     const { sortingList } = this.state;
     const { metaData } = this.props;
     const { ratings, recommended } = metaData;
-    const one = Number(ratings['1']);
-    const two = Number(ratings['2']);
-    const three = Number(ratings['3']);
-    const four = Number(ratings['4']);
-    const five = Number(ratings['5']);
+    const one = Number(ratings['1']) || 0;
+    const two = Number(ratings['2']) || 0;
+    const three = Number(ratings['3']) || 0;
+    const four = Number(ratings['4']) || 0;
+    const five = Number(ratings['5']) || 0;
     const totalReviews = one + two + three + four + five;
     const average =
       (one + two * 2 + three * 3 + four * 4 + five * 5) / totalReviews;
