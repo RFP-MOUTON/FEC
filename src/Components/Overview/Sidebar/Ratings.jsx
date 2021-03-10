@@ -5,7 +5,6 @@ function Ratings(props) {
   const { ratings } = props;
   let count = 0;
   let average = 0;
-  console.log(Number.isNaN(parseFloat(ratings)));
   if (ratings !== undefined && Number.isNaN(parseFloat(ratings)) === false) {
     Object.keys(ratings).map((key) => {
       count += parseInt(props.ratings[key], 10);
