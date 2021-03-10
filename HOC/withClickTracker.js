@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 import axios from 'axios';
@@ -19,7 +21,7 @@ const withClickTracker = (WrappedComponent) => {
       };
 
       axios.post('/interactions', clickData).catch((error) => {
-        console.log(error);
+        console.error(error);
       });
     }
 

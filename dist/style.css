@@ -169,12 +169,14 @@
 
 #overallRating {
   grid-row-start: 3;
+  margin: 10px;
 }
 
 #recommend {
   grid-row-start: 3;
   grid-column-start: 2;
   justify-self: right;
+  margin: 10px;
 }
 
 .tileHelp {
@@ -198,6 +200,9 @@
 
 #summary {
   grid-row-start: 5;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
 }
 
 #reviewBody {
@@ -205,28 +210,36 @@
   grid-row-end: 7;
   grid-column-start: 1;
   grid-column-end: 3;
+  justify-self: center;
 }
 
 #reviewPhoto {
   grid-row-start: 8;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
 }
 
 #reviewName {
   grid-row-start: 9;
+  justify-self: center;
 }
 
 #reviewEmail {
   grid-row-start: 9;
+  justify-self: center;
 }
 
 #cancelButton {
   grid-row-start: 10;
   border-radius: 15px;
+  margin: 5px;
 }
 
 #submitButton {
   grid-row-start: 10;
   border-radius: 15px;
+  margin: 5px;
 }
 
 .modal-main {
@@ -256,8 +269,10 @@
   grid-template-columns: 50% 50%;
   position: fixed;
   background:white;
-  width: 50% !important;
+  width: 40% !important;
   height: 80% !important;
+  min-height: 700px;
+  min-width: 600px;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
