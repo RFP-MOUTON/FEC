@@ -3,18 +3,8 @@ import React from 'react';
 class CarouselThumbnail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      displayedPage: 1,
-    };
+    this.state = {};
   }
-
-  // handleUpArrow() {
-
-  // }
-
-  // handleDownArrow() {
-  //   if()
-  // }
 
   render() {
     const { thumbNail, index, currentImageIndex } = this.props;
