@@ -294,9 +294,9 @@ class AddAReviewForm extends React.Component {
                 required
               />
               <div>
-              {50 - body.length <= 0
-                ? 'Minimum reached'
-                : `Minimum required characters left: ${50 - body.length}`}
+                {50 - body.length <= 0
+                  ? 'Minimum reached'
+                  : `Minimum required characters left: ${50 - body.length}`}
               </div>
             </label>
           </div>
@@ -343,9 +343,8 @@ class AddAReviewForm extends React.Component {
           <button type="button" onClick={toggle} id="cancelButton">
             CANCEL
           </button>
-          <button type="submit" onClick={this.handleSubmit} id="submitButton">
-            SUBMIT
-          </button>
+          <input type="submit" value ="SUBMIT" onClick={this.handleSubmit} id="submitButton" />
+
         </form>
       </div>
     );
