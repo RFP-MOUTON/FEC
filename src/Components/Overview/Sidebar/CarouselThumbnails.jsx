@@ -6,6 +6,7 @@ class CarouselThumbnails extends React.Component {
     super(props);
     this.state = {};
   }
+  //  + displayedPage * 7
 
   render() {
     const {
@@ -14,15 +15,32 @@ class CarouselThumbnails extends React.Component {
       downArrow,
       upArrow,
       selectedImage,
+      displayedPage,
     } = this.props;
-
+    if (!hasButtons) {
+      return (
+        <div>
+          {images.map((image) => {
+            console.log(Object.keys(image));
+            return (
+              <CarouselThumbnail
+                thumbNail={image.thumbnail_url}
+                index={images.indexOf(image)}
+                currentImageIndex={selectedImage}
+              />
+            );
+          })}
+        </div>
+      );
+    }
     return (
       <div>
         {images.map((image) => {
+          console.log(Object.keys(image));
           return (
             <CarouselThumbnail
               thumbNail={image.thumbnail_url}
-              index={images.indexOf(image)}
+              index={images.indexOf(image) + displayedPage * 7 - 7}
               currentImageIndex={selectedImage}
             />
           );

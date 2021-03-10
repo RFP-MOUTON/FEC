@@ -6,7 +6,6 @@ import OverviewContainer from './Components/Overview/OverviewContainer.jsx';
 import Reviews from './Components/Reviews/ReviewsContainer.jsx';
 import RelatedItemsContainer from './Components/RelatedItemsComponents/RelatedItemsContainer.jsx';
 
-// <Reviews id={data.id} productName={data.name} />
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +19,7 @@ class App extends React.Component {
       .get('/products', { params: { count: 10 } })
       .then((response) => {
         this.setState({
-          data: response.data[0],
+          data: response.data[8],
         });
         // this.updateComponent();
       })
@@ -39,6 +38,7 @@ class App extends React.Component {
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
         <RelatedItemsContainer viewedProductId={data.id} />
+        <Reviews id={data.id} productName={data.name} />
       </div>
     );
   }
