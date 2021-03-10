@@ -17,7 +17,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get('/products', { params: { count: 1 } })
+      .get('/products', { params: { count: 10 } })
       .then((response) => {
         this.setState({
           data: response.data[0],

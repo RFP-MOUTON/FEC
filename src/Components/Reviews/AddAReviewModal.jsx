@@ -278,6 +278,7 @@ class AddAReviewForm extends React.Component {
                 onChange={this.handleSummary}
                 value={summary}
                 placeholder="Example: Best purchase ever!"
+                type="text"
               />
             </label>
           </div>
@@ -304,6 +305,7 @@ class AddAReviewForm extends React.Component {
                 onChange={this.handlePhoto}
                 value={photo}
                 placeholder="Paste URL"
+                type="text"
               />
             </label>
           </div>
@@ -315,6 +317,7 @@ class AddAReviewForm extends React.Component {
                 value={name}
                 maxLength="60"
                 placeholder="Example: jackson11!"
+                type="text"
                 required
               />
             </label>
@@ -325,11 +328,14 @@ class AddAReviewForm extends React.Component {
               <input
                 onChange={this.handleEmail}
                 value={email}
-                required
                 maxLength="60"
                 placeholder="Example: jacson11@email.com"
+                type="text"
+                required
               />
-              For authentication reasons, you will not be emailed
+              <div id="authenticationMessage">
+                For authentication reasons, you will not be emailed
+              </div>
             </label>
           </div>
           <button type="button" onClick={toggle} id="cancelButton">
