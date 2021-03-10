@@ -14,14 +14,14 @@ import withClickTracker from '../../../HOC/withClickTracker.js';
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
-    const { id } = this.props;
+    //const { id } = this.props;
     this.state = {
       reviews: [],
       currentlyDisplayed: [],
       filterList: new Set(),
       filtered: [],
       metaData: meta,
-      id,
+      id: this.props.id,
     };
     this.handleAddMoreReviews = this.handleAddMoreReviews.bind(this);
     this.handleSort = this.handleSort.bind(this);
@@ -62,9 +62,9 @@ class Reviews extends React.Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { id } = this.state;
-    if (prevState.id !== id) {
+  componentDidUpdate(prevProps) {
+    const { id } = this.props;
+    if (prevProps.id !== id) {
       axios
         .get('/reviews', { params: { product_id: id, count: 100 } })
         .then(({ data }) => {
