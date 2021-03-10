@@ -23,12 +23,15 @@ const OverviewContainer = (props) => {
   return (
     <div
       className="overviewContainer"
-      onclick={(event) => clickTracker(event, 'reviews')}
+      onClick={(event) => {
+        return clickTracker(event, 'overview');
+      }}
     >
-      <div className="topHalf">
+      <div>
         <Sidebar id={id} data={data} />
       </div>
     </div>
   );
 };
 export default withClickTracker(Sidebar);
+// withClickTracker(sidebar)

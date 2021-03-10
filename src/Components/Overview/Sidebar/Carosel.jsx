@@ -1,5 +1,5 @@
 import React from 'react';
-import CarouselThumbnail from './CarouselThumbnail.jsx';
+import CarouselThumbnails from './CarouselThumbnails.jsx';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 class Carosel extends React.Component {
@@ -10,11 +10,14 @@ class Carosel extends React.Component {
     };
     this.rightArrowClick = this.rightArrowClick.bind(this);
     this.leftArrowClick = this.leftArrowClick.bind(this);
+    this.handleDownArrow = this.handleDownArrow.bind(this);
+    this.handleUpArrow = this.handleUpArrow.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       selectedImage: 0,
+      displayedPage: 1,
     });
   }
 
@@ -33,6 +36,49 @@ class Carosel extends React.Component {
       }
     }
     // const styleString = styleID.toString();
+  }
+
+  // handleSidebarClick() {}
+
+  handleUpArrow() {
+    const { displayedPage } = this.state;
+    const { images } = this.props;
+    if (images.length - displayedPage * 7 < 0) {
+      this.setState({
+        displayedPage: 1,
+      });
+    } else if (images.length - displayedPage * 7 > 0) {
+      this.setState({
+        displayedPage: displayedPage + 1,
+      });
+    }
+  }
+
+  handleDownArrow() {
+    const { displayedPage } = this.state;
+    const { images } = this.props;
+    // if (images.length - displayedPage * 7 < 0) {
+    //   this.setState({
+    //     displayedPage: 1,
+    //   });
+    // } else if (images.length - displayedPage * 7 > 0) {
+    //   this.setState({
+    //     displayedPage: displayedPage + 1,
+    //   });
+    // }
+
+    if (displayedPage - 1 <= 0) {
+      const findPageOverflow = images.length / 7;
+      if (findPageOverflow - Math.floor(findPageOverflow) !== 0) {
+        this.setState({
+          displayedPage: Math.floor(findPageOverflow) + 1,
+        });
+      } else {
+        this.setState({
+          displayedPage: Math.floor(findPageOverflow),
+        });
+      }
+    }
   }
 
   rightArrowClick() {
@@ -83,38 +129,43 @@ class Carosel extends React.Component {
 
   render() {
     const { images, styleID } = this.props;
-    const { selectedImage } = this.state;
-    let thumbnailIndex = 0;
+    const { selectedImage, displayedPage } = this.state;
+    let selectedImages;
+    let hasPages = false;
     if (images === '' || images === undefined) {
       return <div />;
     }
-
+    if (images.length > 7) {
+      hasPages = true;
+      selectedImages = images.slice(
+        displayedPage * 7 - 7,
+        displayedPage * 7 - 1
+      );
+    }
     return (
-      <div className="imageCarousel">
-        <FaArrowAltCircleLeft
-          className="left-arrow"
-          onClick={this.leftArrowClick}
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onClick={this.rightArrowClick}
-        />
-        <img
-          src={images[selectedImage].url}
-          alt="MainImage"
-          className="carouselImage"
-        />
+      <div id="carousel">
+        <div className="carouselImage">
+          <div>
+            <FaArrowAltCircleLeft
+              className="left-arrow"
+              onClick={this.leftArrowClick}
+            />
+            <FaArrowAltCircleRight
+              className="right-arrow"
+              onClick={this.rightArrowClick}
+            />
+            <img src={images[selectedImage].url} alt="MainImage" />
+          </div>
+        </div>
         <div className="carouselThumbnails">
-          {images.map((image) => {
-            thumbnailIndex += 1;
-            return (
-              <CarouselThumbnail
-                thumbNail={image.thumbnail_url}
-                index={thumbnailIndex - 1}
-                currentImageIndex={selectedImage}
-              />
-            );
-          })}
+          <CarouselThumbnails
+            images={selectedImages || images}
+            displayedPage={displayedPage}
+            hasButtons={hasPages}
+            upArrow={this.handleUpArrow}
+            downArrow={this.handleDownArrow}
+            selectedImage={selectedImage}
+          />
         </div>
       </div>
     );

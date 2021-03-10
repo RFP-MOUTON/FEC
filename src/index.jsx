@@ -20,7 +20,7 @@ class App extends React.Component {
       .get('/products', { params: { count: 10 } })
       .then((response) => {
         this.setState({
-          data: response.data[0],
+          data: response.data[8],
         });
         // this.updateComponent();
       })
@@ -42,11 +42,16 @@ class App extends React.Component {
     return (
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
+<<<<<<< HEAD
         <RelatedItemsContainer
           viewedProductId={id}
           newProductHandler={this.newProductHandler}
         />
         <Reviews id={id} productName={name} />
+=======
+        <RelatedItemsContainer viewedProductId={data.id} />
+        <Reviews id={data.id} productName={data.name} />
+>>>>>>> nick_MergeChanges
       </div>
     );
   }
