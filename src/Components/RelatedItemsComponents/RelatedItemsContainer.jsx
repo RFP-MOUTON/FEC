@@ -6,6 +6,8 @@ import data from './data.js';
 
 import '../../css/RelatedItems.scss';
 
+import withClickTracker from '../../../HOC/withClickTracker.js';
+
 const localStorageData = Object.values(localStorage);
 
 class RelatedItemsContainer extends React.Component {
@@ -88,8 +90,12 @@ class RelatedItemsContainer extends React.Component {
       localStorageInfo,
       currentLocalStorage,
     } = this.state;
+    const { clickTracker } = this.props;
     return (
-      <div id="relatedItemsContainer">
+      <div
+        id="relatedItemsContainer"
+        onClick={(event) => clickTracker(event, 'relatedItems')}
+      >
         <RelatedItemsSlider
           productData={productData}
           currentProduct={currentProduct}
@@ -111,4 +117,4 @@ class RelatedItemsContainer extends React.Component {
   }
 }
 
-export default RelatedItemsContainer;
+export default withClickTracker(RelatedItemsContainer);

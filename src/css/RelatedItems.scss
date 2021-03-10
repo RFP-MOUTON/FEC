@@ -3,12 +3,21 @@ img {
   max-height: 100%;
 }
 
+//Container
+#relatedItemsContainer {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 10px;
+  margin: 25px 208px;
+}
+
 //Slider Related
 
 .itemSliderGrid {
   display: grid;
   grid-template-columns: 25px 800px 25px;
-  grid-template-rows: 25px 282px;
+  grid-template-rows: 25px auto;
 }
 
 .outfitSliderWrapper {
@@ -19,6 +28,16 @@ img {
     flex: 1;
     min-width: 200px;
   }
+}
+
+.slideArrowLeft {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.slideArrowRight {
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 
 .cardSliderWrapper {
@@ -34,21 +53,24 @@ img {
 .outfitSlider {
   position: relative;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 0;
   overflow: hidden;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  align-self: start;
 }
 
 .cardSlider {
-  position: relative;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 0;
   overflow: hidden;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  justify-self: start;
 }
 
-.slideArrowLeft {
-}
-
-.slideArrowRight {
+.cardSliderTitle {
+  grid-column: 1/3;
 }
 
 //Card Related

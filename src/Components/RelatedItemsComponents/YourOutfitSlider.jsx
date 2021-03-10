@@ -14,8 +14,8 @@ const YourOutfitSlider = ({
   RightButtonOutfitHandler,
 }) => {
   return (
-    <div>
-      Your Outfit
+    <div className="itemSliderGrid">
+      <div className="cardSliderTitle">Your Outfit</div>
       <ArrowLeft LeftButtonHandler={LeftButtonOutfitHandler} />
       <ArrowRight RightButtonHandler={RightButtonOutfitHandler} />
       <div className="outfitSlider">
