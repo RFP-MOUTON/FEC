@@ -12,10 +12,11 @@ const YourOutfitSlider = ({
   RemoveOutfitHandler,
   LeftButtonOutfitHandler,
   RightButtonOutfitHandler,
+  newProductHandler,
 }) => {
   return (
-    <div>
-      Your Outfit
+    <div className="itemSliderGrid">
+      <div className="cardSliderTitle">Your Outfit</div>
       <ArrowLeft LeftButtonHandler={LeftButtonOutfitHandler} />
       <ArrowRight RightButtonHandler={RightButtonOutfitHandler} />
       <div className="outfitSlider">
@@ -38,6 +39,7 @@ const YourOutfitSlider = ({
                 key={productId}
                 productId={productId}
                 RemoveOutfitHandler={RemoveOutfitHandler}
+                newProductHandler={newProductHandler}
               />
             );
           })}

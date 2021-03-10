@@ -6,6 +6,8 @@ import data from './data.js';
 
 import '../../css/RelatedItems.scss';
 
+import withClickTracker from '../../../HOC/withClickTracker.js';
+
 const localStorageData = Object.values(localStorage);
 
 class RelatedItemsContainer extends React.Component {
@@ -42,6 +44,26 @@ class RelatedItemsContainer extends React.Component {
     axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
       this.setState({ viewedProductInfo: viewedProductData.data });
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    const { viewedProductId } = this.props;
+    if (prevProps.viewedProductId !== viewedProductId) {
+      const relatedItemsRoute = `/products/${viewedProductId}/related`;
+      axios
+        .get(relatedItemsRoute)
+        .then((relatedItemsArray) => {
+          this.setState({ productData: relatedItemsArray.data });
+          this.setState({ currentProduct: relatedItemsArray.data[0] });
+        })
+        .catch((error) => {
+          throw error;
+        });
+
+      axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
+        this.setState({ viewedProductInfo: viewedProductData.data });
+      });
+    }
   }
 
   LeftButtonHandler() {
@@ -88,14 +110,19 @@ class RelatedItemsContainer extends React.Component {
       localStorageInfo,
       currentLocalStorage,
     } = this.state;
+    const { clickTracker, newProductHandler } = this.props;
     return (
-      <div id="relatedItemsContainer">
+      <div
+        id="relatedItemsContainer"
+        onClick={(event) => clickTracker(event, 'relatedItems')}
+      >
         <RelatedItemsSlider
           productData={productData}
           currentProduct={currentProduct}
           viewedProductInfo={viewedProductInfo}
           LeftButtonHandler={this.LeftButtonHandler}
           RightButtonHandler={this.RightButtonHandler}
+          newProductHandler={newProductHandler}
         />
         <YourOutfitSlider
           viewedProductInfo={viewedProductInfo}
@@ -105,10 +132,11 @@ class RelatedItemsContainer extends React.Component {
           RightButtonOutfitHandler={this.RightButtonOutfitHandler}
           AddOutfitHandler={this.AddOutfitHandler}
           RemoveOutfitHandler={this.RemoveOutfitHandler}
+          newProductHandler={newProductHandler}
         />
       </div>
     );
   }
 }
 
-export default RelatedItemsContainer;
+export default withClickTracker(RelatedItemsContainer);

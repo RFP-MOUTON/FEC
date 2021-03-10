@@ -46,18 +46,28 @@ class OutfitCard extends React.Component {
   }
 
   render() {
-    const { RemoveOutfitHandler } = this.props;
+    const { RemoveOutfitHandler, newProductHandler } = this.props;
     const { currentProductInfo, stylesInfo, reviewsInfo } = this.state;
     return (
       <div className="productCard">
-        <div className="portraitImg">
+        <div className="productImg">
           <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
         </div>
         <div className="productCategory">{currentProductInfo.category}</div>
-        <div className="productName">{currentProductInfo.name}</div>
+        <div
+          className="productName"
+          onClick={() => {
+            newProductHandler(currentProductInfo);
+          }}
+        >
+          {currentProductInfo.name}
+        </div>
         <div className="productPrice">${stylesInfo.original_price}</div>
-        <ProductRating reviewsInfo={reviewsInfo} />
+        <div className="productRating">
+          <ProductRating reviewsInfo={reviewsInfo} />
+        </div>
         <button
+          className="actionButton"
           type="button"
           onClick={() => {
             return RemoveOutfitHandler(currentProductInfo.name);

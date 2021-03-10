@@ -54,7 +54,7 @@ class ProductCard extends React.Component {
   }
 
   render() {
-    const { viewedProductInfo } = this.props;
+    const { viewedProductInfo, newProductHandler } = this.props;
     const {
       isModalOpen,
       currentProductInfo,
@@ -63,14 +63,27 @@ class ProductCard extends React.Component {
     } = this.state;
     return (
       <div className="productCard">
-        <div className="portraitImg">
+        <div className="productImg">
           <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
         </div>
         <div className="productCategory">{currentProductInfo.category}</div>
-        <div className="productName">{currentProductInfo.name}</div>
+        <div
+          className="productName"
+          onClick={() => {
+            newProductHandler(currentProductInfo);
+          }}
+        >
+          {currentProductInfo.name}
+        </div>
         <div className="productPrice">${stylesInfo.original_price}</div>
-        <ProductRating reviewsInfo={reviewsInfo} />
-        <button type="button" onClick={this.ToggleModalHandler}>
+        <div className="productRating">
+          <ProductRating reviewsInfo={reviewsInfo} />
+        </div>
+        <button
+          className="actionButton"
+          type="button"
+          onClick={this.ToggleModalHandler}
+        >
           ✭
         </button>
         <ComparisonModal

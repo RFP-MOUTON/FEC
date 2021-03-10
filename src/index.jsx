@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       data: '',
     };
+    this.newProductHandler = this.newProductHandler.bind(this);
   }
 
   componentDidMount() {
@@ -28,17 +29,24 @@ class App extends React.Component {
       });
   }
 
+  newProductHandler(productData) {
+    this.setState({ data: productData });
+  }
+
   render() {
     const { data } = this.state;
-    // if (state = '') div
+    const { id, name } = data;
     if (data === '') {
       return <div id="mainContainer">Loading</div>;
     }
     return (
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
-        <RelatedItemsContainer viewedProductId={data.id} />
-        <Reviews id={data.id} productName={data.name} />
+        <RelatedItemsContainer
+          viewedProductId={id}
+          newProductHandler={this.newProductHandler}
+        />
+        <Reviews id={id} productName={name} />
       </div>
     );
   }
