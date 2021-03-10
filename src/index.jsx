@@ -42,16 +42,11 @@ class App extends React.Component {
     return (
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
-<<<<<<< HEAD
         <RelatedItemsContainer
-          viewedProductId={id}
+          viewedProductId={data.id}
           newProductHandler={this.newProductHandler}
         />
-        <Reviews id={id} productName={name} />
-=======
-        <RelatedItemsContainer viewedProductId={data.id} />
         <Reviews id={data.id} productName={data.name} />
->>>>>>> nick_MergeChanges
       </div>
     );
   }

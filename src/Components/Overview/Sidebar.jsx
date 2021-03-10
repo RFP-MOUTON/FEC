@@ -26,6 +26,14 @@ class Sidebar extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const { id } = this.props;
+    if (prevProps.id !== id) {
+      this.getMeta(id);
+      this.getStyles(id);
+    }
+  }
+
   getMeta(id) {
     axios
       .get('/reviews/meta', { params: { product_id: id } })

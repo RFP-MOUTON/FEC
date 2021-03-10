@@ -27,9 +27,7 @@ const OverviewContainer = (props) => {
         return clickTracker(event, 'overview');
       }}
     >
-      <div>
-        <Sidebar id={id} data={data} />
-      </div>
+      <Sidebar id={id} data={data} />
     </div>
   );
 };
