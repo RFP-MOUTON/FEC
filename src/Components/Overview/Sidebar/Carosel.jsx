@@ -38,6 +38,8 @@ class Carosel extends React.Component {
     // const styleString = styleID.toString();
   }
 
+  // handleSidebarClick() {}
+
   handleUpArrow() {
     const { displayedPage } = this.state;
     const { images } = this.props;
@@ -128,7 +130,6 @@ class Carosel extends React.Component {
   render() {
     const { images, styleID } = this.props;
     const { selectedImage, displayedPage } = this.state;
-    let thumbnailIndex = 0;
     let selectedImages;
     let hasPages = false;
     if (images === '' || images === undefined) {
@@ -140,24 +141,22 @@ class Carosel extends React.Component {
         displayedPage * 7 - 7,
         displayedPage * 7 - 1
       );
-    } else {
-      selectedImages = images;
     }
     return (
-      <div className="imageCarousel">
-        <FaArrowAltCircleLeft
-          className="left-arrow"
-          onClick={this.leftArrowClick}
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onClick={this.rightArrowClick}
-        />
-        <img
-          src={images[selectedImage].url}
-          alt="MainImage"
-          className="carouselImage"
-        />
+      <div id="carousel">
+        <div className="carouselImage">
+          <div>
+            <FaArrowAltCircleLeft
+              className="left-arrow"
+              onClick={this.leftArrowClick}
+            />
+            <FaArrowAltCircleRight
+              className="right-arrow"
+              onClick={this.rightArrowClick}
+            />
+            <img src={images[selectedImage].url} alt="MainImage" />
+          </div>
+        </div>
         <div className="carouselThumbnails">
           <CarouselThumbnails
             images={selectedImages || images}
