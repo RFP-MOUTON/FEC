@@ -220,19 +220,41 @@ img {
 
 //Modal Related
 .comparisonModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
   grid-gap: 1px;
   justify-items: center;
   align-items: center;
   text-align: center;
+  border: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  background-color: white;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  padding: 16px 24px;
+  box-shadow: 0 0 14px 0 rgb(15 17 17 / 50%);
+}
+
+.colTitle {
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .closeModalButton {
   grid-column: 2/3;
   grid-row-start: 3;
   border-radius: 12px;
+  background: #e7e9ec;
+  border-radius: 3px;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .currentItemsFeatures {
