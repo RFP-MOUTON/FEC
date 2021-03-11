@@ -1,6 +1,10 @@
 import React from 'react';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import CarouselThumbnail from './CarouselThumbnail.jsx';
-
+/*
+    <FAChevronUp className="up-arrow" onClick={upArrow} />
+        <FaChevronDown className="down-arrow" onClick={downArrow} />
+*/
 class CarouselThumbnails extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +18,7 @@ class CarouselThumbnails extends React.Component {
       hasButtons,
       downArrow,
       upArrow,
+      thumbnailClick,
       selectedImage,
       displayedPage,
     } = this.props;
@@ -21,12 +26,12 @@ class CarouselThumbnails extends React.Component {
       return (
         <div>
           {images.map((image) => {
-            console.log(Object.keys(image));
             return (
               <CarouselThumbnail
                 thumbNail={image.thumbnail_url}
                 index={images.indexOf(image)}
                 currentImageIndex={selectedImage}
+                thumbnailClick={thumbnailClick}
               />
             );
           })}
@@ -35,13 +40,15 @@ class CarouselThumbnails extends React.Component {
     }
     return (
       <div>
+        <FaChevronUp className="up-arrow" onClick={upArrow} />
+        <FaChevronDown className="down-arrow" onClick={downArrow} />
         {images.map((image) => {
-          console.log(Object.keys(image));
           return (
             <CarouselThumbnail
               thumbNail={image.thumbnail_url}
               index={images.indexOf(image) + displayedPage * 7 - 7}
               currentImageIndex={selectedImage}
+              thumbnailClick={thumbnailClick}
             />
           );
         })}
