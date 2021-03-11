@@ -72,7 +72,7 @@ class Sidebar extends React.Component {
     return (
       <div id="overviewTopHalf">
         <div className="sidebarContainer">
-          <div id="titles">
+          <div className="titles">
             <Ratings ratings={reviews.ratings} />
             <div id="category" className="text">
               {data.category}

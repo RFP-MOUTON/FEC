@@ -14,7 +14,7 @@ class CarouselThumbnail extends React.Component {
 */
 
   render() {
-    const { thumbNail, index, currentImageIndex } = this.props;
+    const { thumbNail, index, currentImageIndex, thumbnailClick } = this.props;
     if (index === currentImageIndex) {
       return (
         <div className="carouselSidebarThumbnail">
@@ -29,7 +29,12 @@ class CarouselThumbnail extends React.Component {
     }
     return (
       <div className="carouselSidebarThumbnail">
-        <img src={thumbNail} alt={index} className="carouselThumbnail" />
+        <img
+          src={thumbNail}
+          alt={index}
+          className="carouselThumbnail"
+          onClick={thumbnailClick}
+        />
       </div>
     );
   }

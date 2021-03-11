@@ -1,17 +1,20 @@
 import React from 'react';
 import CarouselThumbnails from './CarouselThumbnails.jsx';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 class Carosel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedImage: '',
+      styleHistory: {},
     };
     this.rightArrowClick = this.rightArrowClick.bind(this);
     this.leftArrowClick = this.leftArrowClick.bind(this);
     this.handleDownArrow = this.handleDownArrow.bind(this);
     this.handleUpArrow = this.handleUpArrow.bind(this);
+    this.handleThumbnailClick = this.handleThumbnailClick.bind(this);
+    this.updatePage = this.updatePage.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +40,6 @@ class Carosel extends React.Component {
     }
     // const styleString = styleID.toString();
   }
-
   // handleSidebarClick() {}
 
   handleUpArrow() {
@@ -57,15 +59,6 @@ class Carosel extends React.Component {
   handleDownArrow() {
     const { displayedPage } = this.state;
     const { images } = this.props;
-    // if (images.length - displayedPage * 7 < 0) {
-    //   this.setState({
-    //     displayedPage: 1,
-    //   });
-    // } else if (images.length - displayedPage * 7 > 0) {
-    //   this.setState({
-    //     displayedPage: displayedPage + 1,
-    //   });
-    // }
 
     if (displayedPage - 1 <= 0) {
       const findPageOverflow = images.length / 7;
@@ -81,51 +74,87 @@ class Carosel extends React.Component {
     }
   }
 
-  rightArrowClick() {
-    const { selectedImage } = this.state;
-    const { images, styleID } = this.props;
-    if (images.length - 1 <= selectedImage) {
+  handleThumbnailClick(event) {
+    const { selectedImage, styleHistory } = this.state;
+    const { styleID } = this.props;
+    if (event.target.alt !== selectedImage) {
       this.setState({
-        selectedImage: 0,
+        selectedImage: parseInt(event.target.alt, 10),
         styleHistory: {
-          [styleID]: 0,
-        },
-      });
-    } else {
-      this.setState({
-        selectedImage: selectedImage + 1,
-        styleHistory: {
-          [styleID]: selectedImage + 1,
+          ...styleHistory,
+          [styleID]: parseInt(event.target.alt, 10),
         },
       });
     }
   }
 
-  leftArrowClick() {
-    const { selectedImage } = this.state;
+  rightArrowClick() {
+    const { selectedImage, styleHistory } = this.state;
     const { images, styleID } = this.props;
-    if (selectedImage >= 0) {
+    let newIndex;
+    if (images.length - 1 <= selectedImage) {
+      newIndex = 0;
       this.setState({
-        selectedImage: images.length - 1,
+        selectedImage: 0,
         styleHistory: {
+          ...styleHistory,
           [styleID]: 0,
         },
       });
     } else {
+      newIndex = selectedImage + 1;
+      this.setState({
+        selectedImage: selectedImage + 1,
+        styleHistory: {
+          ...styleHistory,
+          [styleID]: selectedImage + 1,
+        },
+      });
+    }
+    this.updatePage(newIndex);
+  }
+
+  updatePage(newIndex) {
+    const { images } = this.props;
+    const { displayedPage } = this.state;
+    console.log(newIndex);
+    if (images.length > 7) {
+      if (
+        displayedPage * 7 - 1 < newIndex ||
+        displayedPage * 7 - 7 > newIndex
+      ) {
+        this.setState({
+          displayedPage: Math.floor(newIndex / 7) + 1,
+        });
+      }
+    }
+  }
+
+  leftArrowClick() {
+    const { selectedImage, styleHistory } = this.state;
+    const { images, styleID } = this.props;
+    let newIndex;
+    if (selectedImage <= 0) {
+      newIndex = images.length - 1;
+      this.setState({
+        selectedImage: images.length - 1,
+        styleHistory: {
+          ...styleHistory,
+          [styleID]: 0,
+        },
+      });
+    } else {
+      newIndex = selectedImage - 1;
       this.setState({
         selectedImage: selectedImage - 1,
         styleHistory: {
+          ...styleHistory,
           [styleID]: selectedImage - 1,
         },
       });
     }
+    this.updatePage(newIndex);
   }
-  /*
-    Mapping over state:
-    {images.map((image, index) => {
-      return <img src={image.url} alt={index} className="caroselImage" />;
-    })}
-  */
 
   render() {
     const { images, styleID } = this.props;
@@ -137,20 +166,14 @@ class Carosel extends React.Component {
     }
     if (images.length > 7) {
       hasPages = true;
-      selectedImages = images.slice(
-        displayedPage * 7 - 7,
-        displayedPage * 7 - 1
-      );
+      selectedImages = images.slice(displayedPage * 7 - 7, displayedPage * 7);
     }
     return (
       <div id="carousel">
         <div className="carouselImage">
           <div>
-            <FaArrowAltCircleLeft
-              className="left-arrow"
-              onClick={this.leftArrowClick}
-            />
-            <FaArrowAltCircleRight
+            <FaArrowLeft className="left-arrow" onClick={this.leftArrowClick} />
+            <FaArrowRight
               className="right-arrow"
               onClick={this.rightArrowClick}
             />
@@ -164,6 +187,7 @@ class Carosel extends React.Component {
             hasButtons={hasPages}
             upArrow={this.handleUpArrow}
             downArrow={this.handleDownArrow}
+            thumbnailClick={this.handleThumbnailClick}
             selectedImage={selectedImage}
           />
         </div>

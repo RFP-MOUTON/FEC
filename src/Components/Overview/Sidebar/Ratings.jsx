@@ -5,22 +5,33 @@ function Ratings(props) {
   const { ratings } = props;
   let count = 0;
   let average = 0;
-  if (ratings !== undefined && Number.isNaN(parseFloat(ratings)) === false) {
-    Object.keys(ratings).map((key) => {
-      count += parseInt(props.ratings[key], 10);
-      average += props.ratings[key] * key;
+  let ratingsObj;
+  if (ratings !== undefined && Number.isNaN(ratings) === false) {
+    if (Object.keys(ratings).length < 5) {
+      const myObj = { 1: '0', 2: '0', 3: '0', 4: '0', 5: '0' };
+      ratingsObj = { ...myObj, ...ratings };
+    } else {
+      ratingsObj = ratings;
+    }
+    console.log(ratingsObj);
+    Object.keys(ratingsObj).map((key) => {
+      console.log(key);
+      count += parseInt(ratingsObj[key], 10);
+      average += ratingsObj[key] * key;
       return 'Success';
     });
     average /= count;
   }
+  console.log(average);
 
   if (ratings === undefined || Number.isNaN(ratings) === true) {
     return <div className="overviewStars" />;
   }
   return (
     <div className="overviewStars">
-      {Object.keys(ratings).map((key) => {
-        if (key < average) {
+      {Object.keys(ratingsObj).map((key) => {
+        console.log('creating Icon' + key);
+        if (key <= average) {
           return <StarIcon fill="100%" id={key} key={key} />;
         }
         if (key - average > 0 && key - average < 1) {
