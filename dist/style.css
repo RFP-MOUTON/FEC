@@ -253,14 +253,23 @@ grid-column-start: 2;
 
 #cancelButton {
   grid-row-start: 10;
-  border-radius: 15px;
   margin: 5px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid grey;
 }
 
 #submitButton {
   grid-row-start: 10;
-  border-radius: 15px;
   margin: 5px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid grey;
+}
+
+#cancelButton:hover, #submitButton:hover {
+  cursor: pointer;
+  background: rgba(0, 128, 0, 0.096);
 }
 
 .modal-main {
