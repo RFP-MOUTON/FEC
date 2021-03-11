@@ -43,7 +43,7 @@ class TileHelpfulReport extends React.Component {
             </a>{' '}
             ({helpfulness}) |{' '}
             <a
-              className="helpfulLink"
+              className="reportLink"
               onClick={() => {
                 return report(reviewId, () => {
                   this.handleReport();

@@ -61,42 +61,44 @@ class RatingBreakdown extends React.Component {
       (one + two * 2 + three * 3 + four * 4 + five * 5) / totalReviews;
 
     return (
-      <div id="ratingBreakdown">
-        <p>RATINGS &amp; REVIEWS</p>
-        <Rating average={average} totalReviews={totalReviews} />
-        <SortingList sortingList={sortingList} />
-        <Recommended recommended={recommended} totalReviews={totalReviews} />
-        <StarBar
-          num="1"
-          stars={one}
-          total={totalReviews}
-          handleClick={this.handleSortClick}
-        />
-        <StarBar
-          num="2"
-          stars={two}
-          total={totalReviews}
-          handleClick={this.handleSortClick}
-        />
-        <StarBar
-          num="3"
-          stars={three}
-          total={totalReviews}
-          handleClick={this.handleSortClick}
-        />
-        <StarBar
-          num="4"
-          stars={four}
-          total={totalReviews}
-          handleClick={this.handleSortClick}
-        />
-        <StarBar
-          num="5"
-          stars={five}
-          total={totalReviews}
-          handleClick={this.handleSortClick}
-        />
-      </div>
+      <>
+        <p id="ratingTitle">RATINGS &amp; REVIEWS</p>
+        <div id="ratingBreakdown">
+          <Rating average={average} totalReviews={totalReviews} />
+          <SortingList sortingList={sortingList} />
+          <Recommended recommended={recommended} totalReviews={totalReviews} />
+          <StarBar
+            num="1"
+            stars={one}
+            total={totalReviews}
+            handleClick={this.handleSortClick}
+          />
+          <StarBar
+            num="2"
+            stars={two}
+            total={totalReviews}
+            handleClick={this.handleSortClick}
+          />
+          <StarBar
+            num="3"
+            stars={three}
+            total={totalReviews}
+            handleClick={this.handleSortClick}
+          />
+          <StarBar
+            num="4"
+            stars={four}
+            total={totalReviews}
+            handleClick={this.handleSortClick}
+          />
+          <StarBar
+            num="5"
+            stars={five}
+            total={totalReviews}
+            handleClick={this.handleSortClick}
+          />
+        </div>
+      </>
     );
   }
 }

@@ -199,7 +199,7 @@ class AddAReviewForm extends React.Component {
           <div id="formLine1">Write Your Review</div>
           <div id="formLine2">For the {productName}</div>
           <div id="overallRating">
-            <div className="overallMessage">Overall rating (mandatory)</div>
+            <div className="overallMessage">Overall rating*</div>
 
             <div
               className="formStar"
@@ -235,7 +235,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="recommend">
             <label>
-              Do you recommend this product? (mandatory)
+              Do you recommend this product?*
               <div onChange={this.handleRecommend}>
                 <label>
                   Yes
@@ -250,7 +250,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="characteristics">
             <label>
-              Characteristics (mandatory)
+              Characteristics*
               <div>
                 <SizeComponent handleChange={this.handleSize} meta={Size} />
                 <WidthComponent handleChange={this.handleWidth} meta={Width} />
@@ -272,7 +272,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="summary">
             <label>
-              Review summary
+              <div>Review summary</div>
               <input
                 maxLength="60"
                 onChange={this.handleSummary}
@@ -284,7 +284,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="reviewBody">
             <label>
-              Reviewbody (mandatory)
+              <div>Reviewbody*</div>
               <textarea
                 maxLength="1000"
                 onChange={this.handleBody}
@@ -293,14 +293,16 @@ class AddAReviewForm extends React.Component {
                 minLength="50"
                 required
               />
-              {50 - body.length <= 0
-                ? 'Minimum reached'
-                : `Minimum required characters left: ${50 - body.length}`}
+              <div>
+                {50 - body.length <= 0
+                  ? 'Minimum reached'
+                  : `Minimum required characters left: ${50 - body.length}`}
+              </div>
             </label>
           </div>
           <div id="reviewPhoto">
             <label>
-              Include a photo
+              <div>Include a photo</div>
               <input
                 onChange={this.handlePhoto}
                 value={photo}
@@ -311,7 +313,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="reviewName">
             <label>
-              Name to display (mandatory)
+              <div>Name to display*</div>
               <input
                 onChange={this.handleName}
                 value={name}
@@ -324,7 +326,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="reviewEmail">
             <label>
-              Your email (mandatory)
+              <div>Your email*</div>
               <input
                 onChange={this.handleEmail}
                 value={email}
@@ -341,9 +343,8 @@ class AddAReviewForm extends React.Component {
           <button type="button" onClick={toggle} id="cancelButton">
             CANCEL
           </button>
-          <button type="submit" onClick={this.handleSubmit} id="submitButton">
-            SUBMIT
-          </button>
+          <input type="submit" value ="SUBMIT" onClick={this.handleSubmit} id="submitButton" />
+
         </form>
       </div>
     );

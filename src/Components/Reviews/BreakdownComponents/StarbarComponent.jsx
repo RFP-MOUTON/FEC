@@ -10,7 +10,7 @@ const StarBar = ({ num, stars, total, handleClick }) => {
         return handleClick(num);
       }}
     >
-      <div className="starNums">{num} stars</div>
+      <div className="starNums">{num} star</div>
       <div className="progress">
         <div className="progress-value" style={{ width: newWidth }} />
       </div>
