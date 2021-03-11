@@ -17,10 +17,11 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get('/products', { params: { count: 10 } })
+      .get(`/products/17072`, { params: { count: 1 } })
       .then((response) => {
+        console.log(response.data);
         this.setState({
-          data: response.data[8],
+          data: response.data,
         });
         // this.updateComponent();
       })
@@ -43,7 +44,7 @@ class App extends React.Component {
       <div id="mainContainer">
         <OverviewContainer id={data.id} data={data} />
         <RelatedItemsContainer
-          viewedProductId={id}
+          viewedProductId={data.id}
           newProductHandler={this.newProductHandler}
         />
         <Reviews id={id} productName={name} />
