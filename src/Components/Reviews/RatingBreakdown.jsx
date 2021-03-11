@@ -61,8 +61,9 @@ class RatingBreakdown extends React.Component {
       (one + two * 2 + three * 3 + four * 4 + five * 5) / totalReviews;
 
     return (
+      <>
+      <p id="ratingTitle">RATINGS &amp; REVIEWS</p>
       <div id="ratingBreakdown">
-        <p>RATINGS &amp; REVIEWS</p>
         <Rating average={average} totalReviews={totalReviews} />
         <SortingList sortingList={sortingList} />
         <Recommended recommended={recommended} totalReviews={totalReviews} />
@@ -97,6 +98,7 @@ class RatingBreakdown extends React.Component {
           handleClick={this.handleSortClick}
         />
       </div>
+      </>
     );
   }
 }

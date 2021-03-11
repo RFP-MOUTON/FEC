@@ -1,3 +1,8 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
 #mainContainer {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -26,12 +31,17 @@
 
 }
 
+#ratingTitle {
+margin: 5px;
+grid-column-start: 2;
+}
+
 #factors {
   margin: auto;
   position: relative;
   grid-column-start: 2;
   grid-row-start: 3;
-  right: 20px;
+  right: 24px;
 
 }
 
@@ -51,6 +61,9 @@
   height: 50px;
   width: 150px;
   right: 80px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid grey;
 }
 
 #AddAReviewButton {
@@ -61,7 +74,16 @@
   height: 50px;
   width: 150px;
   left: 80px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid grey;
 }
+
+#AddAReviewButton:hover, #moreReviewsButton:hover, select:hover {
+  background: rgba(0, 128, 0, 0.096);
+}
+
+
 
 #sortingSelector {
   grid-column-start: 3;
@@ -76,7 +98,7 @@
   border-bottom: 1px solid black;
   display: grid;
   grid-template-rows: auto auto auto auto auto auto auto;
-  grid-template-columns: 477px auto;
+  grid-template-columns: 400px auto;
 }
 
 .tileStars {
@@ -86,7 +108,7 @@
 
 .tileUser {
   grid-row-start: 1;
-  justify-content: right;
+  justify-self: right;
 }
 
 .tileSummary {
@@ -309,6 +331,9 @@
   height: 15px;
   width: 250px;
   margin: 0px 4px;
+  box-shadow: inset 0 0 0 1px rgb(182, 182, 182);
+  border-radius: 3px;
+  border: 1px solid rgba(128, 128, 128, 0);
 }
 
 .factor {
@@ -320,25 +345,20 @@
   display: flex;
   height: 15px;
   width: 100%;
+  margin: 5px 0px
 }
 
 .progress-value {
-  /* animation: load 3s normal forwards; */
   background: green;
   height: 15px;
-  /* width: 30%; */
+  border-radius: 3px;
 }
 .factor-value {
   position: absolute;
 }
 
 .barContainer {
-  margin: 10px;
-}
-
-.barContainer:hover {
-  background-color: rgb(204, 202, 202);
-  cursor: pointer;
+  margin: 10px 10px 10px 0px;
 }
 
 .barContainer div {
@@ -349,6 +369,16 @@
   margin: 15px;
 }
 
+.starNums {
+  position: relative;
+  bottom: 3px;
+}
+
+.starsTotal {
+  position: relative;
+  bottom: 2px;
+}
+
 .formStar {
   background: rgb(202, 202, 202);
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
@@ -357,21 +387,30 @@
   width: 40px;
 }
 .recommendPercent {
-
+  margin-top: 7px;
 }
 
-.starNums, .starsTotal {
-
+.barContainer:hover .starNums, .barContainer:hover .starsTotal {
+  text-decoration: underline;
+  color: green;
 }
 
-@keyframes load {
-  0% { width: 0; }
-  100% { width: 68%; }
+.barContainer:hover .progress {
+  border: 1px solid green;
+  background: rgba(0, 128, 0, 0.26);
 }
 
-.helpfulLink:hover {
+.barContainer:hover {
   cursor: pointer;
 }
+
+.helpfulLink:hover, .reportLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(0, 128, 0);
+}
+
+
 
 .indicator {
   height: 28px;
@@ -402,19 +441,24 @@
   align-items: left;
   font-weight: bold;
   font-size: 85px;
-  font-family: Arial, Helvetica, sans-serif;
+  justify-self: center;
 }
 
 #starsContainer {
   grid-row-start: 1;
+  margin-top: 14px;
 }
 
 #outOf {
   grid-row-start: 3;
+  margin-bottom: 7px;
 }
 .showMore:hover {
   cursor: pointer;
+  text-decoration: underline;
+  color: rgb(0, 128, 0);
 }
+
 .showMore {
   display: inline;
 }

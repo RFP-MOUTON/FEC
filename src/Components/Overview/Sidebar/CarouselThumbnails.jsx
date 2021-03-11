@@ -21,7 +21,6 @@ class CarouselThumbnails extends React.Component {
       return (
         <div>
           {images.map((image) => {
-            console.log(Object.keys(image));
             return (
               <CarouselThumbnail
                 thumbNail={image.thumbnail_url}
