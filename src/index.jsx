@@ -19,7 +19,6 @@ class App extends React.Component {
     axios
       .get(`/products/17072`, { params: { count: 1 } })
       .then((response) => {
-        console.log(response.data);
         this.setState({
           data: response.data,
         });

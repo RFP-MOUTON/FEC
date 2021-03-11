@@ -19,10 +19,7 @@ const withClickTracker = (WrappedComponent) => {
         widget: widget,
         time: date,
       };
-
-      axios.post('/interactions', clickData).catch((error) => {
-        console.error(error);
-      });
+      axios.post('/interactions', clickData).catch((error) => {});
     }
 
     render() {
