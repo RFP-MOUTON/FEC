@@ -64,7 +64,7 @@ class ProductCard extends React.Component {
     return (
       <div className="productCard">
         <div className="productImg">
-          <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
+          <img src={stylesInfo.photos[0].url} alt="placeholder" />
         </div>
         <div className="productCategory">{currentProductInfo.category}</div>
         <div
