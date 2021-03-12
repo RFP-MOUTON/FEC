@@ -95,14 +95,11 @@ class ProductCard extends React.Component {
       stylesInfo,
       reviewsInfo,
     } = this.state;
-<<<<<<< HEAD
-=======
 
     if (!stylesInfo || !reviewsInfo) {
       return <div>Loading</div>;
     }
 
->>>>>>> 76a94ca899d26ae03a65c392b1f3e7591b03d1a1
     return (
       <div className="productCard">
         <div
