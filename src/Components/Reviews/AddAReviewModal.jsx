@@ -236,7 +236,7 @@ class AddAReviewForm extends React.Component {
           <div id="recommend">
             <label>
               Do you recommend this product?*
-              <div onChange={this.handleRecommend}>
+              <div onChange={this.handleRecommend} id="recommendOptions">
                 <label>
                   Yes
                   <input type="radio" value={true} name="recommend" required />
@@ -272,7 +272,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="summary">
             <label>
-              <div>Review summary</div>
+              <div id="summaryTitle">Review summary</div>
               <input
                 maxLength="60"
                 onChange={this.handleSummary}
@@ -284,7 +284,7 @@ class AddAReviewForm extends React.Component {
           </div>
           <div id="reviewBody">
             <label>
-              <div>Reviewbody*</div>
+              <div id="bodyTitle">Reviewbody*</div>
               <textarea
                 maxLength="1000"
                 onChange={this.handleBody}
@@ -293,7 +293,7 @@ class AddAReviewForm extends React.Component {
                 minLength="50"
                 required
               />
-              <div>
+              <div id="characterCount">
                 {50 - body.length <= 0
                   ? 'Minimum reached'
                   : `Minimum required characters left: ${50 - body.length}`}

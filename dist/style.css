@@ -77,7 +77,8 @@ grid-column-start: 2;
   right: 80px;
   border-radius: 8px;
   background: white;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: inset 0 0 0 1px rgb(182 182 182);
 }
 
 #AddAReviewButton {
@@ -90,11 +91,13 @@ grid-column-start: 2;
   left: 80px;
   border-radius: 8px;
   background: white;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: inset 0 0 0 1px rgb(182 182 182);
 }
 
 #AddAReviewButton:hover, #moreReviewsButton:hover, select:hover {
   background: rgba(0, 128, 0, 0.096);
+  border: 1px solid green;
 }
 
 
@@ -104,6 +107,13 @@ grid-column-start: 2;
   grid-row-start: 1;
   height: max-content;
   width: max-content;
+}
+
+#sortingSelector select {
+  box-shadow: inset 0 0 0 1px rgb(182 182 182);
+  border-radius: 3px;
+  border: 1px solid rgba(128, 128, 128, 0);
+  margin-left: 5px;
 }
 
 .reviewTile {
@@ -217,6 +227,10 @@ grid-column-start: 2;
   margin: 10px;
 }
 
+#recommendOptions {
+  margin-left: 73px;
+}
+
 .tileHelp {
   grid-row-start: 7;
 }
@@ -226,7 +240,7 @@ grid-column-start: 2;
 }
 
 .overallMessage {
-  padding-left: 10px;
+  padding-left: 47px;
 }
 
 #characteristics {
@@ -236,36 +250,66 @@ grid-column-start: 2;
   text-align: center;
 }
 
-#summary {
-  grid-row-start: 5;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  justify-self: center;
+input[type="radio"]:hover {
+  cursor: pointer;
+  color: green;
 }
 
-#reviewBody {
-  grid-row-start: 6;
-  grid-row-end: 7;
+#summary {
+  grid-row-start: 7;
   grid-column-start: 1;
   grid-column-end: 3;
-  justify-self: center;
+  justify-self: left;
+  width: 97%;
+}
+
+#summaryTitle {
+  margin-left: 5px;
+}
+
+#summary input {
+  width: 100% !important;
+}
+
+
+#reviewBody {
+  grid-row-start: 8;
+  grid-row-end: 9;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: left;
+  width: 97%;
+}
+
+#bodyTitle {
+  margin-left: 5px;
+}
+
+#characterCount {
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 #reviewPhoto {
-  grid-row-start: 8;
+  grid-row-start: 6;
   grid-column-start: 1;
   grid-column-end: 3;
   justify-self: center;
 }
 
 #reviewName {
-  grid-row-start: 9;
+  grid-row-start: 5;
   justify-self: center;
 }
 
 #reviewEmail {
-  grid-row-start: 9;
+  grid-row-start: 5;
   justify-self: center;
+}
+
+#authenticationMessage {
+  font-size: 10px;
+  margin-left: 6px;
 }
 
 #cancelButton {
@@ -273,7 +317,8 @@ grid-column-start: 2;
   margin: 5px;
   border-radius: 8px;
   background: white;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: inset 0 0 0 1px rgb(182 182 182);
 }
 
 #submitButton {
@@ -281,12 +326,14 @@ grid-column-start: 2;
   margin: 5px;
   border-radius: 8px;
   background: white;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: inset 0 0 0 1px rgb(182 182 182);
 }
 
 #cancelButton:hover, #submitButton:hover {
   cursor: pointer;
   background: rgba(0, 128, 0, 0.096);
+  border: 1px solid green;
 }
 
 .modal-main {
@@ -333,8 +380,9 @@ grid-column-start: 2;
 
 #addAReviewModal textarea {
   margin: 5px;
-  width: 250px;
+  width: 100%;
 }
+
 .blur {
   position: fixed;
     width: 100%;
