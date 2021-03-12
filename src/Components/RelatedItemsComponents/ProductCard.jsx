@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ProductRating from './ProductRating.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
+import ProductImage from './ProductImage.jsx';
 
 import dummyStyles from './dummyStyles.js';
 import dummyReviews from './dummyReviews.js';
@@ -61,10 +62,16 @@ class ProductCard extends React.Component {
       stylesInfo,
       reviewsInfo,
     } = this.state;
+    console.log(stylesInfo.photos[0].url);
     return (
       <div className="productCard">
-        <div className="productImg">
-          <img src={stylesInfo.photos[0].url} alt="placeholder" />
+        <div
+          className="productImg"
+          onClick={() => {
+            newProductHandler(currentProductInfo);
+          }}
+        >
+          <ProductImage image={stylesInfo.photos[0].url} />
         </div>
         <div className="productCategory">{currentProductInfo.category}</div>
         <div
@@ -75,7 +82,14 @@ class ProductCard extends React.Component {
         >
           {currentProductInfo.name}
         </div>
-        <div className="productPrice">${stylesInfo.original_price}</div>
+        <div
+          className="productPrice"
+          onClick={() => {
+            newProductHandler(currentProductInfo);
+          }}
+        >
+          ${stylesInfo.original_price}
+        </div>
         <div className="productRating">
           <ProductRating reviewsInfo={reviewsInfo} />
         </div>
