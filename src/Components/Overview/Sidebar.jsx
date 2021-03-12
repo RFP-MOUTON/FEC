@@ -74,15 +74,12 @@ class Sidebar extends React.Component {
         <div className="sidebarContainer">
           <div className="titles">
             <Ratings ratings={reviews.ratings} />
-            <div id="category" className="text">
-              {data.category}
-            </div>
-            <h1 id="productName">{data.name}</h1>
+            <div />
+            <div id="productCategory">{data.category}</div>
+            <div id="productName">{data.name}</div>
             <div id="price">{data.default_price}</div>
           </div>
-          <div>
-            <Styles data={styles} liftStyle={this.liftStyle} />
-          </div>
+          <Styles data={styles} liftStyle={this.liftStyle} />
         </div>
         <div>
           <Carosel styleID={styleID} images={stylePhotos} />

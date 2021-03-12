@@ -13,16 +13,13 @@ function Ratings(props) {
     } else {
       ratingsObj = ratings;
     }
-    console.log(ratingsObj);
     Object.keys(ratingsObj).map((key) => {
-      console.log(key);
       count += parseInt(ratingsObj[key], 10);
       average += ratingsObj[key] * key;
       return 'Success';
     });
     average /= count;
   }
-  console.log(average);
 
   if (ratings === undefined || Number.isNaN(ratings) === true) {
     return <div className="overviewStars" />;
@@ -30,7 +27,6 @@ function Ratings(props) {
   return (
     <div className="overviewStars">
       {Object.keys(ratingsObj).map((key) => {
-        console.log('creating Icon' + key);
         if (key <= average) {
           return <StarIcon fill="100%" id={key} key={key} />;
         }

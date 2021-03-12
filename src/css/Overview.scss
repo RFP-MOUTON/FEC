@@ -1,7 +1,23 @@
+.overviewBottomHalf{
+  font-family: Helvetica, Verdana, sans-serif;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100%;
+}
+.description {
+  grid-column: 1 / span 1;
+  grid-row-start: 1;
+}
+.featuresContainer{
+  grid-column: 2 /span 1;
+  grid-row-start: 1;
+  padding-left: 1em;
+  border-left: 1px solid black;
+}
 .categoryImage {
-  border-radius: 10%;
-  height: 4em;
-  width: 6em;
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
   flex-grow: 1;
   object-fit: cover;
 }
@@ -13,6 +29,26 @@
   float: left;
   margin: 10px 20px;
   width: 70%
+}
+.overviewStars {
+  margin-top: 1rem;
+}
+.left-arrow {
+  position: absolute;
+  top: 15rem;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+.right-arrow {
+  position: absolute;
+  top: 15rem;
+  left: 37rem;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 .category-data {
   display: inline-block;
@@ -32,6 +68,7 @@
   grid-column: 2 / span 1;
   object-fit: cover;
   flex-shrink: 0;
+  color: white;
 }
 .carouselThumbnails {
   grid-row-start: 1;
@@ -39,29 +76,63 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   margin: 10px 20px;
+  background-color: #ffffff59;
+  border-radius: 1em 1em 1em 1em;
 }
 .carouselThumbnail {
-  height: 3.5em;
-  width: 4em;
+  height: 3em;
+  width: 3.5em;
   flex-grow: 1;
   object-fit: cover;
+  opacity: 70%;
+}
+.stylesSectionContainer {
+ grid-row: 2 / span 1;
 }
 .carouselSidebarThumbnail{
-  margin-top: 1em;
-  margin-bottom: 1em;
   flex-shrink: 1;
   flex-basis: 13%;
+}
+.titles {
+  grid-row:  1 / span 1
 }
 .sidebarContainer{
   grid-row: 1 / 2;
   grid-column: 2 / span 1;
-  width: 100%;
+  width: 35em;
   height: 40em;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% 45% 30%;
+}
+#productCategory{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+#productName{
+  font-size: 2rem;
+}
+#price{
+  font-size: 1.2rem;
+}
+#selectedImg{
+  position: absolute;
+  object-fit: cover;
+  opacity: 100%;
+  width: 40em;
+  height: 30em;
+  z-index: -100;
+  border-radius: 5% 5% 5% 5%;
 }
 #styles{
+  cursor: pointer;
   display: flex;
   flex-direction: row;
+}
+#addToCart {
+  grid-row: 3 / span 1
 }
 #carousel {
   grid-row: 1 / 2;
@@ -74,20 +145,32 @@
   height: 30em;
   width: 100%;
 }
+#sizeSelector {
+  margin-top: 2rem;
+  width: 5rem;
+  height: 2rem;
+  cursor: pointer;
+}
+#quantitySelector {
+  padding: 1rem .5rem;
+  cursor: pointer;
+}
 #addButton{
+  cursor: pointer;
   background: black;
 	border: none;
-	padding-top: 2rem;
+	padding-top: 3rem;
   width: 15em;
   height: 3em;
 	border-radius: 15%;
 	color: white;
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: font-size 0.4s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.4s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.4s ease, background-color 0.3s ease;
+  transition: font-size 0.4s ease, background-color 0.3s ease;
 }
 #selectedCarouselThumbnail{
+  opacity: 100%;
   height: 3.5em;
   width: 4em;
   flex-grow: 1;
@@ -104,11 +187,18 @@
 #overviewTopHalf {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 100%;
   border-radius: 2px solid black;
-  width: 80rem;
+  height: 34rem;
+  font-family: Helvetica, Verdana, sans-serif;
 }
 #addButton:hover{
-  font-size: 20px;
+  font-size: 2em;
   background: grey;
+}
+.left-arrow:hover{
+  font-size: 1.5em;
+}
+.right-arrow:hover{
+  font-size: 1.5em;
 }

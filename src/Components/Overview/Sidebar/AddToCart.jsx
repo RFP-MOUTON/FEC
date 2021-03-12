@@ -90,7 +90,7 @@ class AddToCart extends React.Component {
     return (
       <>
         <PleaseSelectStyle toggle={pleaseSelectStyle} />
-        <select onChange={this.handleChange}>
+        <select onChange={this.handleChange} id="sizeSelector">
           {Object.keys(style.skus).map((key) => {
             return (
               <option
