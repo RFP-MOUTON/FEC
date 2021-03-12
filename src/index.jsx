@@ -17,10 +17,10 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`/products/17072`, { params: { count: 1 } })
+      .get(`/products/`, { params: { count: 1 } })
       .then((response) => {
         this.setState({
-          data: response.data,
+          data: response.data[0],
         });
         // this.updateComponent();
       })

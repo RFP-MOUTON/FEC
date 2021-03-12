@@ -18,6 +18,16 @@ const ComparisonModal = ({
     return null;
   }
 
+  const OVERLAY_STYLES = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, .7)',
+    zIndex: 1000,
+  };
+
   const viewedProductFeatures = [];
   const currentProductFeatures = [];
 
@@ -46,39 +56,41 @@ const ComparisonModal = ({
   const noDupeFeatures = Array.from(new Set(mergedFeatures));
 
   return ReactDom.createPortal(
-    <div className="comparisonModal">
-      <div className="colTitle">{currentProductInfo.name}</div>
-      <div className="colTitle">Features</div>
-      <div className="colTitle"> {viewedProductInfo.name}</div>
-      <div className="currentItemFeatures">
-        {noDupeFeatures.map((feature) => {
-          if (currentProductFeatures.includes(feature))
-            return <FeaturesCurrent key={feature} glyph="✔" />;
-          return <FeaturesCurrent key={feature} glyph="✘" />;
-        })}
-      </div>
+    <div style={OVERLAY_STYLES}>
+      <div className="comparisonModal">
+        <div className="colTitle">{currentProductInfo.name}</div>
+        <div className="colTitle">Features</div>
+        <div className="colTitle"> {viewedProductInfo.name}</div>
+        <div className="currentItemFeatures">
+          {noDupeFeatures.map((feature) => {
+            if (currentProductFeatures.includes(feature))
+              return <FeaturesCurrent key={feature} glyph="✔" />;
+            return <FeaturesCurrent key={feature} glyph="✘" />;
+          })}
+        </div>
 
-      <div className="featuresList">
-        {noDupeFeatures.map((feature) => {
-          return <FeaturesList key={feature} feature={feature} />;
-        })}
-      </div>
+        <div className="featuresList">
+          {noDupeFeatures.map((feature) => {
+            return <FeaturesList key={feature} feature={feature} />;
+          })}
+        </div>
 
-      <div className="viewedItemFeatures">
-        {noDupeFeatures.map((feature) => {
-          if (viewedProductFeatures.includes(feature))
-            return <FeaturesViewed key={feature} glyph="✔" />;
-          return <FeaturesViewed key={feature} glyph="✘" />;
-        })}
-      </div>
+        <div className="viewedItemFeatures">
+          {noDupeFeatures.map((feature) => {
+            if (viewedProductFeatures.includes(feature))
+              return <FeaturesViewed key={feature} glyph="✔" />;
+            return <FeaturesViewed key={feature} glyph="✘" />;
+          })}
+        </div>
 
-      <button
-        className="closeModalButton"
-        type="button"
-        onClick={ToggleModalHandler}
-      >
-        Close
-      </button>
+        <button
+          className="closeModalButton"
+          type="button"
+          onClick={ToggleModalHandler}
+        >
+          Close
+        </button>
+      </div>
     </div>,
     document.getElementById('portal')
   );

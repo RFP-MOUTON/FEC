@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import RelatedItemsSlider from './RelatedItemsSlider.jsx';
 import YourOutfitSlider from './YourOutfitSlider.jsx';
-import data from './data.js';
 
 import '../../css/RelatedItems.scss';
 
@@ -14,8 +13,8 @@ class RelatedItemsContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productData: data,
-      currentProduct: data[0],
+      productData: '',
+      currentProduct: '',
       viewedProductInfo: '',
       localStorageInfo: localStorageData,
       currentLocalStorage: localStorageData[0],
@@ -37,18 +36,20 @@ class RelatedItemsContainer extends React.Component {
         this.setState({ productData: relatedItemsArray.data });
         this.setState({ currentProduct: relatedItemsArray.data[0] });
       })
+      .then(
+        axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
+          this.setState({ viewedProductInfo: viewedProductData.data });
+        })
+      )
       .catch((error) => {
         throw error;
       });
-
-    axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
-      this.setState({ viewedProductInfo: viewedProductData.data });
-    });
   }
 
   componentDidUpdate(prevProps) {
     const { viewedProductId } = this.props;
     if (prevProps.viewedProductId !== viewedProductId) {
+      const { viewedProductId } = this.props;
       const relatedItemsRoute = `/products/${viewedProductId}/related`;
       axios
         .get(relatedItemsRoute)
@@ -56,13 +57,16 @@ class RelatedItemsContainer extends React.Component {
           this.setState({ productData: relatedItemsArray.data });
           this.setState({ currentProduct: relatedItemsArray.data[0] });
         })
+        .then(
+          axios
+            .get(`/products/${viewedProductId}`)
+            .then((viewedProductData) => {
+              this.setState({ viewedProductInfo: viewedProductData.data });
+            })
+        )
         .catch((error) => {
           throw error;
         });
-
-      axios.get(`/products/${viewedProductId}`).then((viewedProductData) => {
-        this.setState({ viewedProductInfo: viewedProductData.data });
-      });
     }
   }
 
@@ -111,6 +115,11 @@ class RelatedItemsContainer extends React.Component {
       currentLocalStorage,
     } = this.state;
     const { clickTracker, newProductHandler } = this.props;
+
+    if (!productData) {
+      return <div>Loading</div>;
+    }
+
     return (
       <div
         id="relatedItemsContainer"
