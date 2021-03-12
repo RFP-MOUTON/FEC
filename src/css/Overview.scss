@@ -143,34 +143,6 @@
   justify-content: center;
   overflow: hidden;
 }
-<<<<<<< HEAD
-#sizeSelector {
-  margin-top: 2rem;
-  width: 5rem;
-  height: 2rem;
-  cursor: pointer;
-}
-#quantitySelector {
-  padding: 1rem .5rem;
-  cursor: pointer;
-}
-#addButton{
-  cursor: pointer;
-  background: black;
-	border: none;
-	padding-top: 3rem;
-  width: 15em;
-  height: 3em;
-	border-radius: 15%;
-	color: white;
-  -webkit-transition: font-size 0.4s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.4s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.4s ease, background-color 0.3s ease;
-  transition: font-size 0.4s ease, background-color 0.3s ease;
-}
-#selectedCarouselThumbnail{
-  opacity: 100%;
-=======
 #addButton {
   background: black;
   border: none;
@@ -185,7 +157,6 @@
   transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 #selectedCarouselThumbnail {
->>>>>>> 68cc3d039230fe00d7ccc95a3c767e8d17f01c03
   height: 3.5em;
   width: 4em;
   flex-grow: 1;
@@ -204,17 +175,9 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
   border-radius: 2px solid black;
-<<<<<<< HEAD
-  height: 34rem;
-  font-family: Helvetica, Verdana, sans-serif;
-}
-#addButton:hover{
-  font-size: 2em;
-=======
 }
 #addButton:hover {
   font-size: 20px;
->>>>>>> 68cc3d039230fe00d7ccc95a3c767e8d17f01c03
   background: grey;
 }
 .left-arrow:hover{
