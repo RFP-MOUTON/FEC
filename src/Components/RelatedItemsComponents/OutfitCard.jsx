@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ProductRating from './ProductRating.jsx';
+import ProductImage from './ProductImage.jsx';
 
 import dummyStyles from './dummyStyles.js';
 import dummyReviews from './dummyReviews.js';
@@ -51,7 +52,7 @@ class OutfitCard extends React.Component {
     return (
       <div className="productCard">
         <div className="productImg">
-          <img src={stylesInfo.photos[0].thumbnail_url} alt="placeholder" />
+          <ProductImage image={stylesInfo.photos[0].thumbnail_url} />
         </div>
         <div className="productCategory">{currentProductInfo.category}</div>
         <div
