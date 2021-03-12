@@ -7,10 +7,18 @@ const ProductRating = ({ reviewsInfo }) => {
 
   let count = 0;
   let average = 0;
+  let ratingsObj;
 
-  Object.keys(ratings).map((key) => {
-    count += parseInt(ratings[key], 10);
-    average += ratings[key] * key;
+  if (Object.keys(ratings).length < 5) {
+    const myObj = { 1: '0', 2: '0', 3: '0', 4: '0', 5: '0' };
+    ratingsObj = { ...myObj, ...ratings };
+  } else {
+    ratingsObj = ratings;
+  }
+
+  Object.keys(ratingsObj).map((key) => {
+    count += parseInt(ratingsObj[key], 10);
+    average += ratingsObj[key] * key;
     return null;
   });
 
@@ -18,8 +26,8 @@ const ProductRating = ({ reviewsInfo }) => {
 
   return (
     <div>
-      {Object.keys(ratings).map((key) => {
-        if (key < average) {
+      {Object.keys(ratingsObj).map((key) => {
+        if (key <= average) {
           return <ReviewStars key={key} fill="100%" id={key} />;
         }
         if (key - average > 0 && key - average < 1) {
