@@ -21,8 +21,8 @@ const RelatedItemsSlider = ({
           className="cardSliderWrapper"
           style={{
             transform: `translateX(-${
-              productData.indexOf(currentProduct) * (100 / productData.length)
-            }%)`,
+              productData.indexOf(currentProduct) * 840
+            }px)`,
           }}
         >
           {productData.map((productId) => {

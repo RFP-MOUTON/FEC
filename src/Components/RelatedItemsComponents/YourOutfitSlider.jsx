@@ -24,9 +24,8 @@ const YourOutfitSlider = ({
           className="outfitSliderWrapper"
           style={{
             transform: `translateX(-${
-              localStorageInfo.indexOf(currentLocalStorage) *
-              (100 / localStorageInfo.length)
-            }%)`,
+              localStorageInfo.indexOf(currentLocalStorage) * 840
+            }px)`,
           }}
         >
           <YourOutfitAddCard
