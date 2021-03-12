@@ -3,22 +3,16 @@ import React from 'react';
 const YourOutfitAddCard = ({ viewedProductInfo, AddOutfitHandler }) => {
   const { name, id } = viewedProductInfo;
   return (
-    <div className="addOutfitCard">
+    <div
+      className="addOutfitCard"
+      onClick={() => {
+        return AddOutfitHandler(name, id);
+      }}
+    >
       <div className="addOutfitImg">
-        <img
-          src="https://cdn2.iconfinder.com/data/icons/everything-but-the-kitchen-sink-2/100/common-06-512.png"
-          alt="placeholder"
-        />
+        <img src="https://www.iconsdb.com/icons/preview/black/add-xxl.png" />
       </div>
-      <button
-        className="addOutfitButton"
-        type="button"
-        onClick={() => {
-          return AddOutfitHandler(name, id);
-        }}
-      >
-        Add Viewed Item to Your Outfit
-      </button>
+      <div className="addOutfitTitle">Add Item to Your Outfit</div>
     </div>
   );
 };
