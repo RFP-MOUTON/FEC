@@ -62,7 +62,6 @@ class ProductCard extends React.Component {
       stylesInfo,
       reviewsInfo,
     } = this.state;
-    console.log(stylesInfo.photos[0].url);
     return (
       <div className="productCard">
         <div
