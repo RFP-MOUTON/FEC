@@ -38,6 +38,7 @@ class Carosel extends React.Component {
         });
       }
     }
+    this.updatePage();
     // const styleString = styleID.toString();
   }
   // handleSidebarClick() {}

@@ -81,9 +81,7 @@ class Sidebar extends React.Component {
           </div>
           <Styles data={styles} liftStyle={this.liftStyle} />
         </div>
-        <div>
-          <Carosel styleID={styleID} images={stylePhotos} />
-        </div>
+        <Carosel styleID={styleID} images={stylePhotos} />
       </div>
     );
   }

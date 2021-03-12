@@ -70,7 +70,7 @@ class Styles extends React.Component {
     }
     let count = 0;
     return (
-      <div>
+      <>
         <div className="stylesSectionContainer">
           <SelectedStyle name={selectedObj.name || data.results[0].name} />
           <div id="styles">
@@ -107,7 +107,7 @@ class Styles extends React.Component {
         <div id="addToCart">
           <AddToCart style={selectedObj} />
         </div>
-      </div>
+      </>
     );
   }
 }

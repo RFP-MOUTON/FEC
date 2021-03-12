@@ -24,7 +24,7 @@ class CarouselThumbnails extends React.Component {
     } = this.props;
     if (!hasButtons) {
       return (
-        <div>
+        <>
           {images.map((image) => {
             return (
               <CarouselThumbnail
@@ -35,7 +35,7 @@ class CarouselThumbnails extends React.Component {
               />
             );
           })}
-        </div>
+        </>
       );
     }
     return (
