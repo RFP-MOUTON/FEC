@@ -4,16 +4,6 @@ import FeaturesCurrent from './FeaturesCurrent.jsx';
 import FeaturesViewed from './FeaturesViewed.jsx';
 import FeaturesList from './FeaturesList.jsx';
 
-const MODAL_STYLES = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: '#808080',
-  padding: '25px',
-  zIndex: 1000,
-};
-
 const ComparisonModal = ({
   isModalOpen,
   ToggleModalHandler,
@@ -56,10 +46,10 @@ const ComparisonModal = ({
   const noDupeFeatures = Array.from(new Set(mergedFeatures));
 
   return ReactDom.createPortal(
-    <div className="comparisonModal" style={MODAL_STYLES}>
-      <div>{currentProductInfo.name}</div>
-      <div>Features</div>
-      <div>{viewedProductInfo.name}</div>
+    <div className="comparisonModal">
+      <div className="colTitle">{currentProductInfo.name}</div>
+      <div className="colTitle">Features</div>
+      <div className="colTitle"> {viewedProductInfo.name}</div>
       <div className="currentItemFeatures">
         {noDupeFeatures.map((feature) => {
           if (currentProductFeatures.includes(feature))
