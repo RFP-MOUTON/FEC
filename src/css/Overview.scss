@@ -1,18 +1,72 @@
+.overviewBottomHalf{
+  margin-top: .2rem;
+  font-family: Helvetica, Verdana, sans-serif;
+  display: grid;
+  grid-template-columns: auto 600px 500px auto;
+  margin-left: 3.5rem;
+  margin-bottom: 2.5rem;
+  grid-template-rows: 100%;
+}
+.Description {
+  grid-column: 2 / span 1;
+  grid-row-start: 1;
+  margin-top:1rem
+}
+.selectedStyle {
+  display: flex;
+  flex-direction: row;
+}
+.featuresContainer{
+  grid-column: 3 /span 1;
+  grid-row-start: 1;
+  margin-top: 1.2rem;
+  padding-left: 1em;
+  border-left: 1px solid black;
+}
 .categoryImage {
-  border-radius: 10%;
-  height: 4em;
-  width: 6em;
+  border-radius: 50%;
+  height: 4.2rem;
+  width: 4.2rem;
   flex-grow: 1;
   object-fit: cover;
 }
 .category-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   columns: 4;
   flex-wrap: wrap;
   float: left;
   margin: 10px 20px;
-  width: 70%;
+  width: 19rem;
+  margin-top: -.6rem;
+}
+.singleFeatureContainer {
+  display: flex;
+  flex-direction: row;
+}
+.overviewStars {
+  margin-top: 1rem;
+}
+.left-arrow {
+  position: absolute;
+  top: 15rem;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+.chosenStyle {
+  font-weight: bold;
+  margin-right: .7rem;
+}
+.right-arrow {
+  position: relative;
+  top: 15rem;
+  left: 28rem;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 .category-data {
   display: inline-block;
@@ -32,6 +86,11 @@
   grid-column: 2 / span 1;
   object-fit: cover;
   flex-shrink: 0;
+  color: white;
+}
+.slogan {
+  font-size: 1.7rem;
+  margin-bottom: .5rem;
 }
 .carouselThumbnails {
   grid-row-start: 1;
@@ -39,44 +98,93 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   margin: 10px 20px;
+  background-color: #ffffff59;
+  border-radius: 1em 1em 1em 1em;
 }
 .carouselThumbnail {
-  height: 3.5em;
-  width: 4em;
+  height: 3em;
+  width: 3.5em;
   flex-grow: 1;
   object-fit: cover;
+  opacity: 70%;
 }
-.carouselSidebarThumbnail {
-  margin-top: 1em;
-  margin-bottom: 1em;
+.stylesSectionContainer {
+ grid-row: 2 / span 1;
+}
+.carouselSidebarThumbnail{
   flex-shrink: 1;
   flex-basis: 13%;
 }
-.sidebarContainer {
-  grid-row: 1 / 2;
-  grid-column: 2 / span 1;
+.titles {
+  grid-row:  1 / span 1
 }
-#styles {
+.overviewFeature {
+  font-weight: bold;
+  margin-right: .3rem;
+}
+.sidebarContainer{
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+  width: 35em;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30% 40% 35%;
+}
+#productCategory{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+#productName{
+  font-size: 2rem;
+}
+#price{
+  font-size: 1.2rem;
+}
+#selectedImg{
+  position: absolute;
+  object-fit: cover;
+  opacity: 100%;
+  width: 40rem;
+  height: 30rem;
+  z-index: -100;
+  border-radius: 5% 5% 5% 5%;
+}
+#styles{
+  width: 24rem;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
 }
+#addToCart {
+  grid-row: 3 / span 1
+}
 #carousel {
   grid-row: 1 / 2;
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 20% 80%;
-  justify-content: center;
+  width: 40rem;
+  height: 30rem;
+  justify-content: left;
   overflow: hidden;
 }
 #addButton {
+  margin-left: .8rem;
+  cursor: pointer;
   background: black;
   border: none;
-  padding-top: 2rem;
-  width: 15em;
-  height: 3em;
-  border-radius: 15%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  width: 16rem;
+  height: 3.5rem;
+  border-radius: 1rem 1rem 1rem 1rem;
   color: white;
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -84,26 +192,87 @@
   transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 #selectedCarouselThumbnail {
+  opacity: 100%;
   height: 3.5em;
   width: 4em;
   flex-grow: 1;
   object-fit: cover;
   border-bottom: 2px solid black;
 }
+#sizeSelector {
+  background: #FFFFFF;
+  border-color: rgba(34, 34, 34, 0.15);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-size: 1.3rem;
+  transition: all 200ms ease-out;
+  color: #222222;
+  border-radius: .6rem .6rem .6rem .6rem;
+  padding-right: 1rem;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+}
+#quantitySelect {
+  margin-left: 1rem;
+  background: #FFFFFF;
+  border-color: rgba(34, 34, 34, 0.15);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  font-size: 1.3rem;
+  transition: all 200ms ease-out;
+  color: #222222;
+  border-radius: .6rem .6rem .6rem .6rem;
+  padding-right: 1rem;
+  width: 7rem;
+  height: 3rem;
+  cursor: pointer;
+}
 #checkmark {
   position: absolute;
-  color: white;
-  top: 50%;
-  right: 25%;
+  color: black;
+  top: -.5rem;
+  right: 15%;
   font-size: 1.6rem;
 }
 #overviewTopHalf {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: auto 650px 450px auto;
+  grid-template-rows: 100%;
+  height: 30rem;
   border-radius: 2px solid black;
 }
 #addButton:hover {
-  font-size: 20px;
   background: grey;
+}
+.left-arrow:hover{
+  font-size: 1.5em;
+}
+.right-arrow:hover{
+  font-size: 1.5em;
+}
+#sizeSelector .quantitySelect___element {
+  transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  border-width: 1px;
+  border-style: solid;
+}
+#quantitySelect .quantitySelect___element {
+  transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
+  box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+  border-width: 1px;
+  border-style: solid;
+}
+
+#sizeSelector:hover {
+  transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
+  border-color: rgba(34, 34, 34, 0.5);
+  box-shadow: 0 1px 12px 0 rgb(34 34 34 / 20%);
+  border-width: 1px;
+}
+#quantitySelect:hover {
+  border-color: rgba(34, 34, 34, 0.5);
+  box-shadow: 0 1px 12px 0 rgb(34 34 34 / 20%);
 }

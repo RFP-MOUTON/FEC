@@ -24,7 +24,7 @@ class CarouselThumbnails extends React.Component {
     } = this.props;
     if (!hasButtons) {
       return (
-        <div>
+        <>
           {images.map((image) => {
             return (
               <CarouselThumbnail
@@ -35,13 +35,13 @@ class CarouselThumbnails extends React.Component {
               />
             );
           })}
-        </div>
+        </>
       );
     }
     return (
-      <div>
+      <>
         <FaChevronUp className="up-arrow" onClick={upArrow} />
-        <FaChevronDown className="down-arrow" onClick={downArrow} />
+
         {images.map((image) => {
           return (
             <CarouselThumbnail
@@ -52,7 +52,8 @@ class CarouselThumbnails extends React.Component {
             />
           );
         })}
-      </div>
+        <FaChevronDown className="down-arrow" onClick={downArrow} />
+      </>
     );
   }
 }

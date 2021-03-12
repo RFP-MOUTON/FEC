@@ -70,42 +70,44 @@ class Styles extends React.Component {
     }
     let count = 0;
     return (
-      <div>
-        <SelectedStyle name={selectedObj.name || data.results[0].name} />
-        <div id="styles">
-          <div className="category-list">
-            {data.results.map((style) => {
-              count += 1;
-              let selected = false;
-              if (targetID === '' && style['default?'] === true) {
-                selected = true;
-              }
-              if (style.style_id.toString() === targetID.toString()) {
-                selected = true;
-              }
-              return (
-                <div className="category-data" key={style.style_id}>
-                  <div
-                    alt={style.name}
-                    name={style.style_id}
-                    className="checkContainer"
-                  >
-                    <StyleImage
-                      src={style.photos[0].thumbnail_url}
-                      alt={`${style.style_id} ${count - 1}`}
-                      selected={selected}
-                      handleClick={this.handleClick}
-                    />
+      <>
+        <div className="stylesSectionContainer">
+          <SelectedStyle name={selectedObj.name || data.results[0].name} />
+          <div id="styles">
+            <div className="category-list">
+              {data.results.map((style) => {
+                count += 1;
+                let selected = false;
+                if (targetID === '' && style['default?'] === true) {
+                  selected = true;
+                }
+                if (style.style_id.toString() === targetID.toString()) {
+                  selected = true;
+                }
+                return (
+                  <div className="category-data" key={style.style_id}>
+                    <div
+                      alt={style.name}
+                      name={style.style_id}
+                      className="checkContainer"
+                    >
+                      <StyleImage
+                        src={style.photos[0].thumbnail_url}
+                        alt={`${style.style_id} ${count - 1}`}
+                        selected={selected}
+                        handleClick={this.handleClick}
+                      />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
         <div id="addToCart">
           <AddToCart style={selectedObj} />
         </div>
-      </div>
+      </>
     );
   }
 }
