@@ -8,7 +8,7 @@ const SelectedStyle = (props) => {
   }
   return (
     <div className="selectedStyle">
-      <div className="selectedStyle">Style:</div>
+      <div className="chosenStyle">Style:</div>
       <div>{name}</div>
     </div>
   );

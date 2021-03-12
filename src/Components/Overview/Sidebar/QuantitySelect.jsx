@@ -5,7 +5,7 @@ const QuantitySelect = (props) => {
   const items = [];
   if (quantity === undefined || quantity === '') {
     return (
-      <select>
+      <select id="quantitySelect">
         <option>-</option>
       </select>
     );
@@ -17,7 +17,7 @@ const QuantitySelect = (props) => {
     items.push(i);
   }
   return (
-    <select onChange={funk}>
+    <select onChange={funk} id="quantitySelect">
       {items.map((item) => {
         return <option key={item}>{item}</option>;
       })}

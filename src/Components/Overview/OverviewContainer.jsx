@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar.jsx';
+import Features from './Features.jsx';
 import '../../css/Overview.scss';
 import withClickTracker from '../../../HOC/withClickTracker.js';
 // import instance from '../../env/config.js';
@@ -27,7 +28,10 @@ const OverviewContainer = (props) => {
         return clickTracker(event, 'overview');
       }}
     >
-      <Sidebar id={id} data={data} />
+      <div>
+        <Sidebar id={id} data={data} />
+        <Features data={data} />
+      </div>
     </div>
   );
 };

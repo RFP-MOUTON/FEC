@@ -38,6 +38,7 @@ class Carosel extends React.Component {
         });
       }
     }
+    this.updatePage();
     // const styleString = styleID.toString();
   }
   // handleSidebarClick() {}
@@ -170,6 +171,7 @@ class Carosel extends React.Component {
     }
     return (
       <div id="carousel">
+        <img src={images[selectedImage].url} alt="MainImage" id="selectedImg" />
         <div className="carouselImage">
           <div>
             <FaArrowLeft className="left-arrow" onClick={this.leftArrowClick} />
@@ -177,7 +179,6 @@ class Carosel extends React.Component {
               className="right-arrow"
               onClick={this.rightArrowClick}
             />
-            <img src={images[selectedImage].url} alt="MainImage" />
           </div>
         </div>
         <div className="carouselThumbnails">
