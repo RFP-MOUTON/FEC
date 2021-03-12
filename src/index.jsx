@@ -19,7 +19,6 @@ class App extends React.Component {
     axios
       .get(`/products/17072`, { params: { count: 1 } })
       .then((response) => {
-        console.log(response.data);
         this.setState({
           data: response.data,
         });
@@ -47,7 +46,7 @@ class App extends React.Component {
           viewedProductId={data.id}
           newProductHandler={this.newProductHandler}
         />
-        <Reviews id={data.id} productName={data.name} />
+        <Reviews id={id} productName={name} />
       </div>
     );
   }

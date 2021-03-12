@@ -20,10 +20,10 @@ import withClickTracker from '../../../HOC/withClickTracker.js';
 //   }
 // }
 const OverviewContainer = (props) => {
-  const { id, data } = props;
+  const { id, data, clickTracker } = props;
   return (
     <div
-      className="overviewContainer"
+      id="overviewContainer"
       onClick={(event) => {
         return clickTracker(event, 'overview');
       }}

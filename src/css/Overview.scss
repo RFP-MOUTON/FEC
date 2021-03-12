@@ -28,7 +28,7 @@
   flex-wrap: wrap;
   float: left;
   margin: 10px 20px;
-  width: 70%
+  width: 70%;
 }
 .overviewStars {
   margin-top: 1rem;
@@ -142,9 +142,8 @@
   grid-template-columns: 20% 80%;
   justify-content: center;
   overflow: hidden;
-  height: 30em;
-  width: 100%;
 }
+<<<<<<< HEAD
 #sizeSelector {
   margin-top: 2rem;
   width: 5rem;
@@ -171,11 +170,27 @@
 }
 #selectedCarouselThumbnail{
   opacity: 100%;
+=======
+#addButton {
+  background: black;
+  border: none;
+  padding-top: 2rem;
+  width: 15em;
+  height: 3em;
+  border-radius: 15%;
+  color: white;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+#selectedCarouselThumbnail {
+>>>>>>> 68cc3d039230fe00d7ccc95a3c767e8d17f01c03
   height: 3.5em;
   width: 4em;
   flex-grow: 1;
   object-fit: cover;
-  border-bottom: 2px solid black
+  border-bottom: 2px solid black;
 }
 #checkmark {
   position: absolute;
@@ -189,11 +204,17 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
   border-radius: 2px solid black;
+<<<<<<< HEAD
   height: 34rem;
   font-family: Helvetica, Verdana, sans-serif;
 }
 #addButton:hover{
   font-size: 2em;
+=======
+}
+#addButton:hover {
+  font-size: 20px;
+>>>>>>> 68cc3d039230fe00d7ccc95a3c767e8d17f01c03
   background: grey;
 }
 .left-arrow:hover{

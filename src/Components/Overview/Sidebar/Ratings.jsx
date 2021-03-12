@@ -20,7 +20,6 @@ function Ratings(props) {
     });
     average /= count;
   }
-
   if (ratings === undefined || Number.isNaN(ratings) === true) {
     return <div className="overviewStars" />;
   }
