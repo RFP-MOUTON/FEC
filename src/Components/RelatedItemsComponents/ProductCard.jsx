@@ -4,17 +4,14 @@ import ProductRating from './ProductRating.jsx';
 import ComparisonModal from './ComparisonModal.jsx';
 import ProductImage from './ProductImage.jsx';
 
-import dummyStyles from './dummyStyles.js';
-import dummyReviews from './dummyReviews.js';
-
 class ProductCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isModalOpen: false,
       currentProductInfo: '',
-      stylesInfo: dummyStyles,
-      reviewsInfo: dummyReviews,
+      stylesInfo: '',
+      reviewsInfo: '',
     };
     this.ToggleModalHandler = this.ToggleModalHandler.bind(this);
   }
@@ -26,27 +23,63 @@ class ProductCard extends React.Component {
       .then((productData) => {
         this.setState({ currentProductInfo: productData.data });
       })
+      .then(
+        axios
+          .get(`/products/${productId}/styles`)
+          .then((stylesData) => {
+            this.setState({ stylesInfo: stylesData.data.results[0] });
+          })
+          .catch((error) => {
+            throw error;
+          })
+      )
+      .then(
+        axios
+          .get(`/reviews/meta/?product_id=${productId}`)
+          .then((reviewsMetaData) => {
+            this.setState({ reviewsInfo: reviewsMetaData.data });
+          })
+          .catch((error) => {
+            throw error;
+          })
+      )
       .catch((error) => {
         throw error;
       });
+  }
 
-    axios
-      .get(`/products/${productId}/styles`)
-      .then((stylesData) => {
-        this.setState({ stylesInfo: stylesData.data.results[0] });
-      })
-      .catch((error) => {
-        throw error;
-      });
-
-    axios
-      .get(`/reviews/meta/?product_id=${productId}`)
-      .then((reviewsMetaData) => {
-        this.setState({ reviewsInfo: reviewsMetaData.data });
-      })
-      .catch((error) => {
-        throw error;
-      });
+  componentDidUpdate(prevProps) {
+    const { productId } = this.props;
+    if (prevProps.productId !== productId) {
+      axios
+        .get(`/products/${productId}`)
+        .then((productData) => {
+          this.setState({ currentProductInfo: productData.data });
+        })
+        .then(
+          axios
+            .get(`/products/${productId}/styles`)
+            .then((stylesData) => {
+              this.setState({ stylesInfo: stylesData.data.results[0] });
+            })
+            .catch((error) => {
+              throw error;
+            })
+        )
+        .then(
+          axios
+            .get(`/reviews/meta/?product_id=${productId}`)
+            .then((reviewsMetaData) => {
+              this.setState({ reviewsInfo: reviewsMetaData.data });
+            })
+            .catch((error) => {
+              throw error;
+            })
+        )
+        .catch((error) => {
+          throw error;
+        });
+    }
   }
 
   ToggleModalHandler() {
@@ -62,7 +95,11 @@ class ProductCard extends React.Component {
       stylesInfo,
       reviewsInfo,
     } = this.state;
-    console.log(stylesInfo.photos[0].url);
+
+    if (!stylesInfo || !reviewsInfo) {
+      return <div>Loading</div>;
+    }
+
     return (
       <div className="productCard">
         <div

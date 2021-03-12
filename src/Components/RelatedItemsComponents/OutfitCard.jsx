@@ -23,27 +23,63 @@ class OutfitCard extends React.Component {
       .then((productData) => {
         this.setState({ currentProductInfo: productData.data });
       })
+      .then(
+        axios
+          .get(`/products/${productId}/styles`)
+          .then((stylesData) => {
+            this.setState({ stylesInfo: stylesData.data.results[0] });
+          })
+          .catch((error) => {
+            throw error;
+          })
+      )
+      .then(
+        axios
+          .get(`/reviews/meta/?product_id=${productId}`)
+          .then((reviewsMetaData) => {
+            this.setState({ reviewsInfo: reviewsMetaData.data });
+          })
+          .catch((error) => {
+            throw error;
+          })
+      )
       .catch((error) => {
         throw error;
       });
+  }
 
-    axios
-      .get(`/products/${productId}/styles`)
-      .then((stylesData) => {
-        this.setState({ stylesInfo: stylesData.data.results[0] });
-      })
-      .catch((error) => {
-        throw error;
-      });
-
-    axios
-      .get(`/reviews/meta/?product_id=${productId}`)
-      .then((reviewsMetaData) => {
-        this.setState({ reviewsInfo: reviewsMetaData.data });
-      })
-      .catch((error) => {
-        throw error;
-      });
+  componentDidUpdate(prevProps) {
+    const { productId } = this.props;
+    if (prevProps.productId !== productId) {
+      axios
+        .get(`/products/${productId}`)
+        .then((productData) => {
+          this.setState({ currentProductInfo: productData.data });
+        })
+        .then(
+          axios
+            .get(`/products/${productId}/styles`)
+            .then((stylesData) => {
+              this.setState({ stylesInfo: stylesData.data.results[0] });
+            })
+            .catch((error) => {
+              throw error;
+            })
+        )
+        .then(
+          axios
+            .get(`/reviews/meta/?product_id=${productId}`)
+            .then((reviewsMetaData) => {
+              this.setState({ reviewsInfo: reviewsMetaData.data });
+            })
+            .catch((error) => {
+              throw error;
+            })
+        )
+        .catch((error) => {
+          throw error;
+        });
+    }
   }
 
   render() {
