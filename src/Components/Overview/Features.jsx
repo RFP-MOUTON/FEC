@@ -1,24 +1,20 @@
 import React from 'react';
+import FeaturesContainer from './FeaturesContainer.jsx';
 
 const Features = (props) => {
   const { data } = props;
   console.log('render called');
+  console.log(data);
+  if (data === undefined) {
+    return <div />;
+  }
   return (
     <div className="overviewBottomHalf">
       <div className="Description">
         <div className="slogan">{data.slogan}</div>
         {data.description}
       </div>
-      <div className="featuresContainer">
-        {data.features.map((feature) => {
-          return (
-            <div className="singleFeatureContainer">
-              <div className="overviewFeature">{feature.feature}: </div>
-              <div className="featureValue"> {feature.value}</div>
-            </div>
-          );
-        })}
-      </div>
+      <FeaturesContainer data={data} />
     </div>
   );
 };
