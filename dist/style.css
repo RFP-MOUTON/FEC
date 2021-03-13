@@ -189,12 +189,16 @@ grid-column-start: 2;
   margin-bottom: 10px;
 }
 
-.thumbnails img {
+.thumbnails img, #preview {
   width: 70px;
   height: 70px;
   border: 2px solid;
   padding: 2px;
   margin: 5px;
+}
+
+#preview {
+
 }
 
 #formLine1 {

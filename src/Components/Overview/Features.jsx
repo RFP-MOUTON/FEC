@@ -3,8 +3,6 @@ import FeaturesContainer from './FeaturesContainer.jsx';
 
 const Features = (props) => {
   const { data } = props;
-  console.log('render called');
-  console.log(data);
   if (data === undefined) {
     return <div />;
   }

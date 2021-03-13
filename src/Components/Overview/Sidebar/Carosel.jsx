@@ -118,7 +118,6 @@ class Carosel extends React.Component {
   updatePage(newIndex) {
     const { images } = this.props;
     const { displayedPage } = this.state;
-    console.log(newIndex);
     if (images.length > 7) {
       if (
         displayedPage * 7 - 1 < newIndex ||

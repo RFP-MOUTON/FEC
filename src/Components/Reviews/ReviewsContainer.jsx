@@ -1,5 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import {
+  Image,
+  Video,
+  Transformation,
+  CloudinaryContext,
+} from 'cloudinary-react';
 
 import ReviewList from './ReviewList.jsx';
 import RatingBreakdown from './RatingBreakdown.jsx';
