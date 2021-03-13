@@ -227,7 +227,6 @@ class AddAReviewForm extends React.Component {
       ratingMessage,
       summary,
       body,
-      photo,
       name,
       email,
     } = this.state;
