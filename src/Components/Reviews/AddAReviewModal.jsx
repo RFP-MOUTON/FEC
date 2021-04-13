@@ -5,6 +5,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import axios from 'axios';
+import {
+  Image,
+  Video,
+  Transformation,
+  CloudinaryContext,
+} from 'cloudinary-react';
 
 import SizeComponent from './CharactersisticsFormComponents/SizeSelector.jsx';
 import WidthComponent from './CharactersisticsFormComponents/WidthSelector.jsx';
@@ -12,6 +18,8 @@ import ComfortComponent from './CharactersisticsFormComponents/ComfortSelector.j
 import QualityComponent from './CharactersisticsFormComponents/QualitySelector.jsx';
 import LengthComponent from './CharactersisticsFormComponents/LengthSelector.jsx';
 import FitComponent from './CharactersisticsFormComponents/FitSelector.jsx';
+
+// const cloudinary = require('cloudinary').v2;
 
 class AddAReviewForm extends React.Component {
   constructor(props) {
@@ -28,9 +36,10 @@ class AddAReviewForm extends React.Component {
       fit: null,
       summary: '',
       body: '',
-      photo: '',
+      photo: null,
       name: '',
       email: '',
+      photoUrl: '',
     };
     this.handleStarClick = this.handleStarClick.bind(this);
     this.handleRecommend = this.handleRecommend.bind(this);
@@ -126,9 +135,32 @@ class AddAReviewForm extends React.Component {
   }
 
   handlePhoto(event) {
-    this.setState({
-      photo: event.target.value,
-    });
+    const photoFile = event.target.files[0];
+    const photoReader = new FileReader();
+    photoReader.readAsDataURL(photoFile);
+    photoReader.onloadend = () => {
+      this.setState(
+        {
+          photo: photoReader.result,
+        },
+        () => {
+          const sendPhoto = axios.create({
+            baseURL: 'http://localhost:3000/',
+          });
+
+          sendPhoto
+            .post('', {
+              photo: this.state.photo,
+            })
+            .then((result) => {
+              this.setState({
+                photoUrl: result.data,
+              });
+            })
+            .catch((err) => console.log('Error sending photo', err));
+        }
+      );
+    };
   }
 
   handleName(event) {
@@ -148,7 +180,15 @@ class AddAReviewForm extends React.Component {
     const { metaData, submit } = this.props;
     // eslint-disable-next-line camelcase
     const { product_id, characteristics } = metaData;
-    const { rating, summary, body, recommend, name, email, photo } = this.state;
+    const {
+      rating,
+      summary,
+      body,
+      recommend,
+      name,
+      email,
+      photoUrl,
+    } = this.state;
     const newCharacteristics = {};
     let newRec = true;
     if (recommend === 'true') {
@@ -171,7 +211,7 @@ class AddAReviewForm extends React.Component {
       recommend: newRec,
       name: name,
       email: email,
-      photos: [photo],
+      photos: [photoUrl],
       characteristics: newCharacteristics,
     };
 
@@ -187,7 +227,6 @@ class AddAReviewForm extends React.Component {
       ratingMessage,
       summary,
       body,
-      photo,
       name,
       email,
     } = this.state;
@@ -303,14 +342,12 @@ class AddAReviewForm extends React.Component {
           <div id="reviewPhoto">
             <label>
               <div>Include a photo</div>
-              <input
-                onChange={this.handlePhoto}
-                value={photo}
-                placeholder="Paste URL"
-                type="text"
-              />
+              <input onChange={this.handlePhoto} type="file" />
             </label>
           </div>
+          {this.state.photo ? (
+            <img src={this.state.photo} id="preview" />
+          ) : null}
           <div id="reviewName">
             <label>
               <div>Name to display*</div>
@@ -343,8 +380,12 @@ class AddAReviewForm extends React.Component {
           <button type="button" onClick={toggle} id="cancelButton">
             CANCEL
           </button>
-          <input type="submit" value ="SUBMIT" onClick={this.handleSubmit} id="submitButton" />
-
+          <input
+            type="submit"
+            value="SUBMIT"
+            onClick={this.handleSubmit}
+            id="submitButton"
+          />
         </form>
       </div>
     );

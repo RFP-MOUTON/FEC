@@ -3,6 +3,7 @@ dist/bundle.js
 
 ## API key
 src/env/config.js
+.env
 
 ## bundle
 dist/bundle.js
